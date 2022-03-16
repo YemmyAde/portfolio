@@ -1,0 +1,699 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+@font-face {
+  font-family: "geonik";
+  src: url(assets/Geonik-Pro-Font/ckhans-fonts-geonik-pro-regular-demo.otf);
+}
+a {
+  text-decoration: none;
+  color: #cecece;
+}
+h1 {
+  font-weight: 600;
+  font-size: 80px;
+  color: #242a37;
+  line-height: 90px;
+  font-family: "geonik", sans-serif;
+}
+.sans {
+  font-family: sans-serif;
+}
+h2 {
+  font-weight: 600;
+  font-size: 65px;
+  color: #242a37;
+  font-family: "Geonik", sans-serif;
+}
+h3 {
+  font-size: 45px;
+  color: #fff;
+  font-family: "Geonik", sans-serif;
+  font-weight: 500;
+}
+h4 {
+  font-size: 43px;
+  font-weight: 600;
+  font-family: "Geonik", sans-serif;
+  letter-spacing: 1px;
+}
+h5 {
+  font-size: 30px;
+  font-family: "Geonik", sans-serif;
+  font-weight: bold;
+}
+h6 {
+  font-family: "Geonik", sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 25px;
+}
+
+p {
+  font-size: 16px;
+  font-family: "Raleway";
+  font-weight: 500;
+  line-height: 26px;
+}
+.no-bullet {
+  list-style-type: none;
+}
+ul ul {
+  display: none;
+  text-decoration: none;
+}
+ul li:hover {
+  cursor: pointer;
+}
+.navigation {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu {
+  display: flex;
+  justify-content: center;
+  width: 420px;
+  align-items: center;
+}
+.flexMenu {
+  width: 100%;
+  display: flex;
+  padding: 20px 0 0;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.buildJoyText {
+  color: #1c2d52;
+  font-family: "Geonik", sans-serif;
+  font-weight: 600;
+  font-size: 30px !important;
+  position: relative;
+  top: -5px;
+}
+.buildJoyText a {
+  color: #1c2d52;
+}
+.section {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 80px;
+}
+.image {
+  width: 100%;
+}
+
+.contact {
+  background-color: #000;
+  font-size: 18px;
+  padding: 11px 20px;
+  right: 0;
+  width: auto;
+  font-family: "Geonik", sans-serif;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.contact a {
+  color: #fff !important;
+}
+a .contact {
+  color: #fff !important;
+}
+.menu > li > a {
+  font-family: "Geonik", sans-serif;
+  font-size: 16px;
+  color: #000;
+  margin: 0 15px;
+}
+.space {
+  margin-left: 6%;
+  margin-right: 6%;
+}
+.space2 {
+  margin: 70px 0 120px;
+}
+
+.hero {
+  width: 600px;
+  margin-top: 80px;
+  margin-bottom: 150px;
+}
+.policyBox {
+  width: 70%;
+  margin-top: 70px;
+  /* margin-bottom: 100px; */
+}
+.policyBoxH1 {
+  width: 100%;
+}
+.policyBox h1 {
+  font-size: 83px;
+  line-height: 140px;
+  letter-spacing: 5px;
+  padding-bottom: 50px;
+  color: #000;
+}
+
+.policyBox h3 {
+  color: #000;
+  letter-spacing: 1px;
+  padding-bottom: 30px;
+  font-size: 50px;
+  padding-bottom: 30px;
+}
+
+.policyBox p {
+  font-size: 20px;
+  line-height: 35px;
+  margin-bottom: 30px;
+  text-align: left;
+  color: black;
+}
+
+.exploreDiv {
+  margin-bottom: 100px;
+}
+.explore {
+  font-family: "Geonik", sans-serif;
+  font-weight: 600;
+  color: #1c2d52;
+}
+.bold {
+  font-weight: bold;
+}
+.exploreText {
+  margin-bottom: 60px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+}
+.marginBottom {
+  margin-bottom: 100px;
+}
+.marginBottom30 {
+  margin-bottom: 30px;
+}
+.geonik {
+  font-family: "Geonik", sans-serif;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.flexItem {
+  padding: 100px 40px 30px;
+  margin: 20px 20px 20px 0;
+  width: 300px;
+}
+.flexItem2 {
+  padding: 40px 40px 20px;
+  margin: 20px 40px 20px 0;
+}
+.boxItem > p {
+  line-height: 28.66px;
+}
+.boxItem > h6 {
+  color: #000;
+}
+.flexItem > h6,
+.flexItem2 > h6 {
+  margin-bottom: 20px;
+  font-family: "Geonik", sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+}
+.boxItem2 > p {
+  line-height: 28.66px;
+  color: white;
+}
+.boxItem2 > h6 {
+  color: #fff;
+}
+.boxItem {
+  background: #f6f6f8;
+  border-radius: 14px;
+}
+.boxItem2 {
+  background: #1c2d52;
+  border-radius: 14px;
+}
+
+.boxItem3 {
+  background: linear-gradient(
+    285.83deg,
+    rgba(255, 122, 63, 0.48) 2.5%,
+    rgba(255, 122, 63, 0.25) 104.51%
+  );
+  border-radius: 8px;
+}
+.boxItem4 {
+  background: linear-gradient(
+    285.83deg,
+    rgba(33, 173, 90, 0.44) 2.5%,
+    rgba(33, 173, 90, 0.15) 104.51%
+  );
+  border-radius: 8px;
+}
+.brownBox {
+  background: #474646;
+  padding: 80px 150px;
+}
+.getStarted {
+  width: 500px;
+  padding-bottom: 70px;
+  margin-top: 20px;
+}
+.getStarted > p {
+  color: #474646;
+  line-height: 26px;
+  font-weight: 500;
+}
+.halfWidth {
+  width: 70%;
+}
+.imgBackground {
+  background-image: url(./assets/images/image.PNG);
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  position: relative;
+  background-size: 100%;
+  text-align: center;
+  display: flex;
+  padding: 30px 30px 50px 30px;
+  background-color: #1c2d52;
+  height: auto;
+}
+.textLeft {
+  width: 40%;
+  margin-top: 40px;
+}
+.textLeft > p,
+.textLeft > h3 {
+  text-align: left;
+  color: white;
+  margin-bottom: 30px;
+}
+.textLeft > p {
+  margin: 30px 0;
+}
+.caseStudy {
+  margin-top: 70px;
+}
+.caseStudy {
+  color: white;
+  padding: 15px 0;
+  border: 1px solid white;
+  border-radius: 5px;
+  width: 170px;
+  text-align: center;
+}
+.caseStudy > a {
+  color: white;
+  font-size: 18px;
+  font-family: "Geonik";
+}
+.phoneMockUp {
+  position: absolute;
+  right: -4px;
+  height: 350px;
+}
+.faq {
+  background-color: #1c2d52;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 40px 60px 80px;
+}
+.faqTitle {
+  color: #ffa200;
+  margin: 20px 20px 20px 0;
+  font-family: "Geonik", sans-serif;
+}
+.textIcon {
+  display: flex;
+}
+
+.flexBar {
+  display: none;
+}
+.fa-bars,
+.fa-times {
+  size: 3x;
+  color: #1c2d52;
+}
+#close {
+  display: none;
+}
+.fa-long-arrow-alt-right {
+  margin-left: 15px;
+}
+.fa-long-arrow-alt-up {
+  transform: rotate(45deg);
+  margin-left: 10px;
+  margin-top: 5px;
+}
+.marginLi :active,
+.marginLi :hover {
+  font-weight: 600;
+}
+.arrow {
+  color: white;
+  margin-top: -5px;
+}
+.faqQues {
+  font-family: "Geonik", sans-serif;
+  color: #fff;
+  margin: 30px 0;
+  font-size: 25px;
+  cursor: pointer;
+  margin-right: 60px;
+}
+.colorWhite > p {
+  color: #fff;
+}
+.contact {
+  background-color: #000;
+  font-size: 18px;
+  padding: 11px 20px;
+  width: auto;
+  font-family: "Geonik", sans-serif;
+  font-weight: 500;
+  color: #fff;
+}
+.contact a {
+  color: #fff !important;
+}
+
+.project {
+  background-color: #fff;
+  font-size: 18px;
+  padding: 10px 20px;
+  width: auto;
+  font-family: "Geonik", sans-serif;
+  font-weight: 500;
+  color: #fff;
+  border: 1px solid #000;
+  color: #000;
+  margin-right: 50px;
+  margin-bottom: 10px;
+}
+.center {
+  align-items: center;
+  justify-content: flex-start;
+}
+.project:hover {
+  color: #242a37;
+}
+.faqAns > p {
+  color: #a4b1cd;
+}
+.fa-plus,
+.fa-minus {
+  color: #a4b1cd;
+  position: absolute;
+  top: 40px;
+  right: 0;
+}
+.select {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Geonik", sans-serif;
+  width: 200px;
+}
+.select:focus,
+.select:hover {
+  outline: none;
+}
+.footer {
+  background-color: #000;
+  display: flex;
+  justify-content: space-between;
+  padding: 80px 200px 80px 80px;
+  flex-wrap: wrap;
+}
+
+.footerDiv > p {
+  font-size: 18px;
+  padding-bottom: 5px;
+  color: #cecece;
+  font-family: "Raleway", sans-serif;
+}
+.footerMenu {
+  color: #fff !important;
+  padding-bottom: 18px;
+  font-family: "Geonik", sans-serif !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.footerDiv {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding-right: 30px;
+}
+.buildJoy {
+  position: relative;
+  left: 30px;
+  bottom: 25px;
+}
+.dropDown {
+  border-radius: 5px;
+  background-color: white;
+  width: 200px;
+  padding: 1px 10px 1px 10px;
+  position: relative;
+  bottom: 30px;
+}
+.country {
+  font-size: 13px;
+  font-family: "Raleway", sans-serif;
+  color: #9a9a9a !important;
+}
+.country2 {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Geonik", sans-serif;
+}
+.fa-chevron-down {
+  color: #a2a2a2;
+  padding-top: 10px;
+  size: 1x;
+}
+
+@media screen and (max-width: 1200px) {
+  .footer {
+    padding: 80px 100px 80px 40px;
+  }
+  .space {
+    margin-left: 4%;
+    margin-right: 4%;
+  }
+  .phoneMockUp {
+    height: 300px;
+  }
+  .caseStudy {
+    margin-top: 30px;
+  }
+
+  .policyBox {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .phoneMockUp {
+    height: 250px;
+  }
+  .textLeft > h3 {
+    margin-bottom: 20px;
+    font-size: 30px;
+  }
+  .textLeft > p {
+    margin: 10px 0;
+  }
+  .caseStudy {
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .phoneMockUp {
+    height: 230px;
+  }
+  .hideIcon {
+    display: none;
+  }
+  .navigation {
+    display: block;
+  }
+  .flexBar {
+    display: flex;
+    position: fixed;
+    z-index: 50;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 20px 40px 40px 20px !important;
+    box-sizing: border-box;
+  }
+  .marginLi {
+    margin: 20px 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+    width: 80%;
+  }
+  .menu {
+    position: fixed;
+    display: block;
+    height: 100vh !important;
+    width: 100%;
+    background-color: white;
+    left: -100%;
+    transition: all 0.5s;
+    z-index: 200;
+    margin: 0 !important;
+    top: 70px;
+  }
+  ul.show {
+    left: 0;
+  }
+  .hero {
+    margin-top: 150px;
+  }
+}
+@media screen and (max-width: 850px) {
+  .policyBox h1,
+  h1 {
+    font-size: 70px;
+    line-height: 80px;
+  }
+  .policyBox h1 {
+    margin-bottom: 20px;
+  }
+  .exploreDiv {
+    margin: 0 auto;
+    padding: 4%;
+  }
+  h2 {
+    font-size: 45px;
+    line-height: 55px;
+  }
+  .hero {
+    width: 90%;
+    margin-bottom: 100px;
+  }
+  .policyBox {
+    width: 90%;
+  }
+  .flex {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .flexItem {
+    width: 100%;
+  }
+  .brownBox {
+    padding: 80px 70px;
+  }
+  h3 {
+    font-size: 40px;
+  }
+  .faqQues {
+    margin: 20px 40px 20px 0;
+    font-size: 20px;
+  }
+  .fa-minus,
+  .fa-plus {
+    top: 25px;
+  }
+  .imgBackground {
+    background-color: #1c2d52;
+    height: auto;
+    display: block;
+    padding: 30px 40px 30px 30px;
+  }
+  .phoneMockUp {
+    top: 35px;
+  }
+  .textLeft {
+    width: 30%;
+    margin-right: 30px;
+    margin-top: 10px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .phoneMockUp {
+    position: relative;
+    height: 250px;
+  }
+  .textLeft {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .phoneMockUp {
+    width: 100%;
+    top: 0;
+    margin-top: 20px;
+  }
+  .getStarted {
+    width: 100%;
+    padding-bottom: 30px;
+  }
+  .halfWidth {
+    width: 100%;
+  }
+  .footer {
+    padding: 80px 30px 80px 20px;
+  }
+  .policy h1,
+  h1 {
+    font-size: 50px;
+    line-height: 60px;
+  }
+  h2 {
+    font-size: 35px;
+    line-height: 45px;
+  }
+  h3 {
+    font-size: 30px;
+  }
+  h5 {
+    font-size: 25px;
+  }
+  .hero {
+    width: 95%;
+    margin-bottom: 80px;
+  }
+  .brownBox {
+    padding: 80px 40px;
+  }
+  .faq {
+    padding: 10px 20px 80px;
+  }
+  .flexItem,
+  .flexItem2 {
+    margin: 20px auto;
+  }
+  .phoneMockUp {
+    height: auto;
+  }
+}
+@media screen and (max-width: 500px) {
+  .project {
+    margin-right: 10px;
+  }
+  .contact {
+    padding: 11px 5px;
+  }
+}

@@ -1,0 +1,78 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Sora";
+}
+footer {
+  margin-top: auto;
+}
+
+/*******************Header********************/
+.logo-wrapper {
+  width: 20%;
+}
+.header-main-ceda {
+  padding: 1rem 8rem 1rem 8rem !important;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+}
+.login-account {
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: black;
+  color: white !important;
+  text-decoration: none;
+}
+.nav-ceda,a.nav-ceda{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 93.1%;
+  display: flex;
+  align-items: center;
+  color: #000000;
+  cursor: pointer;
+}
+
+.collapse-wrapper {
+  width: 80%;
+}
+.navbar-wrapper {
+  display: flex;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100%;
+}
+.nav-item-ceda {
+  padding: 0px 20px;
+}
+@media only screen and (max-width: 1200px) {
+  /*Tablets [601px -> 1200px]*/
+}
+@media only screen and (max-width: 600px) {
+  /*Big smartphones [426px -> 600px]*/
+
+  /*******************Header********************/
+  .logo-wrapper {
+    width: 30%;
+  }
+  .header-main-ceda {
+    padding: 1rem 1rem 1rem 1rem !important;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 425px) {
+  /*Small smartphones [325px -> 425px]*/
+  /*******************Header********************/
+  .logo-wrapper {
+    width: 30%;
+  }
+  .header-main-ceda {
+    padding: 1rem 1rem 1rem 1rem;
+    align-items: center;
+  }
+}

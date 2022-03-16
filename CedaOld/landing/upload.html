@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/b35dfa58ee.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css" />
+    <title>CEDA</title>
+</head>
+
+<body>
+
+    <div class="register">
+        <h2 class="font-40"> CEDA - KYC Verification </h2>
+        <h6 class="font-18">For KYC Verification: Upload Driver license or Passport?</h6>
+        <form>
+            <div class="upload">
+                <input class="inputfile" type="file" name="file" id="file" required />
+                <label for="file">
+                    <span> <img src="assets/images/upload.png" alt="" class="uploadImg"></span>
+                    Click to choose a file or drag here
+                </label>
+                <p> </p>
+                <p class="fileSize"> Size limit: 10MB</p>
+                <i class="fas fa-asterisk asterisk2"></i>
+            </div>
+            <div class="marginTop2">
+                <button type="submit" class="registerButton marginTop2 pointer">
+                    <span> Submit </span>
+                    <i class="fas fa-arrow-right registerIcon"> </i>
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name=”viewport” content=”width=device-width,initial-scale=1.0">
+        <link rel="icon" href="/assets/images/weremind-favicon.png">
+
+        <title><?=$title?></title>
+
+         <!-- Font-awesome CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/assets/styles.css" rel="stylesheet">
+        <link href="/assets/css/dash-styles.css" rel="stylesheet" />
+
+        <?php if($title=='Privacy Notices | We Remind' || $title=="Terms & Conditions | We Remind"){ ?>
+        <link href="/assets/css/privacy-style.css" rel="stylesheet" />
+        <?php } ?>
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    </head>
+    <body>
+        <div class="container">
+          <!---------->
+          <nav class="navbar navbar-expand-lg">
+           <a href="/" class="navbar-brand logo-wrapper"><img src="/assets/images/cedaBlack.png" alt="Ceda Logo"></a>
+           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarText" style="">
+              <ul class="navbar-nav mr-auto ml-auto">
+                <li class="nav-item nav-item-ceda">
+                  <a class="nav-link nav-ceda"> Freelancers </a>
+                </li>
+                <li class="nav-item nav-item-ceda">
+                  <a class="nav-link nav-ceda" href=""> Micro Business </a>
+                </li>
+                <li class="nav-item nav-item-ceda">
+                  <a class="nav-link nav-ceda" href="">Developer</a>
+                </li>
+                <li class="nav-item nav-item-ceda">
+                  <a class="nav-link nav-ceda" href=""> Help</a>
+                </li>
+              </ul>
+              <span class="navbar-text">
+              <div class="form-inline my-2 my-lg-0">
+                <a class="mr-4s login-account" href="/login">Login to account</a>
+              </div>
+              </span>
+            </div>
+          </nav>
+          <!---------->
+        
+    <!-- <?php if($_SESSION['id']==""){ ?>
+    <div class="form-inline my-2 my-lg-0">
+       <a class="mr-4 text-dark login-account" href="/login">Login to account</a>
+        <a class="btn btn-primary my-2 my-sm-0 text-white" href="/signup" type="submit">Sign Up</a>
+    </div>
+    <?php } else { ?>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+     <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+        <li class="nav-item active"><div class="nav-link logout">Logout</div></li>
+    </ul>
+  </div>
+  <?php } ?> -->
+</div>
