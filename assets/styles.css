@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Sora;
+  src: url(/assets/font/sora/Sora-Bold.ttf);
+}
+
 body {
   min-height: 100vh;
   display: flex;
@@ -11,6 +16,11 @@ footer {
 /*******************Header********************/
 .logo-wrapper {
   width: 20%;
+}
+.navbar-toggler:focus {
+  text-decoration: none;
+  outline: 0;
+  box-shadow: 0 0 0 0rem;
 }
 .header-main-ceda {
   padding: 1rem 8rem 1rem 8rem !important;
@@ -37,7 +47,9 @@ footer {
   color: #000000;
   cursor: pointer;
 }
-
+.nav-ceda:hover, a.nav-ceda:hover {
+  font-weight: 500;  color: #000000;
+}
 .collapse-wrapper {
   width: 80%;
 }
@@ -50,6 +62,161 @@ footer {
 .nav-item-ceda {
   padding: 0px 20px;
 }
+/***************Footer**************/
+.main-footer {
+  background: #000000;
+  margin-top: 0px;
+  padding: 63.5px 0px;
+}
+a.footer-nav {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 93.1%;
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+/**********Hero Section***********/
+.hero-section {
+  background: #FBF9FC;
+}
+.hero-row {
+  display: flex;
+  align-items: center;
+}
+.hero-heading {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 56px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+.hero-description {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 139.6%;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+.hero-about {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20.02px;
+  line-height: 143.5%;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+.hero-login a {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16.9549px;
+  line-height: 143.5%;
+  display: flex;
+  align-items: center;
+  color: #000000;
+  text-decoration: none;  
+  margin-top: 30px;
+}
+.hero-login a img {
+  margin-left: 8.5px;
+}
+a.btn.btn-get-start-cta {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #000000;
+  padding: 10px 25px;
+  border: 1.41291px solid #000000;
+}
+a.btn.btn-get-hiw-cta {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+  padding: 10px 25px;
+  border: 1.41291px solid #000000;
+  box-sizing: border-box;
+  margin-left: 20px;
+}
+.digital-service-section {
+  background: #FBF9FC;
+}
+.section-heading {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 56px;
+  align-items: center;
+  color: #000000;
+}
+.section-description {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  align-items: center;
+  color: #000000;
+}
+.currency-exchange-row {
+  display: flex;
+  align-items: center;
+}
+.section-sub-heading {
+  padding-left: 45px;
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  align-items: center;
+  color: #000000;
+  position: relative;
+}
+.section-sub-description {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  align-items: center;
+  color: #000000;
+  padding-left: 45px;
+}
+
+h3.section-sub-heading::before {
+  content: "";
+  background-image: url(/assets/images/mdi_finance.png);
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  left: 0px;
+  top: 0px;
+}
+img.section-image {
+  width: 100%;
+  height: auto;
+}
+/********************/
 @media only screen and (max-width: 1200px) {
   /*Tablets [601px -> 1200px]*/
 }
