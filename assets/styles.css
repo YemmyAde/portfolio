@@ -2,6 +2,7 @@
     font-family: Sora;
     src: url(/assets/font/sora/Sora-Bold.ttf);
 }
+
 @font-face {
     font-family: Sora-regular;
     src: url(/assets/font/sora/Sora-Regular.ttf);
@@ -215,9 +216,11 @@ a.btn.btn-get-hiw-cta {
     background-position: 15%;
     background-size: auto 70%;
 }
+
 .digital-services-image {
     display: none;
 }
+
 .hero-login {
     margin-bottom: 0px;
 }
@@ -304,11 +307,15 @@ img.section-image {
 /********************/
 /****************Login Page*****************/
 .left-col {
-    background-color: #000000;height: 100vh;
+    background-color: #000000;
+    height: 100vh;
 }
+
 .right-col {
-    background-color: #FFFFFF;height: 100vh;
+    background-color: #FFFFFF;
+    height: 100vh;
 }
+
 .left-col {
     background-color: #000000;
     height: 100vh;
@@ -318,10 +325,12 @@ img.section-image {
     background-position: center;
     background-size: cover;
 }
+
 .left-col .inner-col {
     padding-left: 115px;
     padding-right: 115px;
 }
+
 .left-content {
     color: #FFFFFF;
     font-family: Sora-regular;
@@ -329,17 +338,21 @@ img.section-image {
     font-weight: 700;
     font-size: 20px;
     line-height: 139.6%;
+    margin-top:16px
 }
+
 .left-content-text {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 19px;
     display: flex;
     align-items: center;
     color: #ffffff;
+    margin-top: 16px;
 }
+
 h2.form-heading {
     font-family: 'Sora-regular';
     font-style: normal;
@@ -350,6 +363,7 @@ h2.form-heading {
     align-items: center;
     color: #000000;
 }
+
 p.contact-form-sub-heading {
     font-family: 'Inter';
     font-style: normal;
@@ -360,10 +374,78 @@ p.contact-form-sub-heading {
     align-items: center;
     color: #000000;
 }
+
 .right-col .inner-col {
     padding-left: 115px;
     padding-right: 115px;
     padding-top: 70px;
+}
+
+.input-login {
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 4px;
+    height: 50px;
+    font-family: 'Inter';
+    height: 50px;
+}
+
+.pass-wrapper {
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 4px;
+    align-items: center;
+    padding-right: 13px;
+}
+
+.login-pass {
+    border: 0px !important;
+}
+
+i {
+    color: black
+}
+.form-labels {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 143.5%;
+}
+.forgot-pass {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 143.5%;
+    margin-top: 16px;
+}
+.forgot-password-login {
+    color: #000000;
+    text-decoration: none;
+}
+button.btn-submit {
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    width: 100%;
+    background: #000000;
+    color: #ffffff;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    margin-top: 24px;
+    line-height: 143.5%;
+}
+.register-redirect {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 143.5%;
+    margin-top: 24px;
+    text-align: center;
 }
 /*********************************/
 
@@ -405,20 +487,24 @@ p.contact-form-sub-heading {
         padding: 1rem 1rem 1rem 1rem !important;
         align-items: center;
     }
+
     .currency-exchange-section {
         padding: 30px 0px;
         background-image: none;
     }
+
     .currency-exchange-image {
 
         display: block;
         width: 100%;
     }
+
     .digital-services-image {
         display: block;
-        width:100%;
+        width: 100%;
         margin-bottom: 30px;
     }
+
     .digital-service-section {
         background: #FBF9FC;
         padding: 30px 0px;
