@@ -1,245 +1,440 @@
 @font-face {
-  font-family: Sora;
-  src: url(/assets/font/sora/Sora-Bold.ttf);
+    font-family: Sora;
+    src: url(/assets/font/sora/Sora-Bold.ttf);
+}
+@font-face {
+    font-family: Sora-regular;
+    src: url(/assets/font/sora/Sora-Regular.ttf);
+}
+
+@font-face {
+    font-family: Inter;
+    src: url(/assets/font/inter/Inter-Regular.otf);
+}
+
+.container {
+    max-width: 1440px;
+    padding-left: 148px;
+    padding-right: 148px;
+}
+
+.my-header {
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  font-family: "Sora";
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Sora";
 }
+
 footer {
-  margin-top: auto;
+    margin-top: auto;
 }
 
 /*******************Header********************/
 .logo-wrapper {
-  width: 20%;
+    width: 20%;
 }
+
 .navbar-toggler:focus {
-  text-decoration: none;
-  outline: 0;
-  box-shadow: 0 0 0 0rem;
+    text-decoration: none;
+    outline: 0;
+    box-shadow: 0 0 0 0rem;
 }
+
 .header-main-ceda {
-  padding: 1rem 8rem 1rem 8rem !important;
-  align-items: center;
-  width: 100%;
-  position: fixed;
+    padding: 1rem 8rem 1rem 8rem !important;
+    align-items: center;
+    width: 100%;
+    position: fixed;
 }
+
 .login-account {
-  border: 1px solid #000;
-  border-radius: 5px;
-  padding: 10px 20px;
-  background-color: black;
-  color: white !important;
-  text-decoration: none;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 10px 20px;
+    background-color: black;
+    color: white !important;
+    text-decoration: none;
+    font-family: Inter;
 }
-.nav-ceda,a.nav-ceda{
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 93.1%;
-  display: flex;
-  align-items: center;
-  color: #000000;
-  cursor: pointer;
+
+.nav-ceda, a.nav-ceda {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 93.1%;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    cursor: pointer;
 }
+
 .nav-ceda:hover, a.nav-ceda:hover {
-  font-weight: 500;  color: #000000;
+    font-weight: 500;
+    color: #000000;
 }
+
 .collapse-wrapper {
-  width: 80%;
+    width: 80%;
 }
+
 .navbar-wrapper {
-  display: flex;
-  align-items: center !important;
-  justify-content: space-between !important;
-  width: 100%;
+    display: flex;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100%;
 }
+
 .nav-item-ceda {
-  padding: 0px 20px;
+    padding: 0px 20px;
 }
+
 /***************Footer**************/
 .main-footer {
-  background: #000000;
-  margin-top: 0px;
-  padding: 63.5px 0px;
+    background: #000000;
+    margin-top: 0px;
+    padding: 120px 0px 85px 0px;
 }
+
 a.footer-nav {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 93.1%;
-  display: flex;
-  align-items: center;
-  color: #FFFFFF;
-  text-decoration: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 93.1%;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    text-decoration: none;
 }
+
 /**********Hero Section***********/
 .hero-section {
-  background: #FBF9FC;
+    background: #FBF9FC;
+    background-image: url(/assets/images/ceda-girl.png);
+    background-repeat: no-repeat;
+    background-position: 90%;
+    background-size: auto 90%;
 }
-.hero-row {
-  display: flex;
-  align-items: center;
+
+.hero-image {
+    display: none;
 }
+
 .hero-heading {
-  font-family: 'Sora';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 56px;
-  line-height: 56px;
-  display: flex;
-  align-items: center;
-  color: #000000;
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 52px;
+    line-height: 54px;
+    display: flex;
+    align-items: center;
+    color: #000000;
 }
+
+.hero-content {
+    padding-top: 100px;
+}
+
 .hero-description {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 21px;
-  line-height: 139.6%;
-  display: flex;
-  align-items: center;
-  color: #000000;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 139.6%;
+    display: flex;
+    align-items: center;
+    color: #000000;
 }
+
 .hero-about {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20.02px;
-  line-height: 143.5%;
-  display: flex;
-  align-items: center;
-  color: #000000;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20.02px;
+    line-height: 143.5%;
+    display: flex;
+    align-items: center;
+    color: #000000;
 }
+
 .hero-login a {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16.9549px;
-  line-height: 143.5%;
-  display: flex;
-  align-items: center;
-  color: #000000;
-  text-decoration: none;  
-  margin-top: 30px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16.9549px;
+    line-height: 143.5%;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    text-decoration: none;
+    margin-top: 10px;
 }
+
 .hero-login a img {
-  margin-left: 8.5px;
+    margin-left: 8.5px;
 }
+
 a.btn.btn-get-start-cta {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  align-items: center;
-  text-align: center;
-  color: #FFFFFF;
-  background-color: #000000;
-  padding: 10px 25px;
-  border: 1.41291px solid #000000;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: #000000;
+    padding: 10px 25px;
+    border: 1.41291px solid #000000;
 }
+
 a.btn.btn-get-hiw-cta {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  align-items: center;
-  text-align: center;
-  color: #000000;
-  padding: 10px 25px;
-  border: 1.41291px solid #000000;
-  box-sizing: border-box;
-  margin-left: 20px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    padding: 10px 25px;
+    border: 1.41291px solid #000000;
+    box-sizing: border-box;
+    margin-left: 20px;
 }
+
 .digital-service-section {
-  background: #FBF9FC;
+    background: #FBF9FC;
+    padding: 70px 0px;
+    background-image: url(/assets/images/digital-service.png);
+    background-repeat: no-repeat;
+    background-position: 15%;
+    background-size: auto 70%;
 }
+.digital-services-image {
+    display: none;
+}
+.hero-login {
+    margin-bottom: 0px;
+}
+
 .section-heading {
-  font-family: 'Sora';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 56px;
-  align-items: center;
-  color: #000000;
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 34px;
+    align-items: center;
+    color: #000000;
 }
+
 .section-description {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  align-items: center;
-  color: #000000;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    align-items: center;
+    color: #000000;
 }
+
 .currency-exchange-row {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
+
 .section-sub-heading {
-  padding-left: 45px;
-  font-family: 'Sora';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  align-items: center;
-  color: #000000;
-  position: relative;
+    padding-left: 45px;
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    align-items: center;
+    color: #000000;
+    position: relative;
 }
+
+.currency-exchange-image {
+
+    display: none;
+}
+
+.currency-exchange-section {
+    padding: 70px 0px;
+    background-image: url(/assets/images/IconBusiness.png);
+    background-repeat: no-repeat;
+    background-position: 90%;
+    background-size: auto 85%;
+}
+
+.currency-image-wrapper {
+    text-align: right;
+}
+
 .section-sub-description {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  align-items: center;
-  color: #000000;
-  padding-left: 45px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    align-items: center;
+    color: #000000;
+    padding-left: 45px;
 }
 
 h3.section-sub-heading::before {
-  content: "";
-  background-image: url(/assets/images/mdi_finance.png);
-  width: 25px;
-  height: 25px;
-  position: absolute;
-  background-repeat: no-repeat;
-  background-size: contain;
-  left: 0px;
-  top: 0px;
+    content: "";
+    background-image: url(/assets/images/mdi_finance.png);
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+    left: 0px;
+    top: 0px;
 }
-img.section-image {
-  width: 100%;
-  height: auto;
-}
-/********************/
-@media only screen and (max-width: 1200px) {
-  /*Tablets [601px -> 1200px]*/
-}
-@media only screen and (max-width: 600px) {
-  /*Big smartphones [426px -> 600px]*/
 
-  /*******************Header********************/
-  .logo-wrapper {
-    width: 30%;
-  }
-  .header-main-ceda {
-    padding: 1rem 1rem 1rem 1rem !important;
-    align-items: center;
-  }
+img.section-image {
+    width: 100%;
+    height: auto;
 }
-@media only screen and (max-width: 425px) {
-  /*Small smartphones [325px -> 425px]*/
-  /*******************Header********************/
-  .logo-wrapper {
-    width: 30%;
-  }
-  .header-main-ceda {
-    padding: 1rem 1rem 1rem 1rem;
+
+/********************/
+/****************Login Page*****************/
+.left-col {
+    background-color: #000000;height: 100vh;
+}
+.right-col {
+    background-color: #FFFFFF;height: 100vh;
+}
+.left-col {
+    background-color: #000000;
+    height: 100vh;
+    padding: 70px 0px;
+    background-image: url(/assets/images/black-bg-image.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.left-col .inner-col {
+    padding-left: 115px;
+    padding-right: 115px;
+}
+.left-content {
+    color: #FFFFFF;
+    font-family: Sora-regular;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 139.6%;
+}
+.left-content-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
     align-items: center;
-  }
+    color: #ffffff;
+}
+h2.form-heading {
+    font-family: 'Sora-regular';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 56px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+p.contact-form-sub-heading {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 143.5%;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+.right-col .inner-col {
+    padding-left: 115px;
+    padding-right: 115px;
+    padding-top: 70px;
+}
+/*********************************/
+
+@media only screen and (max-width: 1200px) {
+    /*Tablets [601px -> 1200px]*/
+}
+
+@media only screen and (max-width: 600px) {
+    /*Big smartphones [426px -> 600px]*/
+    /*******************Header********************/
+    .logo-wrapper {
+        width: 30%;
+    }
+
+    .hero-image {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .hero-section {
+        background-image: none;
+    }
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .hero-content {
+        padding-top: 30px;
+    }
+
+    a.btn.btn-get-start-cta {
+        padding: 10px 8px;
+    }
+
+    .header-main-ceda {
+        padding: 1rem 1rem 1rem 1rem !important;
+        align-items: center;
+    }
+    .currency-exchange-section {
+        padding: 30px 0px;
+        background-image: none;
+    }
+    .currency-exchange-image {
+
+        display: block;
+        width: 100%;
+    }
+    .digital-services-image {
+        display: block;
+        width:100%;
+        margin-bottom: 30px;
+    }
+    .digital-service-section {
+        background: #FBF9FC;
+        padding: 30px 0px;
+        background-image: none;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    /*Small smartphones [325px -> 425px]*/
+    /*******************Header********************/
+    .logo-wrapper {
+        width: 30%;
+    }
+
+    .header-main-ceda {
+        padding: 1rem 1rem 1rem 1rem;
+        align-items: center;
+    }
 }
