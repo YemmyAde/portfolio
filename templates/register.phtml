@@ -1,29 +1,96 @@
-
 <section class="login-service-section">
     <div class="container-fluid">
         <div class="row login-row">
             <div class="col-md-5 left-col">
                 <div class="inner-col">
-                    <a class="d-inline-flex align-items-center mb-2 link-dark text-decoration-none" href="/" aria-label="Bootstrap">
-                        <img src="/assets/images/footer-logo.png" alt="CEDA Logo">
-                    </a>
+                    <img src="/assets/images/Ceda-Black.svg" alt="CEDA Logo">
                     <h2 class="left-content">Lorem ipsum is placeholder text commonly</h2>
-                    <p class="left-content-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <p class="left-content-text">Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                        unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                 </div>
             </div>
             <div class="col-md-7 right-col">
                 <div class="inner-col">
                     <h2 class="form-heading">Create a Ceda Account</h2>
-                    <p class="contact-form-sub-heading">Please enter your account details</p>
-                    <form action="">
-                        <div class="form-group">
-                            <label for="inputEmail">Email Address</label>
-                            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                    <form action="" id="reg-form">
+                        <div class="col-md-12 input-wrapper">
+                            <div class="name-wrapper">
+                                <div class="name-col">
+                                    <div class="form-group mb-0">
+                                        <label class="form-labels" for="first_name">First Name</label>
+                                        <input type="text" class="form-control input-login" id="first_name"
+                                               placeholder="First Name">
+                                    </div>
+                                </div>
+                                <div class="name-col">
+                                    <div class="form-group mb-0">
+                                        <label class="form-labels" for="last_name">Last Name</label>
+                                        <input type="text" class="form-control input-login" id="last_name"
+                                               placeholder="Last Name">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="inputEmail">Email Password</label>
-                            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                        <div class="col-md-12 input-wrapper">
+                            <div class="form-group">
+                                <label class="form-labels" for="email">Email Address</label>
+                                <div class="input-group pass-wrapper" id="show_hide_password">
+                                    <div class="input-group-addon">
+                                        <img src="/assets/images/nigeria-flag.svg" alt="nigeria-flag">
+                                    </div>
+                                    <p class="mb-0 pl-10 line"> | </p>
+                                    <input type="email" class="form-control input-login login-pass pl-10" id="email"
+                                           placeholder="Enter your Email Address">
+                                </div>
+                            </div>
                         </div>
+                        <div class="col-md-12 input-wrapper">
+
+                            <div class="form-group">
+                                <label class="form-labels" for="phone">Phone Number</label>
+                                <input type="text" class="form-control input-login-bellow" id="phone"
+                                       placeholder="Enter phone number">
+                            </div>
+                        </div>
+                        <div class="col-md-12 input-wrapper">
+                            <div class="form-group">
+                                <label class="form-labels" for="password">Enter Password</label>
+                                <input type="password" class="form-control input-login-bellow" id="password"
+                                       placeholder="Min. of 8 characters">
+                            </div>
+                        </div>
+                        <div class="col-md-12 input-wrapper">
+                            <div class="form-group">
+                                <label class="form-labels" for="email">Confirm Password</label>
+                                <input type="password" class="form-control input-login-bellow" id="cpassword"
+                                       placeholder="Min. of 8 characters">
+                            </div>
+                        </div>
+                        <div class="bellow-content-wrapper">
+                            <p class="acc-type mb-0">What type of account do you own?</p>
+                            <div class="below-content">
+                                <div class="type">
+                                    <div class="type-name">
+                                        <input class="checkbox-type" type="checkbox" name="type_name" id="type_name"/>
+                                        <p class="type-actual mb-0">Freelancer</p>
+                                    </div>
+                                    <p class="bellow-text mb-0">I run my business personally and would love to receive<br> payments from any part of
+                                        the world using Ceda.</p>
+                                </div>
+                            </div>
+                            <div class="below-content mt-24">
+
+                                <div class="type">
+                                    <div class="type-name">
+                                        <input class="checkbox-type" type="checkbox" name="type_name" id="type_name"/>
+                                        <p class="type-actual mb-0">MicroBusiness</p>
+                                    </div>
+                                    <p class="bellow-text mb-0">I own a microbusiness and would love to reach my savings goals with the help of Ceda</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-submit">Register &nbsp; <img src="/assets/images/register.png" alt=""></button>
                     </form>
                 </div>
             </div>
