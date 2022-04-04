@@ -19,14 +19,14 @@
                                 <div class="name-col">
                                     <div class="form-group mb-0">
                                         <label class="form-labels" for="first_name">First Name</label>
-                                        <input type="text" class="form-control input-login" id="first_name"
+                                        <input type="text" class="form-control input-login" id="first_name" name="first_name"
                                                placeholder="First Name">
                                     </div>
                                 </div>
                                 <div class="name-col">
                                     <div class="form-group mb-0">
                                         <label class="form-labels" for="last_name">Last Name</label>
-                                        <input type="text" class="form-control input-login" id="last_name"
+                                        <input type="text" class="form-control input-login" id="last_name" name="last_name"
                                                placeholder="Last Name">
                                     </div>
                                 </div>
@@ -37,7 +37,7 @@
 
                             <div class="form-group">
                                 <label class="form-labels" for="phone">Email Address</label>
-                                <input type="text" class="form-control input-login-bellow" id="email"
+                                <input type="text" class="form-control input-login-bellow" id="email" name="email"
                                        placeholder="Enter your Email Address">
                             </div>
                         </div>
@@ -49,7 +49,7 @@
                                         <img src="/assets/images/nigeria-flag.svg" alt="nigeria-flag">
                                     </div>
                                     <p class="mb-0 pl-10 line"> | </p>
-                                    <input type="number" class="form-control input-login login-pass pl-10" id="phone"
+                                    <input type="number" class="form-control input-login login-pass pl-10" id="phone_number" name="phone_number"
                                            placeholder="Enter phone number ">
                                 </div>
                             </div>
@@ -57,14 +57,14 @@
                         <div class="col-md-12 input-wrapper">
                             <div class="form-group">
                                 <label class="form-labels" for="password">Enter Password</label>
-                                <input type="password" class="form-control input-login-bellow" id="password"
+                                <input type="password" class="form-control input-login-bellow" id="password" name="password"
                                        placeholder="Min. of 8 characters">
                             </div>
                         </div>
                         <div class="col-md-12 input-wrapper">
                             <div class="form-group">
                                 <label class="form-labels" for="email">Confirm Password</label>
-                                <input type="password" class="form-control input-login-bellow" id="cpassword"
+                                <input type="password" class="form-control input-login-bellow" id="cpassword" name="cpassword"
                                        placeholder="Min. of 8 characters">
                             </div>
                         </div>
@@ -73,7 +73,7 @@
                             <div class="below-content">
                                 <div class="type">
                                     <div class="type-name">
-                                        <input class="checkbox-type" type="checkbox" name="type_name" id="type_name"/>
+                                        <input class="checkbox-type" type="checkbox" name="type_name" id="freelancer" value="freelancer"/>
                                         <p class="type-actual mb-0">Freelancer</p>
                                     </div>
                                     <p class="bellow-text mb-0">I run my business personally and would love to receive<br> payments from any part of
@@ -84,14 +84,14 @@
 
                                 <div class="type">
                                     <div class="type-name">
-                                        <input class="checkbox-type" type="checkbox" name="type_name" id="type_name"/>
+                                        <input class="checkbox-type" type="checkbox" name="type_name" id="microbusiness" value="microbusiness"/>
                                         <p class="type-actual mb-0">MicroBusiness</p>
                                     </div>
                                     <p class="bellow-text mb-0">I own a microbusiness and would love to reach my savings goals with the help of Ceda</p>
                                 </div>
                             </div>
                         </div>
-                        <button class="btn-submit">Register &nbsp; <img src="/assets/images/register.png" alt=""></button>
+                        <button class="btn-submit" onclick="addUser()">Register &nbsp; <img src="/assets/images/register.png" alt=""></button>
                     </form>
                 </div>
             </div>
@@ -99,3 +99,21 @@
     </div>
 </section>
 <?php include 'templates/footer.phtml'; ?>
+
+<script>
+    function addUser(){
+        $.ajax({
+            url: '/ajax/signup_user',
+            method: 'POST',
+            dataType: 'JSON',
+            data: {
+                first_name: $('#first_name').val(),
+                last_name: $('#last_name').val(),
+                email: $('#email').val(),
+                phone_number: $('#phone_number').val(),
+                password: $('#password').val(),
+                type: $('#type').val(),
+            }
+        });
+    }
+</script>
