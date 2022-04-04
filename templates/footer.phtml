@@ -1,47 +1,60 @@
-<?php if($title == "CEDA") { ?>
-<footer class="bd-footer main-footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-3 ">
-        <a class="d-inline-flex align-items-center mb-2 link-dark text-decoration-none footer-logo" href="/" aria-label="Bootstrap">
-            <img src="/assets/images/footer-logo.png" alt="CEDA Logo">
-        </a>
-      </div>
-      <div class="col-6 col-lg-2 offset-lg-1">
-        <ul class="list-unstyled">
-          <li class="mb-4"><a class="footer-nav" href="#">Get Started</a></li>
-          <li class="mb-4"><a  class="footer-nav" href="#">Login</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-lg-2">
-        <ul class="list-unstyled">
-          <li class="mb-4"><a  class="footer-nav" href="#">Freelancers</a></li>
-          <li class="mb-4"><a  class="footer-nav" href="#">Micro Business</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-lg-2">
-        <ul class="list-unstyled">
-          <li class="mb-4"><a  class="footer-nav" href="#">Developer</a></li>
-          <li class="mb-4"><a  class="footer-nav" href="#">Help</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-lg-2">
-        <ul class="list-unstyled">
-          <li class="mb-4"><a  class="footer-nav" href="#">Privacy</a></li>
-          <li class="mb-4"><a  class="footer-nav" href="#">Terms of use</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer>
+<?php if ($title == "CEDA") { ?>
+    <footer class="bd-footer main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 ">
+                    <a class="d-inline-flex align-items-center mb-2 link-dark text-decoration-none footer-logo" href="/"
+                       aria-label="Bootstrap">
+                        <img src="/assets/images/footer-logo.png" alt="CEDA Logo">
+                    </a>
+                </div>
+                <div class="col-6 col-lg-2 offset-lg-1">
+                    <ul class="list-unstyled">
+                        <li class="mb-4"><a class="footer-nav" href="#">Get Started</a></li>
+                        <li class="mb-4"><a class="footer-nav" href="#">Login</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <ul class="list-unstyled">
+                        <li class="mb-4"><a class="footer-nav" href="#">Freelancers</a></li>
+                        <li class="mb-4"><a class="footer-nav" href="#">Micro Business</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <ul class="list-unstyled">
+                        <li class="mb-4"><a class="footer-nav" href="#">Developer</a></li>
+                        <li class="mb-4"><a class="footer-nav" href="#">Help</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <ul class="list-unstyled">
+                        <li class="mb-4"><a class="footer-nav" href="#">Privacy</a></li>
+                        <li class="mb-4"><a class="footer-nav" href="#">Terms of use</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </footer>
 <?php } ?>
+<div id="snackbar"></div>
 <script src="/assets/js/slim.min.js"></script>
 <script src="/assets/js/popper.min.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>
 <script src="/assets/js/jquery-3.6.0.min.js"></script>
 <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script> -->
 <script src="/assets/js/scripts.js"></script>
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css"/>
 <script src="/assets/js/jquery.form.min.js"></script>
+<script>
+    function showToast() {
+        var x = document.getElementById("snackbar");
+        console.log(x);
+        x.className = "show";
+        setTimeout(function () {
+            x.className = x.className.replace("show", "");
+        }, 5000);
+    }
+</script>
 </body>
 </html>

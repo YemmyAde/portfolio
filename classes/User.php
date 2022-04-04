@@ -15,6 +15,7 @@ class User {
             $stmt->execute([]);
             return $DB->lastInsertId();
         } catch (Exception $e) {
+            echo $e->getMessage();
             return false;
         }
     }
@@ -27,8 +28,14 @@ class User {
             $stmt->execute([
                 'email' => $email
             ]);
-            return true;
+            $row = $stmt->fetch();
+            if(!$row){
+                return false;
+            }else{
+                return true;
+            }
         } catch (Exception $e) {
+            echo $e->getMessage();
             return false;
         }
     }
