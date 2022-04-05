@@ -39,4 +39,25 @@ class User {
             return false;
         }
     }
+    public static function verifyUser($email,$password)
+    {
+        global $DB;
+        $sql = "SELECT * FROM user WHERE email = :email AND password = :password";
+        $stmt = $DB->prepare($sql);
+        try {
+            $stmt->execute([
+                'email'     => $email,
+                'password'  => $password,
+            ]);
+            $row = $stmt->fetchAll();
+            if(!$row){
+                return false;
+            }else{
+                return $row;
+            }
+        } catch (Exception $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
 }

@@ -16,18 +16,18 @@
                     <form action="" id="reg-form">
                         <div class="col-md-12 input-wrapper">
                             <div class="name-wrapper">
-                                <div class="name-col">
+                                <!--<div class="name-col">
                                     <div class="form-group mb-0">
                                         <label class="form-labels" for="first_name">First Name</label>
                                         <input type="text" class="form-control input-login" id="first_name" name="first_name" required
                                                placeholder="First Name">
                                     </div>
-                                </div>
+                                </div>-->
                                 <div class="name-col">
                                     <div class="form-group mb-0">
-                                        <label class="form-labels" for="last_name">Last Name</label>
-                                        <input type="text" class="form-control input-login" id="last_name" name="last_name" required
-                                               placeholder="Last Name">
+                                        <label class="form-labels" for="name">Name</label>
+                                        <input type="text" class="form-control input-login" id="name" name="name" required
+                                               placeholder="Full legal name as written on  ID card">
                                     </div>
                                 </div>
                             </div>
@@ -73,7 +73,7 @@
                             <div class="below-content">
                                 <div class="type">
                                     <div class="type-name">
-                                        <input class="checkbox-type" type="checkbox" name="type_name" id="freelancer" value="freelancer"/>
+                                        <input class="checkbox-type" type="checkbox" name="type_name" id="freelancer" value="freelancer" onclick="check(this);"/>
                                         <p class="type-actual mb-0">Freelancer</p>
                                     </div>
                                     <p class="bellow-text mb-0">I run my business personally and would love to receive<br> payments from any part of
@@ -84,7 +84,7 @@
 
                                 <div class="type">
                                     <div class="type-name">
-                                        <input class="checkbox-type" type="checkbox" name="type_name" id="microbusiness" value="microbusiness"/>
+                                        <input class="checkbox-type" type="checkbox" name="type_name" id="microbusiness" value="microbusiness" onclick="check(this);"/>
                                         <p class="type-actual mb-0">MicroBusiness</p>
                                     </div>
                                     <p class="bellow-text mb-0">I own a microbusiness and would love to reach my savings goals with the help of Ceda</p>
@@ -101,25 +101,76 @@
 <?php include 'templates/footer.phtml'; ?>
 
 <script>
+    let type = ""
+    function check(input)
+    {
+        type = input.value;
+        let checkboxes = document.getElementsByClassName("checkbox-type");
+
+        for(let i = 0; i < checkboxes.length; i++)
+        {
+            //uncheck all
+            if(checkboxes[i].checked == true)
+            {
+                checkboxes[i].checked = false;
+            }
+        }
+
+        //set checked of clicked object
+        if(input.checked == true)
+        {
+            input.checked = false;
+        }
+        else
+        {
+            input.checked = true;
+        }
+    }
     $('.btn-submit').click(function(e){
         e.preventDefault();
         let password = $('#password').val();
         let cpassword = $('#cpassword').val();
-        if(password==cpassword) {
+        if($('#name').val() ==''){
+            $('#snackbar').html('Please enter your name');
+            showToast();
+            return;
+        }
+        if($('#email').val() ==''){
+            $('#snackbar').html('Please enter your email');
+            showToast();
+            return;
+        }
+        if($('#phone_number').val() ==''){
+            $('#snackbar').html('Please enter your phone number');
+            showToast();
+            return;
+        }
+        if($('#name').val() ==''){
+            $('#snackbar').html('Please enter your name');
+            showToast();
+            return;
+        }
+        if($('#password').val() ==''){
+            $('#snackbar').html('Please enter password');
+            showToast();
+            return;
+        }
+        if(password==cpassword ) {
+            //$(this).html(` <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span><span class="sr-only">Loading...</span>`)
             try{
                 $.ajax({
                     url: '/ajax/signup_user',
                     method: 'POST',
                     dataType: 'JSON',
                     data: {
-                        first_name: $('#first_name').val(),
-                        last_name: $('#last_name').val(),
+                        name: $('#name').val(),
                         email: $('#email').val(),
                         phone_number: $('#phone_number').val(),
                         password: $('#password').val(),
-                        type: 'freelancer',
+                        type: type,
                     },
                     success: function (data) {
+                       // $(this).html(`<p>Register</p> &nbsp; <img src="/assets/images/register.png" alt="">`)
                         if(data.message!==undefined) {
                             $('#snackbar').html(data.message);
                             showToast();

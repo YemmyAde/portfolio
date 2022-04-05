@@ -521,14 +521,11 @@ p.contact-form-sub-heading {
     padding: 211px 0px;
 }
 .name-wrapper{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     width: 100%;
 }
 .name-col{
     padding: 0;
-    width: 48%;
+    width: 100%;
 }
 i {
     color: black
