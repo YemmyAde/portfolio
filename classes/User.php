@@ -39,7 +39,7 @@ class User {
             return false;
         }
     }
-    public static function verifyUser($email,$password)
+    public static function verifyUser($email = "",$password = "")
     {
         global $DB;
         $sql = "SELECT * FROM user WHERE email = :email AND password = :password";

@@ -16,7 +16,7 @@
                     <form action="" class="right-form">
                         <div class="form-group">
                             <label class="form-labels" for="email">Email Address</label>
-                            <input type="email" class="form-control input-login" id="email" placeholder="Enter your email address">
+                            <input type="email" class="form-control input-login" id="email" name="email" placeholder="Enter your email address">
                         </div>
                         <div class="form-group">
                             <label class="form-labels" for="password">Enter Password</label>
@@ -41,3 +41,49 @@
     </div>
 </section>
 <?php include 'templates/footer.phtml'; ?>
+<script>
+    $('.btn-submit').click(function(e){
+        e.preventDefault();
+        if($('#email').val() ==''){
+            $('#snackbar').html('Please enter your email');
+            showToast();
+            return;
+        }
+        if($('#password').val() ==''){
+            $('#snackbar').html('Please enter password');
+            showToast();
+            return;
+        }
+            //$(this).html(` <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span><span class="sr-only">Loading...</span>`)
+            try{
+                $.ajax({
+                    url: '/ajax/login_user',
+                    method: 'POST',
+                    dataType: 'JSON',
+                    data: {
+                        email: $('#email').val(),
+                        password: $('#password').val(),
+                    },
+                    success: function (data) {
+                        // $(this).html(`<p>Register</p> &nbsp; <img src="/assets/images/register.png" alt="">`)
+                        if(data.message!==undefined) {
+                            $('#snackbar').html(data.message);
+                            showToast();
+                            setTimeout(function () {
+                              //  window.location.href="/login";
+                            },3000)
+
+                        }
+                        else{
+                            $('#snackbar').html(data.error);
+                            showToast();
+                        }
+                    }
+                });
+            }catch(e){
+                console.warn(e)
+            }
+
+
+    })
+</script>
