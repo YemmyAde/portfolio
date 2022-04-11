@@ -1,4 +1,5 @@
 <?php
+session_start();
 require '../config/config.php';
 
 if(isset($_REQUEST['email']) && isset($_REQUEST['password'])){
@@ -7,6 +8,7 @@ if(isset($_REQUEST['email']) && isset($_REQUEST['password'])){
     if($login){
         $_SESSION['token'] = $login['token'];
         $_SESSION['id'] = $login['id'];
+        $_SESSION['name'] = $login['name'];
         echo json_encode(['message' => 'Login successful']);
     }
     else{
