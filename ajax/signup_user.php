@@ -9,17 +9,20 @@ if ($check_email) {
     $data = [
         'name'              => $_REQUEST['name'],
         'email'             => $_REQUEST['email'],
+        'country'           => $_REQUEST['country'],
+        'ios2'              => $_REQUEST['ios2'],
+        'dial_code'         => $_REQUEST['dial_code'],
         'phone_number'      => $_REQUEST['phone_number'],
         'password'          => hash('sha512', $_REQUEST['password']),
         'type'              => $_REQUEST['type'],
         'token'             => $token,
     ];
-
-    $user  = User::addUser($data);
-    if($user){
+    /* print_r($_REQUEST);
+     die();*/
+    $user = User::addUser($data);
+    if ($user) {
         echo json_encode(['message' => 'Signup successful']);
-    }
-    else{
+    } else {
         echo json_encode(['error' => 'Oops! Something went wrong']);
 
     }

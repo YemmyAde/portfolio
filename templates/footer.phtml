@@ -10,14 +10,14 @@
                 </div>
                 <div class="col-6 col-lg-2 offset-lg-1">
                     <ul class="list-unstyled">
-                        <li class="mb-4"><a class="footer-nav" href="#">Get Started</a></li>
-                        <li class="mb-4"><a class="footer-nav" href="#">Login</a></li>
+                        <li class="mb-4"><a class="footer-nav" href="/register">Get Started</a></li>
+                        <li class="mb-4"><a class="footer-nav" href="l/login">Login</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-lg-2">
                     <ul class="list-unstyled">
                         <li class="mb-4"><a class="footer-nav" href="#">Freelancers</a></li>
-                        <li class="mb-4"><a class="footer-nav" href="#">Micro Business</a></li>
+                        <li class="mb-4"><a class="footer-nav" href="/microbusiness">Micro Business</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-lg-2">
@@ -46,10 +46,12 @@
 <script src="/assets/js/scripts.js"></script>
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css"/>
 <script src="/assets/js/jquery.form.min.js"></script>
+<script src="https://cdn.tutorialjinni.com/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
 <script>
     function showToast() {
         let x = document.getElementById("snackbar");
-        x.className = "show";
+        x.className = "showToast";
         setTimeout(function () {
             x.className = x.className.replace("show", "");
         }, 5000);

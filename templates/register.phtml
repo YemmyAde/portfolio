@@ -1,9 +1,9 @@
-    <section class="login-service-section">
+<section class="login-service-section">
     <div class="container-fluid">
         <div class="row login-row">
             <div class="col-md-5 left-col">
                 <div class="inner-col">
-                    <img src="/assets/images/Ceda-Black.svg" alt="CEDA Logo">
+                    <a href="/"> <img src="/assets/images/Ceda-Black.svg" alt="CEDA Logo"></a>
                     <h2 class="left-content">Lorem ipsum is placeholder text commonly</h2>
                     <p class="left-content-text">Lorem Ipsum is simply dummy text of the printing and typesetting
                         industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
@@ -26,7 +26,8 @@
                                 <div class="name-col">
                                     <div class="form-group mb-0">
                                         <label class="form-labels" for="name">Name</label>
-                                        <input type="text" class="form-control input-login" id="name" name="name" required
+                                        <input type="text" class="form-control input-login" id="name" name="name"
+                                               required
                                                placeholder="Full legal name as written on  ID card">
                                     </div>
                                 </div>
@@ -37,34 +38,43 @@
 
                             <div class="form-group">
                                 <label class="form-labels" for="phone">Email Address</label>
-                                <input type="text" class="form-control input-login-bellow" id="email" name="email" required
+                                <input type="text" class="form-control input-login-bellow" id="email" name="email"
+                                       required
                                        placeholder="Enter your Email Address">
                             </div>
                         </div>
                         <div class="col-md-12 input-wrapper">
                             <div class="form-group">
                                 <label class="form-labels" for="email">Phone Number</label>
-                                <div class="input-group pass-wrapper" id="show_hide_password">
+                                <div class="input-group pass-wrapper">
+                                    <input class="form-control input-login login-pass" type="tel"
+                                           id="phone_number" placeholder="Enter phone number" name="phone_number[main]"
+                                    />
+                                </div>
+                                <!--<div class="input-group pass-wrapper" id="show_hide_password">
                                     <div class="input-group-addon">
                                         <img src="/assets/images/nigeria-flag.svg" alt="nigeria-flag">
                                     </div>
+
                                     <p class="mb-0 pl-10 line"> | </p>
                                     <input type="number" class="form-control input-login login-pass pl-10" id="phone_number" name="phone_number" required
                                            placeholder="Enter phone number ">
-                                </div>
+                                </div>-->
                             </div>
                         </div>
                         <div class="col-md-12 input-wrapper">
                             <div class="form-group">
                                 <label class="form-labels" for="password">Enter Password</label>
-                                <input type="password" class="form-control input-login-bellow" id="password" name="password" required
+                                <input type="password" class="form-control input-login-bellow" id="password"
+                                       name="password" required
                                        placeholder="Min. of 8 characters">
                             </div>
                         </div>
                         <div class="col-md-12 input-wrapper">
                             <div class="form-group">
                                 <label class="form-labels" for="email">Confirm Password</label>
-                                <input type="password" class="form-control input-login-bellow" id="cpassword" name="cpassword" required
+                                <input type="password" class="form-control input-login-bellow" id="cpassword"
+                                       name="cpassword" required
                                        placeholder="Min. of 8 characters">
                             </div>
                         </div>
@@ -73,10 +83,12 @@
                             <div class="below-content">
                                 <div class="type">
                                     <div class="type-name">
-                                        <input class="checkbox-type" type="checkbox" name="type_name" id="individual" value=individual" onclick="check(this);"/>
+                                        <input class="checkbox-type" type="checkbox" name="type_name" id="individual"
+                                               value="individual" onclick="check(this);"/>
                                         <p class="type-actual mb-0">Individual</p>
                                     </div>
-                                    <p class="bellow-text mb-0">I run my business personally and would love to receive<br> payments from any part of
+                                    <p class="bellow-text mb-0">I run my business personally and would love to
+                                        receive<br> payments from any part of
                                         the world using Ceda.</p>
                                 </div>
                             </div>
@@ -84,14 +96,20 @@
 
                                 <div class="type">
                                     <div class="type-name">
-                                        <input class="checkbox-type" type="checkbox" name="type_name" id="microbusiness" value="microbusiness" onclick="check(this);"/>
+                                        <input class="checkbox-type" type="checkbox" name="type_name" id="microbusiness"
+                                               value="microbusiness" onclick="check(this);"/>
                                         <p class="type-actual mb-0">MicroBusiness</p>
                                     </div>
-                                    <p class="bellow-text mb-0">I own a microbusiness and would love to reach my savings goals with the help of Ceda</p>
+                                    <p class="bellow-text mb-0">I own a microbusiness and would love to reach my savings
+                                        goals with the help of Ceda</p>
                                 </div>
                             </div>
                         </div>
-                        <button class="btn-submit">Register &nbsp; <img src="/assets/images/register.png" alt=""></button>
+                        <button class="btn-submit">Register &nbsp; <img src="/assets/images/register.png" alt="">
+                        </button>
+                        <div class="register-redirect">
+                            Already have an account? <a href="/login">Login here</a>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -102,62 +120,67 @@
 
 <script>
     let type = ""
-    function check(input)
-    {
+
+    function check(input) {
         type = input.value;
+        console.log(type)
         let checkboxes = document.getElementsByClassName("checkbox-type");
 
-        for(let i = 0; i < checkboxes.length; i++)
-        {
+        for (let i = 0; i < checkboxes.length; i++) {
             //uncheck all
-            if(checkboxes[i].checked == true)
-            {
+            if (checkboxes[i].checked == true) {
                 checkboxes[i].checked = false;
             }
         }
 
         //set checked of clicked object
-        if(input.checked == true)
-        {
+        if (input.checked == true) {
             input.checked = false;
-        }
-        else
-        {
+        } else {
             input.checked = true;
         }
     }
-    $('.btn-submit').click(function(e){
+    var phone_number = window.intlTelInput(document.querySelector("#phone_number"), {
+        separateDialCode: true,
+        hiddenInput: "full",
+        utilsScript: "//cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/utils.js",
+        onlyCountries: ["ng", "pk", "ph"],
+    });
+    $('.btn-submit').click(function (e) {
         e.preventDefault();
         let password = $('#password').val();
         let cpassword = $('#cpassword').val();
-        if($('#name').val() ==''){
+        if ($('#name').val() == '') {
             $('#snackbar').html('Please enter your name');
             showToast();
             return;
         }
-        if($('#email').val() ==''){
+        if ($('#email').val() == '') {
             $('#snackbar').html('Please enter your email');
             showToast();
             return;
         }
-        if($('#phone_number').val() ==''){
+        if ($('#phone_number').val() == '') {
             $('#snackbar').html('Please enter your phone number');
             showToast();
             return;
         }
-        if($('#name').val() ==''){
+        if ($('#name').val() == '') {
             $('#snackbar').html('Please enter your name');
             showToast();
             return;
         }
-        if($('#password').val() ==''){
+        if ($('#password').val() == '') {
             $('#snackbar').html('Please enter password');
             showToast();
             return;
         }
-        if(password==cpassword ) {
+        var full_number = phone_number.getNumber(intlTelInputUtils.numberFormat.E164);
+        let countryData = phone_number.getSelectedCountryData()
+        console.log(countryData);
+        if (password == cpassword) {
             //$(this).html(` <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span><span class="sr-only">Loading...</span>`)
-            try{
+            try {
                 $.ajax({
                     url: '/ajax/signup_user',
                     method: 'POST',
@@ -165,34 +188,36 @@
                     data: {
                         name: $('#name').val(),
                         email: $('#email').val(),
-                        phone_number: $('#phone_number').val(),
+                        country: countryData.name,
+                        ios2: countryData.iso2,
+                        dial_code:countryData.dialCode,
+                        phone_number: full_number,
                         password: $('#password').val(),
                         type: type,
                     },
                     success: function (data) {
-                       // $(this).html(`<p>Register</p> &nbsp; <img src="/assets/images/register.png" alt="">`)
-                        if(data.message!==undefined) {
+                        // $(this).html(`<p>Register</p> &nbsp; <img src="/assets/images/register.png" alt="">`)
+                        if (data.message !== undefined) {
                             $('#snackbar').html(data.message);
                             showToast();
                             setTimeout(function () {
-                                window.location.href="/login";
-                            },3000)
+                                window.location.href = "/login";
+                            }, 3000)
 
-                        }
-                        else{
+                        } else {
                             $('#snackbar').html(data.error);
                             showToast();
                         }
                     }
                 });
-            }catch(e){
+            } catch (e) {
                 console.warn(e)
             }
 
-        }
-        else{
+        } else {
             $('#snackbar').html('Passwords don\'t match');
             showToast();
         }
     })
+
 </script>

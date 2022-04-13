@@ -29,12 +29,16 @@
     font-size: 17px;
 }
 
-#snackbar.show {
+#snackbar.showToast {
     visibility: visible;
     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
-
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 @-webkit-keyframes fadein {
     from {bottom: 0; opacity: 0;}
     to {bottom: 30px; opacity: 1;}
@@ -366,7 +370,7 @@ img.section-image {
 
 .left-col {
     background-color: #E1E3E4;
-    height: 208vh;
+    height: 220vh;
     padding: 195px 0px;
 }
 
@@ -380,7 +384,13 @@ img.section-image {
     width: 158.46px;
     height: 43px;
 }
-
+.show{
+    cursor: pointer;
+    display:none;
+}
+.hide{
+    cursor: pointer;
+}
 .left-col .inner-col {
     padding-left: 90px;
     padding-right: 90px;
@@ -484,6 +494,17 @@ p.contact-form-sub-heading {
     border-radius: 4px;
     align-items: center;
     padding-left: 13px;
+}
+.iti--separate-dial-code .iti__selected-flag {
+    background-color: transparent !important;
+}
+.iti__selected-flag {
+    padding: 0 6px 0 0px !important;
+}
+
+.iti.iti--allow-dropdown.iti--separate-dial-code {
+    width: 100% !important;
+    padding-left: 10px !important;
 }
 .pl-10{
     padding-left: 10px !important;

@@ -9,7 +9,8 @@ class User {
             $keys_array[] = $key;
         }
         $sql = "INSERT INTO user (" . implode(',', $keys_array) . ") VALUE('" . implode("','", $values_array) . "')";
-        //echo $sql;
+        /*echo $sql;
+        die();*/
         $stmt = $DB->prepare($sql);
         try {
             $stmt->execute([]);
@@ -49,7 +50,7 @@ class User {
                 'email'     => $email,
                 'password'  => $password,
             ]);
-            $row = $stmt->fetchAll();
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
             if(!$row){
                 return false;
             }else{

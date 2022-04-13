@@ -4,7 +4,7 @@
         <div class="row login-row">
             <div class="col-md-5 left-col hl-150">
                 <div class="inner-col">
-                        <img src="/assets/images/Ceda-Black.svg" alt="CEDA Logo">
+                    <a href="/">  <img src="/assets/images/Ceda-Black.svg" alt="CEDA Logo"></a>
                     <h2 class="left-content">Lorem ipsum is placeholder text commonly</h2>
                     <p class="left-content-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                 </div>
@@ -22,15 +22,18 @@
                             <label class="form-labels" for="password">Enter Password</label>
                             <div class="input-group pass-wrapper pl-0" id="show_hide_password">
                                 <input class="form-control input-login login-pass" type="password" name="password" id="password" placeholder="Min. of 8 characters">
-                                <div class="input-group-addon">
-                                    <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i>
+                                <div class="input-group-addon show">
+                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                </div>
+                                <div class="input-group-addon hide">
+                                    <i class="fa fa-eye-slash" aria-hidden="true"></i>
                                 </div>
                             </div>
                         </div>
                         <div class="text-right forgot-pass">
                             <a class="forgot-password-login" href="/reset-password">Forgot Password?</a>
                         </div>
-                        <button class="btn-submit mt-24">Register &nbsp; <img src="/assets/images/register.png" alt=""></button>
+                        <button class="btn-submit mt-24">Login &nbsp; <img src="/assets/images/register.png" alt=""></button>
                         <div class="register-redirect">
                             No account yet? <a href="/register">Register here</a>
                         </div>
@@ -85,5 +88,16 @@
             }
 
 
+    })
+
+    $('.show').click(function(){
+        $(this).hide();
+        $('.hide').show();
+        $( "#password" ).attr( "type", "password" );
+    })
+    $('.hide').click(function(){
+        $(this).hide();
+        $('.show').show();
+        $( "#password" ).attr( "type", "text" );
     })
 </script>

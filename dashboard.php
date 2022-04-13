@@ -2,8 +2,8 @@
 session_start();
 $title = "Dashboard";
 require 'config/config.php';
- if($_SESSION['id']!=""){
-     header('Location:/dashboard');
+ if($_SESSION['id']==""){
+     header('Location:/login');
      die();
  }
 include 'templates/header.phtml';
