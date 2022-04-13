@@ -12,7 +12,61 @@
 
                 </div>
                 <div class="border-header"></div>
+                <div class="content-wrapper bottom-content">
+                    <div class="user-name"><span class="welcome">Welcome,</span> <?= $_SESSION['name'] ?>! 👋🏾</div>
+                    <div class="ceda-rate">Ceda Rate</div>
+                    <div class="rate-wrapper">
+                        <div class="rate-row">
+                            <div class="row-item-left">Currency</div>
+                            <div class="row-item-right">Rate</div>
+                        </div>
+                        <div class="rate-row-td bb-dd">
+                            <div class="row-item-left-td"><span><img src="/assets/images/usa.svg" alt=""></span> United
+                                States Dollar
+                            </div>
+                            <div class="row-item-right-td">N 585</div>
+                        </div>
+                        <div class="rate-row-td bb-dd">
+                            <div class="row-item-left-td"><span><img src="/assets/images/uk.svg" alt=""></span> Great
+                                Britain Pound
+                            </div>
+                            <div class="row-item-right-td">N 585</div>
+                        </div>
+                        <div class="rate-row-td ">
+                            <div class="row-item-left-td"><span><img src="/assets/images/eu.svg" alt=""></span> European
+                                Euro
+                            </div>
+                            <div class="row-item-right-td">N 585</div>
+                        </div>
+                    </div>
+                    <div class="ceda-rate">Convert to Local currency</div>
+                    <div class="convert-local-currency">
+                        <div class="upper-covert">
+                            <div class="currency">
+                                <div class="price-from">30</div>
+                                <select name="price_to" id="price_to" class="price_to">
+                                    <option value="DOL">DOL</option>
+                                    <option value="POU">POU</option>
+                                    <option value="EU">EU</option>
+                                </select>
+                            </div>
+                            <div><img src="/assets/images/convert-in.svg" alt=""></div>
+                            <div class="currency">
+                                <div class="price-from">17,333</div>
+                                <select name="price_to" id="price_to" class="price_to">
+                                    <option value="DOL">DOL</option>
+                                    <option value="POU">POU</option>
+                                    <option value="EU">EU</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="trans-btn-wrapper">
+                            <div class="trans-btn">Continue Transaction</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+</div>
 </div>

@@ -733,10 +733,21 @@ button.btn-submit {
     border-radius: 39px;
     margin-left: 20px;
 }
-
+/***********Home**********/
+.content-wrapper.bottom-content {
+    padding-top: 50px;
+}
+.user-name {
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+    color: #000000;
+}
 /********Right Content***********/
 .content-wrapper {
-    padding: 58px 136px 22px 136px;
+    padding: 58px 116px 22px 116px;
 }
 .bg-right{
     background:#F0F1F3;
@@ -744,8 +755,127 @@ button.btn-submit {
 .border-header {
     border-bottom: 1px solid #DDDDDD;
 }
+.welcome {
+    font-family: Sora-regular;
+}
+.ceda-rate {
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    color: #000000;
+    margin-top: 32px;
+}
+.rate-wrapper {
+    margin-top: 16px;
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+.rate-row {
+    background: #F0F1F3;
+    box-sizing: border-box;
+    padding: 17px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.row-item-right {
+    font-family: Sora-Regular;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13.6241px;
+    line-height: 16px;
+    color: #000000;
+}
+.row-item-left {
+    font-family: Sora-Regular;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13.6241px;
+    line-height: 16px;
+    color: #000000;
+}
+.rate-row-td {
+    box-sizing: border-box;
+    padding: 15px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.row-item-left-td {
+    font-family: 'Sora-regular';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13.6241px;
+    line-height: 16px;
+    color: #000000;
+}
+.row-item-right-td {
+    font-family: 'Sora-regular';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13.6241px;
+    line-height: 16px;
+    color: #000000;
+}
+.bb-dd{
+    border-bottom: 1px solid #DDDDDD;
 
-
+}
+.convert-local-currency {
+    margin-top: 16px;
+    background-color: #ffffff;
+    padding: 49px 65px 27px 65px;
+}
+.convert-local-currency {
+    margin-top: 16px;
+    background-color: #ffffff;
+    padding: 49px 65px 27px 65px;
+}
+.currency {
+    display: flex;
+    width: 45%;
+    align-items: center;
+    justify-content: space-between;
+    background: #F8F8F9;
+    border: 1px solid #DDDDDD;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 10px 12px;
+}
+.upper-covert {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.price-from {
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 40px;
+    color: #000000;
+}
+.trans-btn {
+    margin-top: 24px;
+    padding: 15px;
+    height: 50px;
+    background: #000000;
+    color: #ffffff;
+    width: 276px;
+    border-radius: 4px;
+    font-family: Sora;
+}
+.trans-btn-wrapper {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 @media only screen and (max-width: 1200px) {
     /*Tablets [601px -> 1200px]*/
 
