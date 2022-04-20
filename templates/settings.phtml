@@ -1,0 +1,144 @@
+<div class="container ceda-wrapper">
+    <div class="col-md-12 ceda-wrapper">
+        <div class="row w100">
+            <?php include "sidebar.phtml" ?>
+            <div class="col-md-9 ceda-wrapper bg-right">
+                <div class="content-wrapper">
+                    <div class="right-header">
+                        <h3 class="header-text">
+                            Settings
+                        </h3>
+                    </div>
+
+                </div>
+                <div class="border-header"></div>
+                <div class="content-wrapper ">
+                    <div class="setting-wrapper">
+                        <p class="info">Personal Information</p>
+                        <div class="info-wrapper">
+                            <div class="info-detail">
+                                <div class="info-detail-text">
+                                    <p class="info-text">mail@email.com</p>
+                                    <p class="info-title">Email address</p>
+                                </div>
+                                <div class="edit-wrapper">
+                                    <span class="change">Change</span>
+                                    <span class="edit"><img src="/assets/images/edit.svg" alt=""/></span>
+                                </div>
+                            </div>
+                            <div class="info-detail mt16">
+                                <div class="info-detail-text">
+                                    <p class="info-text">080123456789</p>
+                                    <p class="info-title">Phone number</p>
+                                </div>
+                                <div class="edit-wrapper">
+                                    <span class="change">Change</span>
+                                    <span class="edit"><img src="/assets/images/edit.svg" alt=""/></span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="info mt40">Security</p>
+                        <div class="action-wrapper">
+                            <div class="info-detail mt16">
+                                <div class="info-detail-text">
+                                    <p class="action-text">Update Password</p>
+                                    <p class="action-sub">Change your old password to a new one</p>
+                                </div>
+                                <div class="edit-wrapper security">
+                                    <span class="change">Change password</span>
+                                    <img src="/assets/images/off.svg" alt="" class="off" id="offPass">
+                                    <img src="/assets/images/on.svg" alt="" class="on" id="onPass">
+
+                                </div>
+                            </div>
+                            <div class="collapse" id="showPassView">
+                                <div class="pass-view">
+                                    <div class="input-wrapper-settings">
+                                        <input type="text" class="input-field" placeholder="New Password" />
+                                    </div>
+                                    <div class="input-wrapper-settings">
+                                        <input type="text" class="input-field" placeholder="Confirm Password" />
+                                    </div>
+                                    <div class="upd-btn">Update Password</div>
+                                </div>
+                            </div>
+                            <div class="info-detail mt16">
+                                <div class="info-detail-text">
+                                    <div class="twofactor">
+                                        <p class="action-text">Two-Factor Authentication</p>
+                                        <div class="status">
+                                            <div class="disabled">Disabled</div>
+                                            <div class="enabled">Enabled</div>
+                                        </div>
+                                    </div>
+                                    <p class="action-sub">Add an extra layer of security and protection to your
+                                        account to protect it from unauthorized transactions</p>
+                                </div>
+                                <div class="edit-wrapper security">
+                                    <span class="change">Enable Auth 2FA</span>
+                                    <img src="/assets/images/off.svg" alt="" class="off" id="off2FA">
+                                    <img src="/assets/images/on.svg" alt="" class="on" id="on2FA">
+                                </div>
+                            </div>
+                            <div class="collapse" id="show2FaView">
+                                <div class="pass-view">
+                                    <div class="auth-code-wrapper">
+                                        <div class="field-wrapper-auth">
+                                        <input type="text" class="auth-field">
+                                        <input type="text" class="auth-field">
+                                        <input type="text" class="auth-field">
+                                        <input type="text" class="auth-field">
+                                        <input type="text" class="auth-field">
+                                        <input type="text" class="auth-field">
+                                        </div>
+                                        <p class="action-sub">Enter 6 digit code sent to 803***4567</p>
+
+                                    </div>
+                                    <div class="auth-btn">
+                                        <div class="btn-authentication">Authenticate</div>
+                                        <div class="resend-otp">Resend OTP?</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php include 'templates/footer.phtml'; ?>
+
+<script>
+    /*************Password****************/
+    $('#offPass').click(function(){
+        $('#onPass').show();
+        $(this).hide();
+        $('#showPassView').show(150)
+    });
+    $('#onPass').click(function(){
+        $('#offPass').show();
+        $(this).hide();
+        $('#showPassView').hide(150)
+    });
+    /*************2FA****************/
+    $('#off2FA').click(function(){
+        $('#on2FA').show();
+        $(this).hide();
+        $('#show2FaView').show(150);
+        $('.enabled').show();
+        $('.disabled').hide();
+
+    });
+    $('#on2FA').click(function(){
+        $('#off2FA').show();
+        $(this).hide();
+        $('#show2FaView').hide(150)
+
+        $('.disabled').show();
+        $('.enabled').hide();
+
+    });
+
+</script>

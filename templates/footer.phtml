@@ -1,4 +1,4 @@
-<?php if ($title == "CEDA") { ?>
+<?php if ($title == "CEDA" || $title =='Privacy' || $title == 'Terms Of Use') { ?>
     <footer class="bd-footer main-footer">
         <div class="container">
             <div class="row">
@@ -28,8 +28,8 @@
                 </div>
                 <div class="col-6 col-lg-2">
                     <ul class="list-unstyled">
-                        <li class="mb-4"><a class="footer-nav" href="#">Privacy</a></li>
-                        <li class="mb-4"><a class="footer-nav" href="#">Terms of use</a></li>
+                        <li class="mb-4"><a class="footer-nav" href="/privacy">Privacy</a></li>
+                        <li class="mb-4"><a class="footer-nav" href="/terms-of-use">Terms of use</a></li>
                     </ul>
                 </div>
             </div>
@@ -47,7 +47,6 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css"/>
 <script src="/assets/js/jquery.form.min.js"></script>
 <script src="https://cdn.tutorialjinni.com/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-
 <script>
     function showToast() {
         let x = document.getElementById("snackbar");

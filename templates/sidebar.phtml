@@ -1,32 +1,40 @@
-<div class="col md-4 ceda-wrapper">
+<div class="col md-3 ceda-wrapper">
     <div class="sidebar-wrapper">
         <div class="sidebar-header">
-            <img src="/assets/images/ceda-sidebar.svg" alt="">
+            <a href="/dashboard">
+                <img src="/assets/images/ceda-sidebar.svg" alt="">
+            </a>
         </div>
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item nav-li">
-                <a href="#" class="nav-link selected sidebar-nav" aria-current="page">
-                    <img class="nav-icons" src="/assets/images/home<?=($title == 'Dashboard')?'':'-in'?>.svg" alt="home-icon">
-                    <span class="<?=($title=="Dashboard")?'sidebar-title-active':'sidebar-title'?>">Home</span>
+                <a href="/dashboard" class="nav-link  sidebar-nav <?= ($title == "Dashboard") ? 'selected' : '' ?>" aria-current="page">
+                    <img class="nav-icons" src="/assets/images/home<?= ($title == 'Dashboard') ? '' : '-in' ?>.svg"
+                         alt="home-icon">
+                    <span class="<?= ($title == "Dashboard") ? 'sidebar-title-active' : 'sidebar-title' ?>">Home</span>
+                </a>
+            </li>
+            <li class="nav-item nav-li">
+                <a href="/convert-to-local-currency" class="nav-link  sidebar-nav  <?= ($title == "Covert To Local Currency") ? 'selected' : '' ?>" aria-current="page">
+                    <img class="nav-icons"
+                         src="/assets/images/convert<?= ($title == 'Covert To Local Currency') ? '' : '-in' ?>.svg"
+                         alt="convert-to-local-icon">
+                    <span class="<?= ($title == "Covert To Local Currency") ? 'sidebar-title-active' : 'sidebar-title' ?>">Convert to Local Currency</span>
                 </a>
             </li>
             <li class="nav-item nav-li">
                 <a href="#" class="nav-link  sidebar-nav" aria-current="page">
-                    <img class="nav-icons" src="/assets/images/convert<?=($title == 'Covert To Local Currency')?'':'-in'?>.svg" alt="home-icon">
-                    <span class="<?=($title=="Covert To Local Currency")?'sidebar-title-active':'sidebar-title'?>">Convert to Local Currency</span>
-                </a>
-            </li>
-            <li class="nav-item nav-li">
-                <a href="#" class="nav-link  sidebar-nav" aria-current="page">
-                    <img class="nav-icons" src="/assets/images/dollar<?=($title == 'Sell Digital Products')?'':'-in'?>.svg" alt="home-icon">
-                    <span class="<?=($title=="Sell Digital Products")?'sidebar-title-active':'sidebar-title'?>">Sell Digital Products</span>
+                    <img class="nav-icons"
+                         src="/assets/images/dollar<?= ($title == 'Sell Digital Products') ? '' : '-in' ?>.svg"
+                         alt="sell-digital-products-icon">
+                    <span class="<?= ($title == "Sell Digital Products") ? 'sidebar-title-active' : 'sidebar-title' ?>">Sell Digital Products</span>
                     <span class="coming-soon">Coming Soon</span>
                 </a>
             </li>
             <li class="nav-item nav-li">
-                <a href="#" class="nav-link  sidebar-nav" aria-current="page">
-                    <img class="nav-icons" src="/assets/images/setting<?=($title == 'Settings')?'':'-in'?>.svg" alt="home-icon">
-                    <span class="<?=($title=="Settings")?'sidebar-title-active':'sidebar-title'?>">Settings</span>
+                <a href="/settings" class="nav-link sidebar-nav <?= ($title == "Settings") ? 'selected' : '' ?>"" aria-current="page">
+                    <img class="nav-icons" src="/assets/images/setting<?= ($title == 'Settings') ? '' : '-in' ?>.svg"
+                         alt="setting-icon">
+                    <span class="<?= ($title == "Settings") ? 'sidebar-title-active' : 'sidebar-title' ?>">Settings</span>
                 </a>
             </li>
         </ul>
