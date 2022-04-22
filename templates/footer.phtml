@@ -55,6 +55,22 @@
             x.className = x.className.replace("show", "");
         }, 5000);
     }
+    $('#open').click(function(){
+        console.log('open');
+        $('.show-on').show(150);
+       // $('.hide-on').hide(150);
+        $('#close').show()
+        $(this).hide();
+    })
+    $('#close').click(function(){
+        console.log('close');
+
+        $('.show-on').hide(150);
+        $('#open').show();
+        $(this).hide();
+       // $('.hide-on').show(150);
+    })
 </script>
+
 </body>
 </html>

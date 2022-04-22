@@ -1,8 +1,8 @@
-<div class="container ceda-wrapper">
+<div class="container ceda-wrapper  plr">
     <div class="col-md-12 ceda-wrapper">
         <div class="row w100">
             <?php include "sidebar.phtml" ?>
-            <div class="col-md-9 ceda-wrapper bg-right">
+            <div class="col-md-9 ceda-wrapper bg-right col-9-ceda">
                 <div class="content-wrapper">
                     <div class="right-header">
                         <h3 class="header-text">
@@ -50,7 +50,7 @@
                                     <option value="EU">EU</option>
                                 </select>
                             </div>
-                            <div><img src="/assets/images/convert-in.svg" alt=""></div>
+                            <div class="loop"><img src="/assets/images/convert-in.svg" alt=""></div>
                             <div class="currency">
                                 <div class="price-from">17,333</div>
                                 <select name="price_to" id="price_to" class="price_to">
@@ -106,3 +106,4 @@
         </div>
     </div>
 </div>
+<?php include 'templates/footer.phtml';?>
