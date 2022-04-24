@@ -1,4 +1,4 @@
-<?php if ($title == "CEDA" || $title =='Privacy' || $title == 'Terms Of Use') { ?>
+<?php if ($title == "CEDA" || $title == 'Privacy' || $title == 'Terms Of Use') { ?>
     <footer class="bd-footer main-footer">
         <div class="container">
             <div class="row">
@@ -55,20 +55,21 @@
             x.className = x.className.replace("show", "");
         }, 5000);
     }
-    $('#open').click(function(){
-        console.log('open');
+
+    $('#open').click(function () {
         $('.show-on').show(150);
-       // $('.hide-on').hide(150);
+        // $('.hide-on').hide(150);
         $('#close').show()
         $(this).hide();
+        $('.content-wrapper').addClass('pt-50');
     })
-    $('#close').click(function(){
-        console.log('close');
-
+    $('#close').click(function () {
         $('.show-on').hide(150);
         $('#open').show();
         $(this).hide();
-       // $('.hide-on').show(150);
+        $('.content-wrapper').removeClass('pt-50');
+
+        // $('.hide-on').show(150);
     })
 </script>
 

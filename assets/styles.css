@@ -579,9 +579,9 @@ p.contact-form-sub-heading {
     margin-top: 24px !important;
 }
 
-.hl-150 {
+/*.hl-150 {
     height: 150vh !important;
-}
+}*/
 
 .mt-13 {
     margin-top: 13px !important;
@@ -842,7 +842,7 @@ button.btn-submit {
 
 /********Right Content***********/
 .content-wrapper {
-    padding: 58px 116px 22px 116px;
+    padding: 58px 116px 50px 116px;
 }
 
 .bg-right {
@@ -1456,7 +1456,9 @@ th.bl {
 .m40 {
     margin-top: 40px !important;
 }
-
+.pt-50{
+    padding-top: 50px !important;
+}
 @media only screen and (max-width: 1200px) {
     /*Tablets [601px -> 1200px]*/
     .logo-wrapper {
@@ -1520,6 +1522,12 @@ th.bl {
     .footer-logo {
         margin-bottom: 60px !important
     }
+    .convert-wrapper {
+        padding: 50px;
+    }
+    .setting-wrapper {
+        padding: 65px 35px 65px 35px;
+    }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -1532,7 +1540,7 @@ th.bl {
         left: 0;
         width: 100%;
         background-color: white;
-        padding: 35px 50px !important;
+        padding: 35px 15px !important;
         box-sizing: border-box;
         align-items: center;
     }
@@ -1547,10 +1555,23 @@ th.bl {
     }
 
     .content-wrapper {
-        padding: 140px 50px 22px 50px;;
+        padding: 50px 15px 50px 15px;
     }
     .sidebar-wrapper {
         padding-top: 115px;
+    }
+    .pt150{
+        padding-top:150px
+    }
+    .sidebar-wrapper {
+        padding-bottom: 20px;
+    }
+    .inner-col {
+        padding-left: 40px !important;
+        padding-right: 40px !important;
+    }
+    .hl-150 {
+        height: 200vh !important;
     }
 }
 
@@ -1583,13 +1604,14 @@ th.bl {
         height: 40vh !important;
     }
 
-    .col-md-7.right-col.others {
-        padding: 40px 0px;
+    .right-col {
+        padding: 40px 0px !important;
     }
-    .right-col .inner-col {
-        padding-left: 15px;
-        padding-right: 15px;
+     .inner-col {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
     }
+
 }
 
 @media only screen and (max-width: 600px) {
@@ -1649,7 +1671,27 @@ th.bl {
         margin-bottom: 60px !important
     }
     .hl-150 {
-        height: 70vh !important;
+        height: 58vh !important;
+    }
+    .setting-wrapper {
+        padding: 65px 15px 65px 15px;
+    }
+    .pass-view {
+        flex-wrap: wrap;
+    }
+    .input-wrapper-settings {
+        width: 49%;
+    }
+    .input-field{
+        width:100%
+    }
+    .upd-btn {
+        width: 100%;
+        justify-content: center;
+        margin-top: 12px;
+    }
+    .auth-field {
+        width: 35px;
     }
 }
 
@@ -1663,6 +1705,9 @@ th.bl {
     .header-main-ceda {
         padding: 1rem 1rem 1rem 1rem;
         align-items: center;
+    }
+    .convert-wrapper {
+        padding: 50px 10px;
     }
 
 }
