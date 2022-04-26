@@ -13,7 +13,7 @@
                 </div>
                 <div class="border-header"></div>
                 <div class="content-wrapper">
-                    <div class="convert-wrapper">
+                    <div class="convert-wrapper one">
                         <div class="amount-to-convert">
                             <p class="title">Amount to convert</p>
                             <div class="convert-from-rate">
@@ -36,11 +36,65 @@
                                 </select>
                             </div>
                         </div>
-                        <button class="btn-submit m0 m40">Continue Transaction</button>
+                        <button class="btn-submit m0 m40" id="first_sec">Continue Transaction</button>
                     </div>
+                    <div class="convert-wrapper two">
+                        <div class="chose">Choose payment method</div>
+                        <div class="amount-to-convert">
+                            <div class="convert-from-rate">
+                                <div class="price-from-convert medium-wrapper"><img src="/assets/images/payoneer.svg"
+                                                                                    alt="payoneer">
+                                    <p class="payoneer-text">Payoneer</p></div>
+                                <div class="checbox-container">
+                                    <div class="round">
+                                        <input type="checkbox" checked id="checkbox"/>
+                                        <label for="checkbox"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="amount-to-convert mb0">
+                            <div class="convert-from-rate">
+                                <div class="price-from-convert medium-wrapper"><img
+                                            src="/assets/images/buildingbank.svg"
+                                            alt="payoneer">
+                                    <p class="payoneer-text">NGN DOM ACCOUNT</p></div>
+
+                                <div class="checbox-container">
+                                    <div class="round">
+                                        <input type="checkbox" id="checkbox-bank"/>
+                                        <label for="checkbox-bank"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-wrapper-choice">
+                            <button class="btn-cancel m0 m40" id="back_to_one">Cancel</button>
+                            <button class="btn-continue m0 m40" id="second_sec">Continue</button>
+                        </div>
+                    </div>
+                    <?php include "partials/payoneer.phtml" ?>
                 </div>
             </div>
         </div>
     </div>
 </div>
+</div>
 <?php include 'templates/footer.phtml'; ?>
+
+<script>
+    $('#first_sec').click(function () {
+        $('.one').hide();
+        $('.two').show();
+    });
+    $('#second_sec').click(function () {
+        $('.two').hide();
+        $('.three').show();
+    });
+    $('#back_to_one').click(function () {
+        $('.one').show();
+        $('.two').hide();
+        $('.three').hide();
+    });
+
+</script>
