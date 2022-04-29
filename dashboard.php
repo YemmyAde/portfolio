@@ -6,5 +6,6 @@ require 'config/config.php';
      header('Location:/login');
      die();
  }
+ $exchange_rates = CedaExchangeRate::getUserByUserISO($_SESSION['iso']);
 include 'templates/header.phtml';
 include 'templates/dashboard.phtml';

@@ -73,7 +73,7 @@
   <?php } ?> -->
     </div>
 <?php } ?>
-<?php if ($title == 'Dashboard' || $title == 'Settings'|| $title == 'Covert To Local Currency') { ?>
+<?php if ($title == 'Dashboard' || $title == 'Settings'|| $title == 'Covert To Local Currency' || $title == 'Transfer' || $title == 'KYC Verification') { ?>
 <div class="flexBar">
     <div>
         <a href="index">
@@ -98,12 +98,12 @@
             </li>
             <li class="nav-item nav-li">
                 <a href="/convert-to-local-currency"
-                   class="nav-link  sidebar-nav  <?= ($title == "Covert To Local Currency") ? 'selected' : '' ?>"
+                   class="nav-link  sidebar-nav  <?= ($title == "Covert To Local Currency" || $title == 'Transfer') ? 'selected' : '' ?>"
                    aria-current="page">
                     <img class="nav-icons"
-                         src="/assets/images/convert<?= ($title == 'Covert To Local Currency') ? '' : '-in' ?>.svg"
+                         src="/assets/images/convert<?= ($title == 'Covert To Local Currency' || $title == 'Transfer') ? '' : '-in' ?>.svg"
                          alt="convert-to-local-icon">
-                    <span class="<?= ($title == "Covert To Local Currency") ? 'sidebar-title-active' : 'sidebar-title' ?>">Convert to Local Currency</span>
+                    <span class="<?= ($title == "Covert To Local Currency" || $title == 'Transfer') ? 'sidebar-title-active' : 'sidebar-title' ?>">Convert to Local Currency</span>
                 </a>
             </li>
             <li class="nav-item nav-li">

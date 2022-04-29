@@ -47,7 +47,7 @@
                                     <p class="payoneer-text">Payoneer</p></div>
                                 <div class="checbox-container">
                                     <div class="round">
-                                        <input type="checkbox" checked id="checkbox"/>
+                                        <input type="checkbox" value="payoneer" class="checkbox-type" id="checkbox" onclick="check(this);"/>
                                         <label for="checkbox"></label>
                                     </div>
                                 </div>
@@ -62,7 +62,7 @@
 
                                 <div class="checbox-container">
                                     <div class="round">
-                                        <input type="checkbox" id="checkbox-bank"/>
+                                        <input type="checkbox" value="bank" class="checkbox-type" id="checkbox-bank" onclick="check(this);"/>
                                         <label for="checkbox-bank"></label>
                                     </div>
                                 </div>
@@ -73,7 +73,6 @@
                             <button class="btn-continue m0 m40" id="second_sec">Continue</button>
                         </div>
                     </div>
-                    <?php include "partials/payoneer.phtml" ?>
                 </div>
             </div>
         </div>
@@ -83,18 +82,41 @@
 <?php include 'templates/footer.phtml'; ?>
 
 <script>
+    let type = ""
+
+    function check(input) {
+        type = input.value;
+        let checkboxes = document.getElementsByClassName("checkbox-type");
+
+        for (let i = 0; i < checkboxes.length; i++) {
+            //uncheck all
+            if (checkboxes[i].checked == true) {
+                checkboxes[i].checked = false;
+            }
+        }
+
+        //set checked of clicked object
+        if (input.checked == true) {
+            input.checked = false;
+        } else {
+            input.checked = true;
+        }
+    }
     $('#first_sec').click(function () {
         $('.one').hide();
         $('.two').show();
     });
     $('#second_sec').click(function () {
-        $('.two').hide();
-        $('.three').show();
+        if(type==""){
+            $('#snackbar').html('Please select one option');
+            showToast();
+            return
+        }
+        window.location.href="/transfer?q="+type
     });
     $('#back_to_one').click(function () {
         $('.one').show();
         $('.two').hide();
-        $('.three').hide();
     });
 
 </script>

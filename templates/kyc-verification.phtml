@@ -1,0 +1,91 @@
+<div class="container ceda-wrapper plr">
+    <div class="col-md-12 ceda-wrapper">
+        <div class="row w100">
+            <?php include "sidebar.phtml" ?>
+            <div class="col-md-9 ceda-wrapper bg-right col-9-ceda">
+                <div class="content-wrapper pt150 pb-27">
+                    <div class="right-header">
+                        <h3 class="header-text">
+                            <span class="back"><a href="/"><img src="/assets/images/back.svg" alt="back"></a></span> KYC
+                            Verification & Local Bank Details
+                        </h3>
+                    </div>
+
+                </div>
+                <div class="border-header"></div>
+                <div class="content-wrapper ">
+                    <div class="licences-wrapper">
+                        <p class="m0 kyc-title">KYC Verification</p>
+                        <p class="m0 kyc-sub-title">Upload Driver license or Passport?</p>
+                        <form class="box" method="post" action="" enctype="multipart/form-data">
+
+                            <div class="image-wrapper">
+                                <div class="box__input">
+                                    <span class="small-upload"><img src="/assets/images/small-upload.svg"></span>
+                                    <input class="box__file" type="file" name="files" id="file" style="display: none"/>
+                                    <label class="m0 label-kyc" for="file">Click to choose a file or drag here</label>
+                                    <p class="m0 size-limit">Size limit: 10MB</p>
+                                </div>
+                            </div>
+                            <div class="bank-details">
+                                <p class="m0 detail-title">Bank details to receive funds</p>
+                                <div class="bank_section">
+                                    <p class="m0 bank-name">
+                                        Bank Name
+                                    </p>
+                                    <select name="bank_name" id="bank_name" class="form-control bank_name_wrapper">
+                                        <option value="Habbib bank limited">Habbib bank limited</option>
+                                        <option value="Habbib bank limited">Habbib bank limited</option>
+                                        <option value="Habbib bank limited">Habbib bank limited</option>
+                                    </select>
+                                </div>
+                                <div class="bank_section">
+                                    <p class="m0 bank-name">
+                                        Account FullName
+                                    </p>
+                                    <input type="text" class="form-control bank_name_wrapper" disabled value="<?=$_SESSION['name']?>">
+                                </div>
+                                <div class="bank_section">
+                                    <p class="m0 bank-name">
+                                        Account Number
+                                    </p>
+                                    <input type="text" class="form-control bank_name_wrapper" placeholder="Account Number" >
+
+                                </div>
+                                <a href="/convert-to-local-currency" class="btn-send">Submit <span class="sub-btn-kyc"><img src="/assets/images/submit.svg" alt=""></span></a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php include 'templates/footer.phtml'; ?>
+<script>
+    var isAdvancedUpload = function () {
+        var div = document.createElement('div');
+        return (('draggable' in div) || ('ondragstart' in div && 'ondrop' in div)) && 'FormData' in window && 'FileReader' in window;
+    }();
+    var $form = $('.box');
+
+    if (isAdvancedUpload) {
+
+        var droppedFiles = false;
+
+        $form.on('drag dragstart dragend dragover dragenter dragleave drop', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        })
+            .on('dragover dragenter', function () {
+                $form.addClass('is-dragover');
+            })
+            .on('dragleave dragend drop', function () {
+                $form.removeClass('is-dragover');
+            })
+            .on('drop', function (e) {
+                droppedFiles = e.originalEvent.dataTransfer.files;
+            });
+
+    }
+</script>

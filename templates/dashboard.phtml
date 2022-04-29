@@ -16,34 +16,26 @@
                     <div class="user-name"><span class="welcome">Welcome,</span> <?= $_SESSION['name'] ?>! 👋🏾</div>
                     <div class="ceda-rate">Ceda Rate</div>
                     <div class="rate-wrapper">
+
                         <div class="rate-row">
                             <div class="row-item-left">Currency</div>
                             <div class="row-item-right">Rate</div>
                         </div>
+                         <?php foreach ($exchange_rates as $exchange_rate){ ?>
                         <div class="rate-row-td bb-dd">
-                            <div class="row-item-left-td"><span><img src="/assets/images/usa.svg" alt=""></span> <span>United
-                                States Dollar</span>
+                            <div class="row-item-left-td"><span><img src="/assets/images/<?=$exchange_rate['currency_from_iso']?>.svg" alt=""></span> <span><?=$exchange_rate['currency_from_display']?></span>
                             </div>
-                            <div class="row-item-right-td">N 585</div>
+                            <div class="row-item-right-td"><?=$exchange_rate['currency_to_sign']?> <?=$exchange_rate['ceda_rate']?></div>
                         </div>
-                        <div class="rate-row-td bb-dd">
-                            <div class="row-item-left-td"><span><img src="/assets/images/uk.svg" alt=""></span> <span>Great
-                                Britain Pound</span>
-                            </div>
-                            <div class="row-item-right-td">N 585</div>
-                        </div>
-                        <div class="rate-row-td ">
-                            <div class="row-item-left-td"><span><img src="/assets/images/eu.svg" alt=""></span> <span>European
-                                Euro</span>
-                            </div>
-                            <div class="row-item-right-td">N 585</div>
-                        </div>
+                        <?php } ?>
                     </div>
                     <div class="ceda-rate">Convert to Local currency</div>
                     <div class="convert-local-currency">
                         <div class="upper-covert">
+
                             <div class="currency">
-                                <div class="price-from">30</div>
+                                <input type="number" class="price-from" id="price_from"  placeholder="Price from">
+                                <!--<div class="price-from">30</div>-->
                                 <select name="price_to" id="price_to" class="price_to">
                                     <option value="DOL">DOL</option>
                                     <option value="POU">POU</option>
@@ -52,7 +44,8 @@
                             </div>
                             <div class="loop"><img src="/assets/images/convert-in.svg" alt=""></div>
                             <div class="currency">
-                                <div class="price-from">17,333</div>
+                                <input type="number" class="price-from" id="price_to" placeholder="Price to">
+                                <!--<div class="price-from">17,333</div>-->
                                 <select name="price_to" id="price_to" class="price_to">
                                     <option value="DOL">DOL</option>
                                     <option value="POU">POU</option>
@@ -61,7 +54,7 @@
                             </div>
                         </div>
                         <div class="trans-btn-wrapper">
-                            <div class="trans-btn">Continue Transaction</div>
+                            <a href="/convert-to-local-currency" class="trans-btn">Continue Transaction</a>
                         </div>
                     </div>
                     <div class="ceda-rate">Account Activity</div>
