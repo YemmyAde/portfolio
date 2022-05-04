@@ -61,4 +61,46 @@ class User {
             return false;
         }
     }
+    public static function getUserByToken($token)
+    {
+        global $DB;
+        $sql = "SELECT * FROM user WHERE token = :token";
+        $stmt = $DB->prepare($sql);
+        try {
+            $stmt->execute([
+                'token'     => $token,
+            ]);
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            if(!$row){
+                return false;
+            }else{
+                return $row;
+            }
+        } catch (Exception $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
+    public static function updateUser( $data ) {
+        global $DB;
+        $fields = array();
+
+        foreach ($data as $key => $value) {
+            if ($key=='token') {
+                continue;
+            }
+
+            $fields[] = $key ."='".str_replace("'", "\'", $value)."'";
+        }
+        $sql  = "UPDATE user SET ".implode(',', $fields)." WHERE token = '".$data['token']."'";
+        //echo $sql;
+        $stmt = $DB->prepare($sql);
+        try {
+            $stmt->execute([]);
+        } catch (Exception $e) {
+            return false;
+        }
+
+        return true;
+    }
 }

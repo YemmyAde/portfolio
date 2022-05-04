@@ -18,7 +18,7 @@
                         <div class="info-wrapper">
                             <div class="info-detail">
                                 <div class="info-detail-text">
-                                    <p class="info-text">mail@email.com</p>
+                                    <p class="info-text"><?= $user['email'] ?></p>
                                     <p class="info-title">Email address</p>
                                 </div>
                                 <div class="edit-wrapper">
@@ -28,7 +28,7 @@
                             </div>
                             <div class="info-detail mt16">
                                 <div class="info-detail-text">
-                                    <p class="info-text">080123456789</p>
+                                    <p class="info-text"><?= $user['phone_number'] ?></p>
                                     <p class="info-title">Phone number</p>
                                 </div>
                                 <div class="edit-wrapper">
@@ -54,10 +54,12 @@
                             <div class="collapse" id="showPassView">
                                 <div class="pass-view">
                                     <div class="input-wrapper-settings">
-                                        <input type="text" class="input-field" placeholder="New Password" />
+                                        <input type="password" class="input-field" name="new_password" id="new_password"
+                                               placeholder="New Password"/>
                                     </div>
                                     <div class="input-wrapper-settings">
-                                        <input type="text" class="input-field" placeholder="Confirm Password" />
+                                        <input type="password" class="input-field" name="confirm_password"
+                                               id="confirm_password" placeholder="ConfConfirm Password"/>
                                     </div>
                                     <div class="upd-btn">Update Password</div>
                                 </div>
@@ -84,12 +86,12 @@
                                 <div class="pass-view">
                                     <div class="auth-code-wrapper">
                                         <div class="field-wrapper-auth">
-                                        <input type="text" class="auth-field">
-                                        <input type="text" class="auth-field">
-                                        <input type="text" class="auth-field">
-                                        <input type="text" class="auth-field">
-                                        <input type="text" class="auth-field">
-                                        <input type="text" class="auth-field">
+                                            <input type="text" class="auth-field">
+                                            <input type="text" class="auth-field">
+                                            <input type="text" class="auth-field">
+                                            <input type="text" class="auth-field">
+                                            <input type="text" class="auth-field">
+                                            <input type="text" class="auth-field">
                                         </div>
                                         <p class="action-sub">Enter 6 digit code sent to 803***4567</p>
 
@@ -111,18 +113,18 @@
 
 <script>
     /*************Password****************/
-    $('#offPass').click(function(){
+    $('#offPass').click(function () {
         $('#onPass').show();
         $(this).hide();
         $('#showPassView').show(150)
     });
-    $('#onPass').click(function(){
+    $('#onPass').click(function () {
         $('#offPass').show();
         $(this).hide();
         $('#showPassView').hide(150)
     });
     /*************2FA****************/
-    $('#off2FA').click(function(){
+    $('#off2FA').click(function () {
         $('#on2FA').show();
         $(this).hide();
         $('#show2FaView').show(150);
@@ -130,7 +132,7 @@
         $('.disabled').hide();*/
 
     });
-    $('#on2FA').click(function(){
+    $('#on2FA').click(function () {
         $('#off2FA').show();
         $(this).hide();
         $('#show2FaView').hide(150)
@@ -139,5 +141,40 @@
         $('.enabled').hide();
 
     });
+    //update Password
 
+    $('.upd-btn').click(function (e) {
+        e.preventDefault();
+        if ($('#new_password').val() == '' || $('#confirm_password').val() == '') {
+            $('#snackbar').html('Please enter both fields');
+            showToast();
+            return
+        }
+       if ($('#new_password').val() != $('#confirm_password').val()) {
+            $('#snackbar').html('Passwords do not match');
+            showToast();
+            return
+        }
+        try {
+            $.ajax({
+                url: '/ajax/update_password',
+                method: 'POST',
+                dataType: 'JSON',
+                data: {
+                    password: $('#new_password').val(),
+                },
+                success: function (data) {
+                    if (data.message !== undefined) {
+                        $('#snackbar').html(data.message);
+                        showToast();
+                    } else {
+                        $('#snackbar').html(data.error);
+                        showToast();
+                    }
+                }
+            });
+        } catch (e) {
+            console.warn(e)
+        }
+    })
 </script>

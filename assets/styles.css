@@ -1446,6 +1446,7 @@ button.btn-submit {
     box-sizing: border-box;
     border-radius: 8px;
     padding: 10px 12px;
+    height: 60px;
 }
 
 .upper-covert {
@@ -1457,7 +1458,7 @@ button.btn-submit {
 
 .price-from {
     font-family: 'Sora';
-    width: 50%;
+    width: 60%;
     border-radius: 7px;
     border: 1px solid #ddd;
     box-shadow: 1px 1px 1px 0px rgb(0 0 0 / 8%);
@@ -1465,10 +1466,20 @@ button.btn-submit {
     color: #000000;
     line-height: 26px;
     padding-left: 5px;
+    font-size:32px;
+
+}
+.converted_to_img {
+    width: 20px;
+    margin-right: 10px;
+}
+.no-border {
+    border: 0;
+    box-shadow: none;
 }
 .price_to {
     font-size: 12px;
-    width: 25%;
+    width: 35%;
     padding: 4px;
 }
 .trans-btn {

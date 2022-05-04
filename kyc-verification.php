@@ -2,7 +2,7 @@
 session_start();
 $title = "KYC Verification";
 require 'config/config.php';
-if($_SESSION['id']==""){
+if($_SESSION['token']==""){
     header('Location:/login');
     die();
 }

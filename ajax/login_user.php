@@ -9,9 +9,17 @@ if(isset($_REQUEST['email']) && isset($_REQUEST['password'])){
         die();*/
     if($login){
         $_SESSION['token'] = $login['token'];
-        $_SESSION['id'] = $login['id'];
         $_SESSION['name'] = $login['name'];
         $_SESSION['iso'] = $login['iso2'];
+        if($login['iso2']=="ng"){
+            $_SESSION['currency'] = 'naira';
+        }
+        if($login['iso2']=="pk"){
+            $_SESSION['currency'] = 'pkr';
+        }
+        if($login['iso2']=="ph"){
+            $_SESSION['currency'] = 'peso';
+        }
         echo json_encode(['message' => 'Login successful']);
     }
     else{
