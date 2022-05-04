@@ -31,10 +31,17 @@
                 </a>
             </li>
             <li class="nav-item nav-li">
-                <a href="/settings" class="nav-link sidebar-nav <?= ($title == "Settings") ? 'selected' : '' ?>"" aria-current="page">
+                <a href="/settings" class="nav-link sidebar-nav <?= ($title == "Settings") ? 'selected' : '' ?>" aria-current="page">
                     <img class="nav-icons" src="/assets/images/setting<?= ($title == 'Settings') ? '' : '-in' ?>.svg"
                          alt="setting-icon">
                     <span class="<?= ($title == "Settings") ? 'sidebar-title-active' : 'sidebar-title' ?>">Settings</span>
+                </a>
+            </li>
+            <li class="nav-item nav-li">
+                <a href="/logout" class="nav-link sidebar-nav aria-current="page">
+                    <img class="nav-icons" src="/assets/images/logout.svg"
+                         alt="setting-icon">
+                    <span class="sidebar-title">Sign Out</span>
                 </a>
             </li>
         </ul>
