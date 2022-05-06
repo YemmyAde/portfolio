@@ -2,7 +2,7 @@
 session_start();
 $title = "Dashboard";
 require 'config/config.php';
- if($_SESSION['token']==""){
+ if($_SESSION['id']==""){
      header('Location:/login');
      die();
  }

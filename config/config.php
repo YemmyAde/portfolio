@@ -8,6 +8,7 @@ ini_set('display_startup_errors', 0);
 error_reporting(0);
 
 define('SITE_TITLE', 'Join CEDA');
+define('BASE_URL', 'https://joinceda.com');
 define('PAGE_LIMIT', 10);
 
 //loading of all classes

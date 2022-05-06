@@ -65,16 +65,19 @@
                                             <div class="fund-acc-info">
                                                 <p class="acc-title">Account Name</p>
                                                 <div class="info-acc-fund-wrapper">
-                                                    <p class="name-fund">Aliyu Mandam</p>
+                                                    <p class="name-fund"><?=$kyc_info['account_name']?></p>
+
+                                                    <?php if($kyc_info['is_approved']=='1'){ ?>
                                                     <div class="verified">
                                                         <div class="verified-text">Verified</div>
                                                         <span><img src="/assets/images/verified.svg" alt=""></span></div>
+                                                    <?php } ?>
                                                 </div>
                                             </div>
                                             <div class="fund-acc-info">
                                                 <p class="acc-title">Account Number</p>
                                                 <div class="info-acc-fund-wrapper">
-                                                    <p class="name-fund">0000444000</p>
+                                                    <p class="name-fund"><?=$kyc_info['account_number']?></p>
                                                     <div class="copy-wrapper">
                                                         <img src="/assets/images/copy.svg" alt="">
                                                     </div>
@@ -83,7 +86,7 @@
                                             <div class="fund-acc-info">
                                                 <p class="acc-title">Bank name</p>
                                                 <div class="info-acc-fund-wrapper">
-                                                    <p class="name-fund">Guaranty Trust Bank</p>
+                                                    <p class="name-fund"><?=$kyc_info['bank_name']?></p>
                                                     <div class="copy-wrapper">
                                                         <img src="/assets/images/copy.svg" alt="">
                                                     </div>

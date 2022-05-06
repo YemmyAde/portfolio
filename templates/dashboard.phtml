@@ -74,7 +74,7 @@
                                 </div>
                             </div>
                             <div class="trans-btn-wrapper">
-                                <a href="/convert-to-local-currency" class="trans-btn">Continue Transaction</a>
+                                <a href="#" class="trans-btn">Continue Transaction</a>
                             </div>
                         </div>
                     </form>
@@ -135,5 +135,11 @@
         let exchangeRate = $('#price_to').val();
         let input = $('#entered_currency').val();
         $('#converted_price').html(numberWithCommas(convertCurrency(input,exchangeRate)));
+    })
+    $('.trans-btn').click(function (e) {
+        e.preventDefault();
+        let exchangeRate = $('#price_to').val();
+        let input = $('#entered_currency').val();
+        window.location.href = '/convert-to-local-currency?am='+input + "&eq="+convertCurrency(input,exchangeRate);
     })
 </script>

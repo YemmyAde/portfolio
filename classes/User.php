@@ -61,14 +61,14 @@ class User {
             return false;
         }
     }
-    public static function getUserByToken($token)
+    public static function getUserByToken($id)
     {
         global $DB;
-        $sql = "SELECT * FROM user WHERE token = :token";
+        $sql = "SELECT * FROM user WHERE id = :id";
         $stmt = $DB->prepare($sql);
         try {
             $stmt->execute([
-                'token'     => $token,
+                'id'     => $id,
             ]);
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
             if(!$row){

@@ -17,23 +17,26 @@
                         <div class="amount-to-convert">
                             <p class="title">Amount to convert</p>
                             <div class="convert-from-rate">
-                                <div class="price-from-convert">30</div>
-                                <select name="price_to" id="price_to" class="price_to">
-                                    <option value="DOL">DOL</option>
-                                    <option value="POU">POU</option>
-                                    <option value="EU">EU</option>
+                                <!--<div class="price-from-convert">30</div>-->
+                                <input type="number" class="price-from" id="entered_currency" value="<?=$amount?>">
+
+                                <select name="countries" id="price_to" class="price_to">
+                                    <?php foreach ($exchange_rates as $exchange_rate) { ?>
+                                        <option value="<?=$exchange_rate['ceda_rate']?>">🇺🇸&emsp;<?=$exchange_rate['currency_from']?></option>
+                                    <?php } ?>
                                 </select>
                             </div>
                         </div>
                         <div class="amount-to-convert mb0">
                             <p class="title">Equivalent Value</p>
                             <div class="convert-from-rate">
-                                <div class="price-from-convert">17,250</div>
-                                <select name="price_to" id="price_to" class="price_to">
-                                    <option value="DOL">DOL</option>
-                                    <option value="POU">POU</option>
-                                    <option value="EU">EU</option>
-                                </select>
+                               <!-- <div class="price-from-convert">17,250</div>-->
+                                <div class="price-from no-border" id="converted_price"><?=number_format($equivalent)?></div>
+                                <div class="price_to" id="price_to"><span><img
+                                                src="/assets/images/<?= $_SESSION['iso'] ?>.svg"
+                                                alt=""
+                                                class="converted_to_img"></span><span><?= $_SESSION['currency'] ?></span>
+                                </div>
                             </div>
                         </div>
                         <button class="btn-submit m0 m40" id="first_sec">Continue Transaction</button>
@@ -118,5 +121,14 @@
         $('.one').show();
         $('.two').hide();
     });
-
+    $('#price_to').on('change',function(){
+        let exchangeRate = $('#price_to').val();
+        let input = $('#entered_currency').val();
+        $('#converted_price').html(numberWithCommas(convertCurrency(input,exchangeRate)));
+    })
+    $('#entered_currency').keyup(function(){
+        let exchangeRate = $('#price_to').val();
+        let input = $('#entered_currency').val();
+        $('#converted_price').html(numberWithCommas(convertCurrency(input,exchangeRate)));
+    })
 </script>
