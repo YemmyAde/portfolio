@@ -25,7 +25,7 @@ class KycVerification
     public static function getInfoByUserID($id)
     {
         global $DB;
-        $sql = "SELECT * FROM kyc_verification INNER JOIN user ON kyc_verification.user_id=user.id WHERE kyc_verification.user_id = :user_id ";
+        $sql = "SELECT * FROM kyc_verification INNER JOIN users ON kyc_verification.user_id=users.id WHERE kyc_verification.user_id = :user_id ";
         $stmt = $DB->prepare($sql);
         try {
             $stmt->execute([

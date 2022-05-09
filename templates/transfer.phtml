@@ -14,20 +14,22 @@
                 <div class="border-header"></div>
                 <div class="content-wrapper">
                     <div class="convert-wrapper three">
-                        <div class="method-title"><?=($payment_method=="bank")?"NGN DOM ACCOUNT":"Payoneer Account"?></div>
-                        <?php if($payment_method == "bank"){?>
+                        <div class="method-title"><?= ($payment_method == "bank") ? "NGN DOM ACCOUNT" : "Payoneer Account" ?></div>
+                        <?php if ($payment_method == "bank") { ?>
                             <div class="method-title banktranfer">(Bank Transfer)</div>
                         <?php } ?>
-                        <div class="steps">
+                        <!--<div class="steps">
                             <ul class="progressbar">
                                 <li class="active"> Lörem ipsumbr <br> menskopp dedobel</li>
                                 <li>Lörem ipsumbr <br> menskopp dedobel</li>
                                 <li>Lörem ipsumbr <br> menskopp dedobel</li>
                             </ul>
-                        </div>
-                        <div class="support-wrapper"><p class="needsupport">Need assistance?</p> <img
-                                src="/assets/images/support-icon.svg" alt="">
-                            <p class="needsupport ml-8">Contact support</p></div>
+                        </div>-->
+                        <div class="support-wrapper"><p class="needsupport">Need assistance?</p><a
+                                    href="https://wa.me/+923368362215?text=Hi Brace! you guys are amazing"
+                                    target="_blank" class="needsupport ml-8"> <img
+                                        src="/assets/images/support-icon.svg" alt=""> &nbsp;&nbsp;&nbsp; <span
+                                        class="needsupport"> Contact support </span></a></div>
                         <div class="timeline" id="timeline-three">
                             <div class="outer">
 
@@ -55,29 +57,31 @@
                                         </div>
                                     </div>
                                 </div>
-                                <?php if($payment_method =="bank"){ ?>
+                                <?php if ($payment_method == "bank") { ?>
                                     <div class="card">
                                         <div class="timeline-indi"></div>
 
                                         <div class="info-payment-method">
-                                            <h3 class="title-convert">Transfer funds to account provided below <span><img
+                                            <h3 class="title-convert">Transfer funds to account provided below
+                                                <span><img
                                                             src="/assets/images/i.svg" alt=""></span></h3>
                                             <div class="fund-acc-info">
                                                 <p class="acc-title">Account Name</p>
                                                 <div class="info-acc-fund-wrapper">
-                                                    <p class="name-fund"><?=$kyc_info['account_name']?></p>
+                                                    <p class="name-fund">Aliyu Mandam</p>
 
-                                                    <?php if($kyc_info['is_approved']=='1'){ ?>
-                                                    <div class="verified">
-                                                        <div class="verified-text">Verified</div>
-                                                        <span><img src="/assets/images/verified.svg" alt=""></span></div>
+                                                    <?php if ($kyc_info['is_approved'] == '1') { ?>
+                                                        <div class="verified">
+                                                            <div class="verified-text">Verified</div>
+                                                            <span><img src="/assets/images/verified.svg" alt=""></span>
+                                                        </div>
                                                     <?php } ?>
                                                 </div>
                                             </div>
                                             <div class="fund-acc-info">
                                                 <p class="acc-title">Account Number</p>
                                                 <div class="info-acc-fund-wrapper">
-                                                    <p class="name-fund"><?=$kyc_info['account_number']?></p>
+                                                    <p class="name-fund">0000444000</p>
                                                     <div class="copy-wrapper">
                                                         <img src="/assets/images/copy.svg" alt="">
                                                     </div>
@@ -86,7 +90,7 @@
                                             <div class="fund-acc-info">
                                                 <p class="acc-title">Bank name</p>
                                                 <div class="info-acc-fund-wrapper">
-                                                    <p class="name-fund"><?=$kyc_info['bank_name']?></p>
+                                                    <p class="name-fund">Guaranty Trust Bank</p>
                                                     <div class="copy-wrapper">
                                                         <img src="/assets/images/copy.svg" alt="">
                                                     </div>
@@ -95,79 +99,82 @@
                                         </div>
                                     </div>
                                 <?php } ?>
-                                <?php if($payment_method =="payoneer"){ ?>
-                                <div class="card">
-                                    <div class="timeline-indi"></div>
+                                <?php if ($payment_method == "payoneer") { ?>
+                                    <div class="card">
+                                        <div class="timeline-indi"></div>
 
-                                    <div class="info-payment-method">
-                                        <h3 class="title-convert">Transfer funds to account provided below <span><img
-                                                    src="/assets/images/i.svg" alt=""></span></h3>
-                                        <div class="fund-acc-info">
-                                            <p class="acc-title">Beneficiary Name /</p>
-                                            <div class="info-acc-fund-wrapper">
-                                                <p class="name-fund">Brace Network LLC</p>
-                                                <div class="verified">
-                                                    <div class="verified-text">Verified</div>
-                                                    <span><img src="/assets/images/verified.svg" alt=""></span></div>
-                                            </div>
-                                        </div>
-                                        <div class="fund-acc-info">
-                                            <p class="acc-title">Bank name</p>
-                                            <div class="info-acc-fund-wrapper">
-                                                <p class="name-fund">Evolve Bank & Trust</p>
-                                                <div class="copy-wrapper">
-                                                    <img src="/assets/images/copy.svg" alt="">
+                                        <div class="info-payment-method">
+                                            <h3 class="title-convert">Transfer funds to account provided below
+                                                <span><img
+                                                            src="/assets/images/i.svg" alt=""></span></h3>
+                                            <div class="fund-acc-info">
+                                                <p class="acc-title">Beneficiary Name /</p>
+                                                <div class="info-acc-fund-wrapper">
+                                                    <p class="name-fund">Brace Network LLC</p>
+                                                    <div class="verified">
+                                                        <div class="verified-text">Verified</div>
+                                                        <span><img src="/assets/images/verified.svg" alt=""></span>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="fund-acc-info">
-                                            <p class="acc-title">Account Number </p>
-                                            <div class="info-acc-fund-wrapper">
-                                                <p class="name-fund">9800605135</p>
-                                                <div class="copy-wrapper">
-                                                    <img src="/assets/images/copy.svg" alt="">
+                                            <div class="fund-acc-info">
+                                                <p class="acc-title">Bank name</p>
+                                                <div class="info-acc-fund-wrapper">
+                                                    <p class="name-fund">Evolve Bank & Trust</p>
+                                                    <div class="copy-wrapper">
+                                                        <img src="/assets/images/copy.svg" alt="">
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="fund-acc-info">
-                                            <p class="acc-title">ABA Routing Number</p>
-                                            <div class="info-acc-fund-wrapper">
-                                                <p class="name-fund">084106768</p>
-                                                <div class="copy-wrapper">
-                                                    <img src="/assets/images/copy.svg" alt="">
+                                            <div class="fund-acc-info">
+                                                <p class="acc-title">Account Number </p>
+                                                <div class="info-acc-fund-wrapper">
+                                                    <p class="name-fund">9800605135</p>
+                                                    <div class="copy-wrapper">
+                                                        <img src="/assets/images/copy.svg" alt="">
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="fund-acc-info">
-                                            <p class="acc-title">Bank Address</p>
-                                            <div class="info-acc-fund-wrapper">
-                                                <p class="name-fund">6070 Poplar Ave, Suite 200 Memphis, TN 38119</p>
-                                                <div class="copy-wrapper">
-                                                    <img src="/assets/images/copy.svg" alt="">
+                                            <div class="fund-acc-info">
+                                                <p class="acc-title">ABA Routing Number</p>
+                                                <div class="info-acc-fund-wrapper">
+                                                    <p class="name-fund">084106768</p>
+                                                    <div class="copy-wrapper">
+                                                        <img src="/assets/images/copy.svg" alt="">
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="fund-acc-info">
-                                            <p class="acc-title">Type of Account</p>
-                                            <div class="info-acc-fund-wrapper">
-                                                <p class="name-fund">Checking</p>
-                                                <div class="copy-wrapper">
-                                                    <img src="/assets/images/copy.svg" alt="">
+                                            <div class="fund-acc-info">
+                                                <p class="acc-title">Bank Address</p>
+                                                <div class="info-acc-fund-wrapper">
+                                                    <p class="name-fund">6070 Poplar Ave, Suite 200 Memphis, TN
+                                                        38119</p>
+                                                    <div class="copy-wrapper">
+                                                        <img src="/assets/images/copy.svg" alt="">
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="fund-acc-info">
-                                            <p class="acc-title">Beneficiary Address</p>
-                                            <div class="info-acc-fund-wrapper">
-                                                <p class="name-fund">1309 Coffeen Avenue, Ste 1200 Sheridan, WY
-                                                    82801</p>
-                                                <div class="copy-wrapper">
-                                                    <img src="/assets/images/copy.svg" alt="">
+                                            <div class="fund-acc-info">
+                                                <p class="acc-title">Type of Account</p>
+                                                <div class="info-acc-fund-wrapper">
+                                                    <p class="name-fund">Checking</p>
+                                                    <div class="copy-wrapper">
+                                                        <img src="/assets/images/copy.svg" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="fund-acc-info">
+                                                <p class="acc-title">Beneficiary Address</p>
+                                                <div class="info-acc-fund-wrapper">
+                                                    <p class="name-fund">1309 Coffeen Avenue, Ste 1200 Sheridan, WY
+                                                        82801</p>
+                                                    <div class="copy-wrapper">
+                                                        <img src="/assets/images/copy.svg" alt="">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                                 <?php } ?>
                                 <div class="card">
                                     <div class="timeline-indi"></div>
@@ -176,10 +183,11 @@
                                         <h3 class="title-convert">After transferring the funds, click on “Transferred,
                                             notify us”
                                             button <span><img
-                                                    src="/assets/images/i.svg" alt=""></span></h3>
+                                                        src="/assets/images/i.svg" alt=""></span></h3>
                                         <div class="gateway-btn-wrapper">
                                             <div class="notify" id="three-one">Transferred, notify us</div>
-                                            <a href="/convert-to-local-currency" class="notify cancel-order" id="three-one-back">Cancel Order</a>
+                                            <a href="/convert-to-local-currency" class="notify cancel-order"
+                                               id="three-one-back">Cancel Order</a>
                                         </div>
                                     </div>
                                 </div>
@@ -237,7 +245,7 @@
         $('.timeline, .support-wrapper, .trans').hide();
     });
 
-    $('#three-two-back').click(function(){
+    $('#three-two-back').click(function () {
         $('.timeline').show();
         $('.support-wrapper, .trans').hide();
     });

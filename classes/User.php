@@ -8,7 +8,7 @@ class User {
             $values_array[] = str_replace("'", "\'", $value);
             $keys_array[] = $key;
         }
-        $sql = "INSERT INTO user (" . implode(',', $keys_array) . ") VALUE('" . implode("','", $values_array) . "')";
+        $sql = "INSERT INTO users (" . implode(',', $keys_array) . ") VALUE('" . implode("','", $values_array) . "')";
         /*echo $sql;
         die();*/
         $stmt = $DB->prepare($sql);
@@ -23,7 +23,7 @@ class User {
     public static function getUserByEmail($email)
     {
         global $DB;
-        $sql = "SELECT * FROM user WHERE email = :email";
+        $sql = "SELECT * FROM users WHERE email = :email";
         $stmt = $DB->prepare($sql);
         try {
             $stmt->execute([
@@ -43,7 +43,7 @@ class User {
     public static function verifyUser($email = "",$password = "")
     {
         global $DB;
-        $sql = "SELECT * FROM user WHERE email = :email AND password = :password";
+        $sql = "SELECT * FROM users WHERE email = :email AND password = :password";
         $stmt = $DB->prepare($sql);
         try {
             $stmt->execute([
@@ -64,7 +64,7 @@ class User {
     public static function getUserByToken($id)
     {
         global $DB;
-        $sql = "SELECT * FROM user WHERE id = :id";
+        $sql = "SELECT * FROM users WHERE id = :id";
         $stmt = $DB->prepare($sql);
         try {
             $stmt->execute([
@@ -92,7 +92,7 @@ class User {
 
             $fields[] = $key ."='".str_replace("'", "\'", $value)."'";
         }
-        $sql  = "UPDATE user SET ".implode(',', $fields)." WHERE token = '".$data['token']."'";
+        $sql  = "UPDATE users SET ".implode(',', $fields)." WHERE token = '".$data['token']."'";
         //echo $sql;
         $stmt = $DB->prepare($sql);
         try {

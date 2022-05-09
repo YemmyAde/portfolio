@@ -43,12 +43,13 @@ if ($_FILES['file'] != '') {
         if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
             $img_url = str_replace('..','',$target_file);
             $data = [
-                'user_id'           =>$_SESSION['id'],
-                'bank_name'         =>$_REQUEST["bank_name"],
-                'account_name'      => $_SESSION['name'],
-                'account_number'    =>$_REQUEST["account_number"],
-                'document_link'     =>$img_url,
-                'is_approved'       =>0,
+                'user_id'               =>$_SESSION['id'],
+                'bank_name'             =>$_REQUEST["bank_name"],
+                'account_name'          => $_SESSION['name'],
+                'account_number'        =>$_REQUEST["account_number"],
+                'document_link'         =>$img_url,
+                'is_approved'           =>0,
+                'fist_transaction'      =>0,
             ];
             $kyc_res = KycVerification::addKyc($data);
             if($kyc_res){

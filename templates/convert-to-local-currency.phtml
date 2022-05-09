@@ -22,7 +22,7 @@
 
                                 <select name="countries" id="price_to" class="price_to">
                                     <?php foreach ($exchange_rates as $exchange_rate) { ?>
-                                        <option value="<?=$exchange_rate['ceda_rate']?>">🇺🇸&emsp;<?=$exchange_rate['currency_from']?></option>
+                                        <option value="<?=$exchange_rate['ceda_rate']?>"><?=$exchange_rate['currency_from_sign']?>&emsp;<?=$exchange_rate['currency_from']?></option>
                                     <?php } ?>
                                 </select>
                             </div>
@@ -86,7 +86,12 @@
 
 <script>
     let type = ""
-
+    let inputVal = '<?=$_REQUEST['am']?>';
+    let eqVal = '<?=$_REQUEST['eq']?>';
+    if(inputVal!="" && eqVal!=""){
+        $('.one').hide();
+        $('.two').show();
+    }
     function check(input) {
         type = input.value;
         let checkboxes = document.getElementsByClassName("checkbox-type");
@@ -110,12 +115,29 @@
         $('.two').show();
     });
     $('#second_sec').click(function () {
+        let res = '<?=$res?>';
         if(type==""){
             $('#snackbar').html('Please select one option');
             showToast();
             return
         }
-        window.location.href="/bank-transfer?q="+type
+        if(res === "0"){
+            window.location.href="/bank-transfer?q="+type;
+            return
+        }
+        if(res === "1"){
+            $('#snackbar').html('Your KYC verification under review');
+            showToast();
+            return
+        }
+        if(res === "2"){
+            $('#snackbar').html('Please enter your KYC information first');
+            showToast();
+            setTimeout(function () { window.location.href="/kyc-verification";},5000)
+
+            return
+        }
+        window.location.href="/bank-transfer?q="+type;
     });
     $('#back_to_one').click(function () {
         $('.one').show();
