@@ -1,0 +1,252 @@
+<div class="container ceda-wrapper plr">
+    <div class="col-md-12 ceda-wrapper">
+        <div class="row w100">
+            <?php include "sidebar.phtml" ?>
+            <div class="col-md-9 ceda-wrapper bg-right col-9-ceda">
+                <div class="content-wrapper pt150">
+                    <div class="right-header">
+                        <h3 class="header-text">
+                            Convert to Local Currency
+                        </h3>
+                    </div>
+
+                </div>
+                <div class="border-header"></div>
+                <div class="content-wrapper">
+                    <div class="convert-wrapper three">
+                        <div class="method-title"><?= ($payment_method == "bank") ? "NGN DOM ACCOUNT" : "Payoneer Account" ?></div>
+                        <?php if ($payment_method == "bank") { ?>
+                            <div class="method-title banktranfer">(Bank Transfer)</div>
+                        <?php } ?>
+                        <!--<div class="steps">
+                            <ul class="progressbar">
+                                <li class="active"> Lörem ipsumbr <br> menskopp dedobel</li>
+                                <li>Lörem ipsumbr <br> menskopp dedobel</li>
+                                <li>Lörem ipsumbr <br> menskopp dedobel</li>
+                            </ul>
+                        </div>-->
+                        <div class="support-wrapper"><p class="needsupport">Need assistance?</p><a
+                                    href="https://wa.me/+923368362215?text=Hi Brace! you guys are amazing"
+                                    target="_blank" class="needsupport ml-8"> <img
+                                        src="/assets/images/support-icon.svg" alt=""> &nbsp;&nbsp;&nbsp; <span
+                                        class="needsupport"> Contact support </span></a></div>
+                        <div class="timeline" id="timeline-three">
+                            <div class="outer">
+
+                                <div class="card">
+                                    <div class="timeline-indi"></div>
+                                    <div class="info-payment-method">
+                                        <h3 class="title-convert">Confirm order info</h3>
+                                        <div class="convert-order-info-data">
+                                            <div class="data-wrapper">
+                                                <p class="info-title-convert">Amount</p>
+                                                <p class="info-amount">$ 30</p>
+                                            </div>
+                                            <div class="data-wrapper">
+                                                <p class="info-title-convert">Total Value</p>
+                                                <p class="info-amount value-col">N 17,250</p>
+                                            </div>
+                                            <div class="data-wrapper">
+                                                <p class="info-title-convert">Status</p>
+                                                <p class="info-amount status-col">In progress</p>
+                                            </div>
+                                            <div class="data-wrapper">
+                                                <p class="info-title-convert">Duration</p>
+                                                <p class="info-amount">12:05</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php if ($payment_method == "bank") { ?>
+                                    <div class="card">
+                                        <div class="timeline-indi"></div>
+
+                                        <div class="info-payment-method">
+                                            <h3 class="title-convert">Transfer funds to account provided below
+                                                <span><img
+                                                            src="/assets/images/i.svg" alt=""></span></h3>
+                                            <div class="fund-acc-info">
+                                                <p class="acc-title">Account Name</p>
+                                                <div class="info-acc-fund-wrapper">
+                                                    <p class="name-fund">Aliyu Mandam</p>
+
+                                                    <?php if ($kyc_info['is_approved'] == '1') { ?>
+                                                        <div class="verified">
+                                                            <div class="verified-text">Verified</div>
+                                                            <span><img src="/assets/images/verified.svg" alt=""></span>
+                                                        </div>
+                                                    <?php } ?>
+                                                </div>
+                                            </div>
+                                            <div class="fund-acc-info">
+                                                <p class="acc-title">Account Number</p>
+                                                <div class="info-acc-fund-wrapper">
+                                                    <p class="name-fund">0000444000</p>
+                                                    <div class="copy-wrapper">
+                                                        <img src="/assets/images/copy.svg" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="fund-acc-info">
+                                                <p class="acc-title">Bank name</p>
+                                                <div class="info-acc-fund-wrapper">
+                                                    <p class="name-fund">Guaranty Trust Bank</p>
+                                                    <div class="copy-wrapper">
+                                                        <img src="/assets/images/copy.svg" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php } ?>
+                                <?php if ($payment_method == "payoneer") { ?>
+                                    <div class="card">
+                                        <div class="timeline-indi"></div>
+
+                                        <div class="info-payment-method">
+                                            <h3 class="title-convert">Transfer funds to account provided below
+                                                <span><img
+                                                            src="/assets/images/i.svg" alt=""></span></h3>
+                                            <div class="fund-acc-info">
+                                                <p class="acc-title">Beneficiary Name /</p>
+                                                <div class="info-acc-fund-wrapper">
+                                                    <p class="name-fund">Brace Network LLC</p>
+                                                    <div class="verified">
+                                                        <div class="verified-text">Verified</div>
+                                                        <span><img src="/assets/images/verified.svg" alt=""></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="fund-acc-info">
+                                                <p class="acc-title">Bank name</p>
+                                                <div class="info-acc-fund-wrapper">
+                                                    <p class="name-fund">Evolve Bank & Trust</p>
+                                                    <div class="copy-wrapper">
+                                                        <img src="/assets/images/copy.svg" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="fund-acc-info">
+                                                <p class="acc-title">Account Number </p>
+                                                <div class="info-acc-fund-wrapper">
+                                                    <p class="name-fund">9800605135</p>
+                                                    <div class="copy-wrapper">
+                                                        <img src="/assets/images/copy.svg" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="fund-acc-info">
+                                                <p class="acc-title">ABA Routing Number</p>
+                                                <div class="info-acc-fund-wrapper">
+                                                    <p class="name-fund">084106768</p>
+                                                    <div class="copy-wrapper">
+                                                        <img src="/assets/images/copy.svg" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="fund-acc-info">
+                                                <p class="acc-title">Bank Address</p>
+                                                <div class="info-acc-fund-wrapper">
+                                                    <p class="name-fund">6070 Poplar Ave, Suite 200 Memphis, TN
+                                                        38119</p>
+                                                    <div class="copy-wrapper">
+                                                        <img src="/assets/images/copy.svg" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="fund-acc-info">
+                                                <p class="acc-title">Type of Account</p>
+                                                <div class="info-acc-fund-wrapper">
+                                                    <p class="name-fund">Checking</p>
+                                                    <div class="copy-wrapper">
+                                                        <img src="/assets/images/copy.svg" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="fund-acc-info">
+                                                <p class="acc-title">Beneficiary Address</p>
+                                                <div class="info-acc-fund-wrapper">
+                                                    <p class="name-fund">1309 Coffeen Avenue, Ste 1200 Sheridan, WY
+                                                        82801</p>
+                                                    <div class="copy-wrapper">
+                                                        <img src="/assets/images/copy.svg" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php } ?>
+                                <div class="card">
+                                    <div class="timeline-indi"></div>
+
+                                    <div class="info-payment-method">
+                                        <h3 class="title-convert">After transferring the funds, click on “Transferred,
+                                            notify us”
+                                            button <span><img
+                                                        src="/assets/images/i.svg" alt=""></span></h3>
+                                        <div class="gateway-btn-wrapper">
+                                            <div class="notify" id="three-one">Transferred, notify us</div>
+                                            <a href="/convert-to-local-currency" class="notify cancel-order"
+                                               id="three-one-back">Cancel Order</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trans">
+                            <div class="trans-wrapper">
+                                <div class="trans-image-wrapper">
+                                    <img src="/assets/images/upload.svg" alt="upload-icon">
+                                    <div class="upload">Upload Transaction Image</div>
+                                    <div class="upload">or browse file</div>
+                                </div>
+                            </div>
+                            <div class="spWrapper">
+                                <div class="separator">or</div>
+                            </div>
+                            <div class="trans-id-wrapper">
+                                <div class="trans-id">
+                                    <div class="id-title">Input Transaction ID</div>
+                                    <input type="text" class="id-input">
+                                </div>
+                            </div>
+                            <div class="gateway-btn-wrapper mlr-55 jc">
+                                <div class="notify cancel-order w40 ml-0" id="three-two-back">Back</div>
+                                <div class="notify w40" id="three-two">Continue</div>
+                            </div>
+                        </div>
+                        <div class="complete-trans">
+                            <div class="complete-trans-content">
+                                <img src="/assets/images/complete-trans.svg" alt="complete transaction">
+                                <div class="trans-complete-text">Transaction Complete</div>
+                                <div class="trans-complete-text-bellow">Check the dashboard for update
+                                    <br> on the transaction
+                                </div>
+                                <div class="complete-trans-btn-main-wrapper">
+                                    <a href="/dashboard" class="notify w40" id="three-two">To Dashboard</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php include 'templates/footer.phtml'; ?>
+<script>
+    $('#three-one').click(function () {
+        $('.trans').show();
+        $('.timeline, .support-wrapper').hide();
+    });
+    $('#three-two').click(function () {
+        $('.complete-trans').show();
+        $('.timeline, .support-wrapper, .trans').hide();
+    });
+
+    $('#three-two-back').click(function () {
+        $('.timeline').show();
+        $('.support-wrapper, .trans').hide();
+    });
+</script>

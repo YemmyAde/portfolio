@@ -1,41 +1,60 @@
 <?php include 'templates/footer.phtml'; ?>
-<div class="container ceda-wrapper  plr">
+<div class=" ceda-wrapper  plr">
     <div class="col-md-12 ceda-wrapper">
         <div class="row w100">
             <?php include "sidebar.phtml" ?>
             <div class="col-md-9 ceda-wrapper bg-right col-9-ceda">
                 <div class="content-wrapper pt150">
                     <div class="right-header">
-                        <h3 class="header-text">
-                            Home
-                        </h3>
+                        <div class="user-name"><span class="welcome">Hi,</span> <?= $_SESSION['name'] ?>! </div>
                     </div>
 
                 </div>
-                <div class="border-header"></div>
+                <!-- <div class="border-header"></div> -->
                 <div class="content-wrapper bottom-content">
-                    <div class="user-name"><span class="welcome">Welcome,</span> <?= $_SESSION['name'] ?>! 👋🏾</div>
-                    <div class="ceda-rate">Ceda Rate</div>
-                    <div class="rate-wrapper">
 
-                        <div class="rate-row">
-                            <div class="row-item-left">Currency</div>
-                            <div class="row-item-right">Rate</div>
-                        </div>
-                        <?php foreach ($exchange_rates as $exchange_rate) { ?>
-                            <div class="rate-row-td bb-dd">
-                                <div class="row-item-left-td"><span><img
-                                                src="/assets/images/<?= $exchange_rate['currency_from_iso'] ?>.svg"
-                                                alt=""></span>
-                                    <span><?= $exchange_rate['currency_from_display'] ?></span>
-                                </div>
-                                <div class="row-item-right-td"><?= $exchange_rate['currency_to_sign'] ?> <?= $exchange_rate['ceda_rate'] ?></div>
+
+
+                    <div class="trans-box">
+                        <div class="trans-box-left">
+                            <div class="inner-left">
+                            <div class="pending-left">Pending Transaction <span class="in-naira-left">(In Naira)</span></div>
+                            <div class="timer"><Span><img src="/assets/images/time.svg" alt=""></Span> 00:04:04</div>
                             </div>
-                        <?php } ?>
+
+                            <div class="trans-price-left">₦ 585,200</div>
+                         
+                        </div>
+
+                        <div class="trans-box-right">
+                        <div class="total" >Total Transaction <span class="in-naira-right">(In Naira)</span></div>
+                        <div class="trans-price-right">₦ 585,200</div>
+                        </div>
                     </div>
-                    <div class="ceda-rate">Convert to Local currency</div>
+
+                    <div class="ceda-container">
+                        <div class="ceda-rate">Ceda Rate</div>
+                        <div class="border-header"></div>
+                        <div class="rate-row">
+                            <div class="single-rate">
+                                1 USD <span class="divider"><img src="/assets/images/usa.svg" alt=""></span> <span class="price">₦585</span>
+                            </div>
+                            <div class="single-rate">
+                                1 GBP <span class="divider"><img src="/assets/images/uk.svg" alt=""></span> <span class="price">₦767</span>
+                            </div>
+                            <div class="single-rate">
+                                1 EUR <span class="divider"><img src="/assets/images/eu.svg" alt=""></span> <span class="price">₦645</span>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+
                     <form action="" method="post">
                         <div class="convert-local-currency">
+                            <div class="ceda-rate">Convert to Local currency</div>
                             <div class="upper-covert">
 
                                 <div class="currency">
@@ -53,7 +72,7 @@
                                     </select>-->
                                     <select name="countries" id="price_to" class="price_to">
                                         <?php foreach ($exchange_rates as $exchange_rate) { ?>
-                                            <option value="<?=$exchange_rate['ceda_rate']?>"><?=$exchange_rate['currency_from_sign']?>&emsp;<?=$exchange_rate['currency_from']?></option>
+                                            <option value="<?= $exchange_rate['ceda_rate'] ?>"><?= $exchange_rate['currency_from_sign'] ?>&emsp;<?= $exchange_rate['currency_from'] ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
@@ -66,10 +85,7 @@
                                         <option value="POU">POU</option>
                                         <option value="EU">EU</option>
                                     </select>-->
-                                    <div class="price_to" id="price_to"><span><img
-                                                    src="/assets/images/<?= $_SESSION['iso'] ?>.svg"
-                                                    alt=""
-                                                    class="converted_to_img"></span><span><?= $_SESSION['currency'] ?></span>
+                                    <div class="price_to" id="price_to"><span><img src="/assets/images/<?= $_SESSION['iso'] ?>.svg" alt="" class="converted_to_img"></span><span><?= $_SESSION['currency'] ?></span>
                                     </div>
                                 </div>
                             </div>
@@ -78,43 +94,41 @@
                             </div>
                         </div>
                     </form>
-                    <div class="ceda-rate">Account Activity</div>
+
                     <div class="convert-local-currency pd-table table-responsive-md">
+                        <div class="ceda-rate">Transactions</div>
                         <table class="table  table-borderless">
                             <thead>
-                            <tr>
+                                <!-- <tr>
                                 <th scope="col" class="blt">Description</th>
                                 <th scope="col" class="blt">Date</th>
                                 <th scope="col" class="blt">Amount</th>
                                 <th scope="col" class="blt">Status</th>
                                 <th scope="col" class="blt"></th>
-                            </tr>
+                            </tr> -->
                             </thead>
                             <tbody class="bl">
-                            <tr class="bl">
-                                <th class="bl">Fund Conversion</th>
-                                <td class="bl">01 Apr 2022</td>
-                                <td class="bl">N 17,250</td>
-                                <td class="bl"><span class="successful">Successful</span></td>
-                                <td class="bl"><img src="/assets/images/time.svg" alt=""><span
-                                            class="time-text">--:--</span></td>
-                            </tr>
-                            <tr class="bl">
-                                <th class="bl">Fund Conversion</th>
-                                <td class="bl">01 Apr 2022</td>
-                                <td class="bl">N 17,250</td>
-                                <td class="bl"><span class="failed">Failed</span></td>
-                                <td class="bl"><img src="/assets/images/time.svg" alt=""><span
-                                            class="time-text">--:--</span></td>
-                            </tr>
-                            <tr class="bl">
-                                <th class="bl">Fund Conversion</th>
-                                <td class="bl">01 Apr 2022</td>
-                                <td class="bl">N 17,250</td>
-                                <td class="bl"><span class="pending">Pending</span></td>
-                                <td class="bl"><img src="/assets/images/time.svg" alt=""><span
-                                            class="time-text">12:04</span></td>
-                            </tr>
+                                <tr class="bl">
+                                    <th class="bl">Fund Conversion</th>
+                                    <td class="bl">01 Apr 2022</td>
+                                    <td class="bl">N 17,250</td>
+                                    <td class="bl"><span class="successful">Successful</span></td>
+                                    <td class="bl"><img src="/assets/images/time.svg" alt=""><span class="time-text">--:--</span></td>
+                                </tr>
+                                <tr class="bl">
+                                    <th class="bl">Fund Conversion</th>
+                                    <td class="bl">01 Apr 2022</td>
+                                    <td class="bl">N 17,250</td>
+                                    <td class="bl"><span class="failed">Failed</span></td>
+                                    <td class="bl"><img src="/assets/images/time.svg" alt=""><span class="time-text">--:--</span></td>
+                                </tr>
+                                <tr class="bl">
+                                    <th class="bl">Fund Conversion</th>
+                                    <td class="bl">01 Apr 2022</td>
+                                    <td class="bl">N 17,250</td>
+                                    <td class="bl"><span class="pending">Pending</span></td>
+                                    <td class="bl"><img src="/assets/images/time.svg" alt=""><span class="time-text">12:04</span></td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -126,20 +140,20 @@
 
 <script>
     //convertCurrency('30','185.27')
-    $('#price_to').on('change',function(){
-       let exchangeRate = $('#price_to').val();
-       let input = $('#entered_currency').val();
-       $('#converted_price').html(numberWithCommas(convertCurrency(input,exchangeRate)));
-    })
-    $('#entered_currency').keyup(function(){
+    $('#price_to').on('change', function() {
         let exchangeRate = $('#price_to').val();
         let input = $('#entered_currency').val();
-        $('#converted_price').html(numberWithCommas(convertCurrency(input,exchangeRate)));
+        $('#converted_price').html(numberWithCommas(convertCurrency(input, exchangeRate)));
     })
-    $('.trans-btn').click(function (e) {
+    $('#entered_currency').keyup(function() {
+        let exchangeRate = $('#price_to').val();
+        let input = $('#entered_currency').val();
+        $('#converted_price').html(numberWithCommas(convertCurrency(input, exchangeRate)));
+    })
+    $('.trans-btn').click(function(e) {
         e.preventDefault();
         let exchangeRate = $('#price_to').val();
         let input = $('#entered_currency').val();
-        window.location.href = '/convert-to-local-currency?am='+input + "&eq="+convertCurrency(input,exchangeRate);
+        window.location.href = '/convert-to-local-currency?am=' + input + "&eq=" + convertCurrency(input, exchangeRate);
     })
 </script>

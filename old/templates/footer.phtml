@@ -1,0 +1,78 @@
+<?php if ($title == "CEDA" || $title == 'Privacy' || $title == 'Terms Of Use') { ?>
+    <footer class="bd-footer main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 ">
+                    <a class="d-inline-flex align-items-center mb-2 link-dark text-decoration-none footer-logo" href="/"
+                       aria-label="Bootstrap">
+                        <img src="/assets/images/footer-logo.png" alt="CEDA Logo">
+                    </a>
+                </div>
+                <div class="col-6 col-lg-2 offset-lg-1">
+                    <ul class="list-unstyled">
+                        <li class="mb-4"><a class="footer-nav" href="/register">Get Started</a></li>
+                        <li class="mb-4"><a class="footer-nav" href="l/login">Login</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <ul class="list-unstyled">
+                        <li class="mb-4"><a class="footer-nav" href="#">Freelancers</a></li>
+                        <li class="mb-4"><a class="footer-nav" href="/microbusiness">Micro Business</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <ul class="list-unstyled">
+                        <li class="mb-4"><a class="footer-nav" href="#">Developer</a></li>
+                        <li class="mb-4"><a class="footer-nav" href="#">Help</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <ul class="list-unstyled">
+                        <li class="mb-4"><a class="footer-nav" href="/privacy">Privacy</a></li>
+                        <li class="mb-4"><a class="footer-nav" href="/terms-of-use">Terms of use</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+<?php } ?>
+<div id="snackbar"></div>
+<script src="/assets/js/slim.min.js"></script>
+<script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/jquery-3.6.0.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script> -->
+<script src="/assets/js/scripts.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css"/>
+<script src="/assets/js/jquery.form.min.js"></script>
+<script src="/assets/js/custom.js"></script>
+<script src="https://cdn.tutorialjinni.com/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+<script>
+    function showToast() {
+        let x = document.getElementById("snackbar");
+        x.className = "showToast";
+        setTimeout(function () {
+            x.className = x.className.replace("show", "");
+        }, 5000);
+    }
+
+    $('#open').click(function () {
+        $('.show-on').show(150);
+        // $('.hide-on').hide(150);
+        $('#close').show()
+        $(this).hide();
+        $('.content-wrapper').addClass('pt-50');
+    })
+    $('#close').click(function () {
+        $('.show-on').hide(150);
+        $('#open').show();
+        $(this).hide();
+        $('.content-wrapper').removeClass('pt-50');
+
+        // $('.hide-on').show(150);
+    })
+</script>
+
+</body>
+</html>

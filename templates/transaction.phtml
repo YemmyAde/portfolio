@@ -1,0 +1,149 @@
+<div class="ceda-wrapper plr">
+    <div class="col-md-12 ceda-wrapper">
+        <div class="row w100">
+            <?php include "sidebar.phtml" ?>
+            <div class="col-md-9 ceda-wrapper bg-right  col-9-ceda">
+              
+                
+                <div class="content-wrapper">
+
+                <div class="search-box">
+                    <img src="/new/assets/images/search.svg" class="search-btn" alt="">
+                    <input placeholder="Search Transactions" class="search-input" type="text"/>
+                </div>
+
+                <div class="convert-local-currency pd-table table-responsive-md">
+        
+                        <table class="table  table-borderless">
+                            <thead>
+                                <tr>
+                                <th scope="col" class="blt">Description</th>
+                                <th scope="col" class="blt">Date</th>
+                                <th scope="col" class="blt">Amount</th>
+                                <th scope="col" class="blt">Status</th>
+                                <th scope="col" class="blt"></th>
+                            </tr>
+                            </thead>
+                            <tbody class="bl">
+                                <tr class="bl">
+                                    <th class="bl">Fund Conversion</th>
+                                    <td class="bl">01 Apr 2022</td>
+                                    <td class="bl">N 17,250</td>
+                                    <td class="bl"><span class="successful">Successful</span></td>
+                                    <!-- <td class="bl"><img src="/assets/images/time.svg" alt=""><span class="time-text">--:--</span></td> -->
+                                </tr>
+                                <tr class="bl">
+                                    <th class="bl">Fund Conversion</th>
+                                    <td class="bl">01 Apr 2022</td>
+                                    <td class="bl">N 17,250</td>
+                                    <td class="bl"><span class="failed">Failed</span></td>
+                                    <!-- <td class="bl"><img src="/assets/images/time.svg" alt=""><span class="time-text">--:--</span></td> -->
+                                </tr>
+                                <tr class="bl">
+                                    <th class="bl">Fund Conversion</th>
+                                    <td class="bl">01 Apr 2022</td>
+                                    <td class="bl">N 17,250</td>
+                                    <td class="bl"><span class="pending">Pending</span></td>
+                                    <!-- <td class="bl"><img src="/assets/images/time.svg" alt=""><span class="time-text">12:04</span></td> -->
+                                </tr>
+                                <tr class="bl">
+                                    <th class="bl">Fund Conversion</th>
+                                    <td class="bl">01 Apr 2022</td>
+                                    <td class="bl">N 17,250</td>
+                                    <td class="bl"><span class="successful">Successful</span></td>
+                                    <!-- <td class="bl"><img src="/assets/images/time.svg" alt=""><span class="time-text">--:--</span></td> -->
+                                </tr>
+                                <tr class="bl">
+                                    <th class="bl">Fund Conversion</th>
+                                    <td class="bl">01 Apr 2022</td>
+                                    <td class="bl">N 17,250</td>
+                                    <td class="bl"><span class="failed">Failed</span></td>
+                                    <!-- <td class="bl"><img src="/assets/images/time.svg" alt=""><span class="time-text">--:--</span></td> -->
+                                </tr>
+                                <tr class="bl">
+                                    <th class="bl">Fund Conversion</th>
+                                    <td class="bl">01 Apr 2022</td>
+                                    <td class="bl">N 17,250</td>
+                                    <td class="bl"><span class="pending">Pending</span></td>
+                                    <!-- <td class="bl"><img src="/assets/images/time.svg" alt=""><span class="time-text">12:04</span></td> -->
+                                </tr>
+                                <tr class="bl">
+                                    <th class="bl">Fund Conversion</th>
+                                    <td class="bl">01 Apr 2022</td>
+                                    <td class="bl">N 17,250</td>
+                                    <td class="bl"><span class="successful">Successful</span></td>
+                                    <!-- <td class="bl"><img src="/assets/images/time.svg" alt=""><span class="time-text">--:--</span></td> -->
+                                </tr>
+                                <tr class="bl">
+                                    <th class="bl">Fund Conversion</th>
+                                    <td class="bl">01 Apr 2022</td>
+                                    <td class="bl">N 17,250</td>
+                                    <td class="bl"><span class="failed">Failed</span></td>
+                                    <!-- <td class="bl"><img src="/assets/images/time.svg" alt=""><span class="time-text">--:--</span></td> -->
+                                </tr>
+                                <tr class="bl">
+                                    <th class="bl">Fund Conversion</th>
+                                    <td class="bl">01 Apr 2022</td>
+                                    <td class="bl">N 17,250</td>
+                                    <td class="bl"><span class="pending">Pending</span></td>
+                                    <!-- <td class="bl"><img src="/assets/images/time.svg" alt=""><span class="time-text">12:04</span></td> -->
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="pagination">
+                        <div class="previous">
+                            <span><img src="/new/assets/images/previous.png" class="previous-img" alt=""> Previous</span>
+                        </div>
+                        <div class="Next">
+                            <span>Next <img src="/new/assets/images/next.png" class="next-img" alt=""> </span>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</div>
+<?php include 'templates/footer.phtml'; ?>
+<script>
+    $('.arrow-right').click(function(e){
+        e.preventDefault();
+        $(this).hide();
+        $('.arrow-down').show();
+        $('.sendreq-btn').show(150);
+    })
+    $('.arrow-down').click(function(e){
+        e.preventDefault();
+        $(this).hide();
+        $('.arrow-right').show();
+        $('.sendreq-btn').hide(150);
+    })
+    /***********email************/
+    $('.arrow-right-email').click(function(e){
+        e.preventDefault();
+        $(this).hide();
+        $('.arrow-down-email').show();
+        $('.emailuson').show(150);
+    })
+    $('.arrow-down-email').click(function(e){
+        e.preventDefault();
+        $(this).hide();
+        $('.arrow-right-email').show();
+        $('.emailuson').hide(150);
+    })
+    /**************later***************/
+    $('.arrow-right-later').click(function(e){
+        e.preventDefault();
+        $(this).hide();
+        $('.arrow-down-later').show();
+        $('.sendreq-btn').show(150);
+    })
+    $('.arrow-down-later').click(function(e){
+        e.preventDefault();
+        $(this).hide();
+        $('.arrow-right-later').show();
+        $('.sendreq-btn').hide(150);
+    })
+</script>

@@ -1,9 +1,9 @@
-<div class="container ceda-wrapper plr">
+<div class="ceda-wrapper plr">
     <div class="col-md-12 ceda-wrapper">
         <div class="row w100">
             <?php include "sidebar.phtml" ?>
-            <div class="col-md-9 ceda-wrapper bg-right col-9-ceda">
-                <div class="content-wrapper pt150 pb-27">
+            <div class="col-md-9 ceda-wrapper minH bg-right col-9-ceda">
+                <div class="content-wrapper pt150">
                     <div class="right-header">
                         <h3 class="header-text">
                             <span class="back"><a href="/"><img src="/assets/images/back.svg" alt="back"></a></span> KYC
@@ -12,22 +12,25 @@
                     </div>
 
                 </div>
-                <div class="border-header"></div>
+               
                 <div class="content-wrapper ">
                     <div class="licences-wrapper">
-                        <p class="m0 kyc-title">KYC Verification</p>
-                        <p class="m0 kyc-sub-title">Upload Driver license or Passport?</p>
+                        <p class="kyc-title">KYC Verification</p>
+                        
                         <form id="kyc_form" method="post" action="/ajax/insert_kyc_data" enctype="multipart/form-data">
 
                             <div class="image-wrapper">
+                            <p class="m0 kyc-sub-title">Upload Driver license or Passport?</p>
+                                <div class="solid-box">
                                 <div class="box__input">
                                     <span class="small-upload"><img src="/assets/images/small-upload.svg"></span>
                                     <span class="btn-file m0 label-kyc">
-                                     Choose a file or drag it here  <input type="file" name="file" id="file"
+                                    Click to choose a file or drag here  <input type="file" name="file" id="file"
                                            onchange="readURL(this);" style="width: 100%;height: 110px;"/>
                                     </span>
                                     <p class="m0 size-limit">Size limit: 10MB</p>
                                     <img style="display: none" src="" alt="img" id="selectedImg">
+                                </div>
                                 </div>
                             </div>
                             <div class="bank-details">

@@ -26,19 +26,28 @@
                     <img class="nav-icons"
                          src="/assets/images/dollar<?= ($title == 'Sell Digital Products') ? '' : '-in' ?>.svg"
                          alt="sell-digital-products-icon">
-                    <span class="<?= ($title == "Sell Digital Products") ? 'sidebar-title-active' : 'sidebar-title' ?>">Sell Digital Products</span>
+                    <span class="<?= ($title == "Sell Digital Products") ? 'sidebar-title-active' : 'sidebar-title' ?>">Send Money</span>
                     <span class="coming-soon">Coming Soon</span>
                 </a>
             </li>
             <li class="nav-item nav-li">
+                <a href="/transaction" class="nav-link  sidebar-nav" aria-current="page">
+                    <img class="nav-icons"
+                         src="/assets/images/transaction<?= ($title == 'transaction') ? '' : '-in' ?>.svg"
+                         alt="transactions-icon">
+                    <span class="<?= ($title == "transaction") ? 'sidebar-title-active' : 'sidebar-title' ?>">Transaction</span>
+
+                </a>
+            </li>
+            <!-- <li class="nav-item nav-li">
                 <a href="/get-freelancing-advice" class="nav-link  sidebar-nav" aria-current="page">
                     <img class="nav-icons"
-                         src="/assets/images/advice<?= ($title == 'Get Freelancing Advice') ? '' : '-in' ?>.svg"
+                         src="/assets/images/transaction<?= ($title == 'Get Freelancing Advice') ? '' : '-in' ?>.svg"
                          alt="sell-digital-products-icon">
                     <span class="<?= ($title == "Get Freelancing Advice") ? 'sidebar-title-active' : 'sidebar-title' ?>">Get Freelancing Advice</span>
 
                 </a>
-            </li>
+            </li> -->
             <li class="nav-item nav-li">
                 <a href="/settings" class="nav-link sidebar-nav <?= ($title == "Settings") ? 'selected' : '' ?>" aria-current="page">
                     <img class="nav-icons" src="/assets/images/setting<?= ($title == 'Settings') ? '' : '-in' ?>.svg"
@@ -50,7 +59,7 @@
                 <a href="/logout" class="nav-link sidebar-nav aria-current="page">
                     <img class="nav-icons" src="/assets/images/logout.svg"
                          alt="setting-icon">
-                    <span class="sidebar-title">Sign Out</span>
+                    <span class="sidebar-title">Log Out</span>
                 </a>
             </li>
         </ul>

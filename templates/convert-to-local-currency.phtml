@@ -1,17 +1,10 @@
-<div class="container ceda-wrapper plr">
+<div class="ceda-wrapper plr">
     <div class="col-md-12 ceda-wrapper">
         <div class="row w100">
             <?php include "sidebar.phtml" ?>
-            <div class="col-md-9 ceda-wrapper bg-right col-9-ceda">
-                <div class="content-wrapper pt150">
-                    <div class="right-header">
-                        <h3 class="header-text">
-                            Convert to Local Currency
-                        </h3>
-                    </div>
-
-                </div>
-                <div class="border-header"></div>
+            <div class="col-md-9 ceda-wrapper bg-right maxW col-9-ceda">
+              
+                <!-- <div class="border-header"></div> -->
                 <div class="content-wrapper">
                     <div class="convert-wrapper one">
                         <div class="amount-to-convert">
@@ -20,19 +13,19 @@
                                 <!--<div class="price-from-convert">30</div>-->
                                 <input type="number" class="price-from" id="entered_currency" value="<?=$amount?>">
 
-                                <select name="countries" id="price_to" class="price_to">
+                                <select name="countries" id="price_to" class="price_to-convert">
                                     <?php foreach ($exchange_rates as $exchange_rate) { ?>
                                         <option value="<?=$exchange_rate['ceda_rate']?>"><?=$exchange_rate['currency_from_sign']?>&emsp;<?=$exchange_rate['currency_from']?></option>
                                     <?php } ?>
                                 </select>
                             </div>
                         </div>
-                        <div class="amount-to-convert mb0">
+                        <div class="amount-to-convert toggle1 mb0" >
                             <p class="title">Equivalent Value</p>
                             <div class="convert-from-rate">
                                <!-- <div class="price-from-convert">17,250</div>-->
                                 <div class="price-from no-border" id="converted_price"><?=number_format($equivalent)?></div>
-                                <div class="price_to" id="price_to"><span><img
+                                <div class="price_to-convert" id="price_to"><span><img
                                                 src="/assets/images/<?= $_SESSION['iso'] ?>.svg"
                                                 alt=""
                                                 class="converted_to_img"></span><span><?= $_SESSION['currency'] ?></span>
@@ -43,37 +36,45 @@
                     </div>
                     <div class="convert-wrapper two">
                         <div class="chose">Choose payment method</div>
-                        <div class="amount-to-convert">
+                        <div class="amount-to-convert amount-pay">
                             <div class="convert-from-rate">
                                 <div class="price-from-convert medium-wrapper"><img src="/assets/images/payoneer.svg"
                                                                                     alt="payoneer">
                                     <p class="payoneer-text">Payoneer</p></div>
                                 <div class="checbox-container">
                                     <div class="round">
-                                        <input type="checkbox" value="payoneer" class="checkbox-type" id="checkbox" onclick="check(this);"/>
+                                        <input type="checkbox" value="payoneer" class="checkbox-type checkbox-pay" id="checkbox" onclick="check(this);"/>
                                         <label for="checkbox"></label>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="amount-to-convert mb0">
+                        <div class="amount-to-convert mb0" id="toggle2">
+                       
                             <div class="convert-from-rate">
-                                <div class="price-from-convert medium-wrapper"><img
+                                <div class="price-from-convert medium-wrapper">
+                                    <img
                                             src="/assets/images/buildingbank.svg"
                                             alt="payoneer">
-                                    <p class="payoneer-text">NGN DOM ACCOUNT</p></div>
+                                   <div>
+                                   <p class="payoneer-text">NGN DOM ACCOUNT</p>
+                                    <div class="bank-tra">(bank transfer)</div>
+                                   </div>
+                                </div>
 
                                 <div class="checbox-container">
                                     <div class="round">
                                         <input type="checkbox" value="bank" class="checkbox-type" id="checkbox-bank" onclick="check(this);"/>
-                                        <label for="checkbox-bank"></label>
+                                        <label for="checkbox-bank"> </label>
                                     </div>
                                 </div>
                             </div>
+                          
+
                         </div>
                         <div class="btn-wrapper-choice">
                             <button class="btn-cancel m0 m40" id="back_to_one">Cancel</button>
-                            <button class="btn-continue m0 m40" id="second_sec">Continue</button>
+                            <button class="btn-continue m0 m40"  id="second_sec">Continue</button>
                         </div>
                     </div>
                 </div>
@@ -83,7 +84,7 @@
 </div>
 </div>
 <?php include 'templates/footer.phtml'; ?>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
     let type = ""
     let inputVal = '<?=$_REQUEST['am']?>';
@@ -153,4 +154,19 @@
         let input = $('#entered_currency').val();
         $('#converted_price').html(numberWithCommas(convertCurrency(input,exchangeRate)));
     })
+
+    $(document).ready(function(){
+    $(".checkbox-pay").click(function(){
+        $("#toggle2").removeClass("black-border");
+        $(".toggle1").addClass("black-border");
+  });
+});
+    $(document).ready(function(){
+    $("#checkbox-bank").click(function(){
+    $("#toggle2").addClass("black-border");
+    $("#toggle1").removeClass("black-border");
+  });
+});
+
+
 </script>
