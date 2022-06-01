@@ -36,15 +36,18 @@
                         <div class="ceda-rate">Ceda Rate</div>
                         <div class="border-header"></div>
                         <div class="rate-row">
+                            <?php foreach ($exchange_rates as $exchange_rate) { ?>
                             <div class="single-rate">
-                                1 USD <span class="divider"><img src="/assets/images/usa.svg" alt=""></span> <span class="price">₦585</span>
+                                1 <?= $exchange_rate['currency_from'] ?> <span class="divider"><img src="/assets/images/<?= $exchange_rate['currency_from_iso'] ?>.svg" alt=""></span>
+                                <span class="price"><?= $exchange_rate['currency_to_sign'] ?><?= $exchange_rate['ceda_rate'] ?></span>
                             </div>
-                            <div class="single-rate">
+                            <?php } ?>
+                           <!-- <div class="single-rate">
                                 1 GBP <span class="divider"><img src="/assets/images/uk.svg" alt=""></span> <span class="price">₦767</span>
                             </div>
                             <div class="single-rate">
                                 1 EUR <span class="divider"><img src="/assets/images/eu.svg" alt=""></span> <span class="price">₦645</span>
-                            </div>
+                            </div>-->
                         </div>
 
 
@@ -137,7 +140,6 @@
         </div>
     </div>
 </div>
-
 <script>
     //convertCurrency('30','185.27')
     $('#price_to').on('change', function() {

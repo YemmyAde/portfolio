@@ -8,5 +8,7 @@ if ($_SESSION['id'] == "") {
 }
 $payment_method = $_REQUEST['q'];
 $kyc_info = KycVerification::getInfoByUserID($_SESSION['id']);
+$amount = (isset($_REQUEST['am'])) ? $_REQUEST['am']:"";
+$equivalent = (isset($_REQUEST['eq'])) ? $_REQUEST['eq']:"0";
 include 'templates/header.phtml';
 include 'templates/transfer.phtml';

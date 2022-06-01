@@ -2,29 +2,35 @@
     <div class="col-md-12 ceda-wrapper">
         <div class="row w100">
             <?php include "sidebar.phtml" ?>
-            <div class="col-md-9 ceda-wrapper bg-right maxW col-9-ceda">
-              
+            <div class="col-md-9 ceda-wrapper bg-right minH col-9-ceda">
+
                 <!-- <div class="border-header"></div> -->
                 <div class="content-wrapper">
+
                     <div class="convert-wrapper one">
+                        <div class="convert-dis-wrap">
+                            <p class="convert-display mb0">1 <span class="selected_currency">USD</span> ≈ <span class="selected_amount"></span> <?=$_SESSION['currency']?></p> <span><img src="../assets/images/rotated-convert.svg" alt=""></span>
+                        </div>
                         <div class="amount-to-convert">
                             <p class="title">Amount to convert</p>
                             <div class="convert-from-rate">
                                 <!--<div class="price-from-convert">30</div>-->
-                                <input type="number" class="price-from" id="entered_currency" value="<?=$amount?>">
+                                <input type="number" class="price-from" id="entered_currency" value="<?= $amount ?>">
 
                                 <select name="countries" id="price_to" class="price_to-convert">
                                     <?php foreach ($exchange_rates as $exchange_rate) { ?>
-                                        <option value="<?=$exchange_rate['ceda_rate']?>"><?=$exchange_rate['currency_from_sign']?>&emsp;<?=$exchange_rate['currency_from']?></option>
+                                        <option value="<?= $exchange_rate['ceda_rate'] ?>">
+                                            <?= $exchange_rate['currency_from_sign'] ?> <?= $exchange_rate['currency_from'] ?></option>
                                     <?php } ?>
                                 </select>
                             </div>
                         </div>
-                        <div class="amount-to-convert toggle1 mb0" >
+                        <div class="amount-to-convert toggle1 mb0">
                             <p class="title">Equivalent Value</p>
                             <div class="convert-from-rate">
-                               <!-- <div class="price-from-convert">17,250</div>-->
-                                <div class="price-from no-border" id="converted_price"><?=number_format($equivalent)?></div>
+                                <!-- <div class="price-from-convert">17,250</div>-->
+                                <div class="price-from no-border"
+                                     id="converted_price"><?= number_format($equivalent) ?></div>
                                 <div class="price_to-convert" id="price_to"><span><img
                                                 src="/assets/images/<?= $_SESSION['iso'] ?>.svg"
                                                 alt=""
@@ -32,50 +38,13 @@
                                 </div>
                             </div>
                         </div>
+                        <p class="title-res-amount">Select Residing Account For <span class="selected_currency">USD</span></p>
+
+                        <select class="method" name="residing_method" id="residing_method">
+                            <option value="payoneer">Payoneer Account</option>
+                            <option value="bank">NGN Domiciliary Account</option>
+                        </select>
                         <button class="btn-submit m0 m40" id="first_sec">Continue Transaction</button>
-                    </div>
-                    <div class="convert-wrapper two">
-                        <div class="chose">Choose payment method</div>
-                        <div class="amount-to-convert amount-pay">
-                            <div class="convert-from-rate">
-                                <div class="price-from-convert medium-wrapper"><img src="/assets/images/payoneer.svg"
-                                                                                    alt="payoneer">
-                                    <p class="payoneer-text">Payoneer</p></div>
-                                <div class="checbox-container">
-                                    <div class="round">
-                                        <input type="checkbox" value="payoneer" class="checkbox-type checkbox-pay" id="checkbox" onclick="check(this);"/>
-                                        <label for="checkbox"></label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="amount-to-convert mb0" id="toggle2">
-                       
-                            <div class="convert-from-rate">
-                                <div class="price-from-convert medium-wrapper">
-                                    <img
-                                            src="/assets/images/buildingbank.svg"
-                                            alt="payoneer">
-                                   <div>
-                                   <p class="payoneer-text">NGN DOM ACCOUNT</p>
-                                    <div class="bank-tra">(bank transfer)</div>
-                                   </div>
-                                </div>
-
-                                <div class="checbox-container">
-                                    <div class="round">
-                                        <input type="checkbox" value="bank" class="checkbox-type" id="checkbox-bank" onclick="check(this);"/>
-                                        <label for="checkbox-bank"> </label>
-                                    </div>
-                                </div>
-                            </div>
-                          
-
-                        </div>
-                        <div class="btn-wrapper-choice">
-                            <button class="btn-cancel m0 m40" id="back_to_one">Cancel</button>
-                            <button class="btn-continue m0 m40"  id="second_sec">Continue</button>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -86,87 +55,49 @@
 <?php include 'templates/footer.phtml'; ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
-    let type = ""
-    let inputVal = '<?=$_REQUEST['am']?>';
-    let eqVal = '<?=$_REQUEST['eq']?>';
-    if(inputVal!="" && eqVal!=""){
-        $('.one').hide();
-        $('.two').show();
-    }
-    function check(input) {
-        type = input.value;
-        let checkboxes = document.getElementsByClassName("checkbox-type");
+    let exchangeRate = $('#price_to').val();
+    let input = $('#entered_currency').val();
 
-        for (let i = 0; i < checkboxes.length; i++) {
-            //uncheck all
-            if (checkboxes[i].checked == true) {
-                checkboxes[i].checked = false;
-            }
-        }
+    $('.selected_amount').html(exchangeRate)
+    $('.selected_currency').html($("#price_to option:selected").text().replace('$ ','').replace('£ ','').replace('€ ',''))
 
-        //set checked of clicked object
-        if (input.checked == true) {
-            input.checked = false;
-        } else {
-            input.checked = true;
-        }
-    }
     $('#first_sec').click(function () {
-        $('.one').hide();
-        $('.two').show();
-    });
-    $('#second_sec').click(function () {
         let res = '<?=$res?>';
-        if(type==""){
-            $('#snackbar').html('Please select one option');
-            showToast();
+
+        if (res === "0") {
+            window.location.href = "/bank-transfer?q=" + $('#residing_method').val +"&am="+ $('#entered_currency').val() + "&eq="+convertCurrency($('#entered_currency').val(), $('#price_to').val());
             return
         }
-        if(res === "0"){
-            window.location.href="/bank-transfer?q="+type;
-            return
-        }
-        if(res === "1"){
+        if (res === "1") {
             $('#snackbar').html('Your KYC verification under review');
             showToast();
             return
         }
-        if(res === "2"){
+        if (res === "2") {
             $('#snackbar').html('Please enter your KYC information first');
             showToast();
-            setTimeout(function () { window.location.href="/kyc-verification";},5000)
+            setTimeout(function () {
+                window.location.href = "/kyc-verification";
+            }, 5000)
 
             return
         }
-        window.location.href="/bank-transfer?q="+type;
+        window.location.href = "/bank-transfer?q=" + $('#residing_method').val() +"&am="+ $('#entered_currency').val() + "&eq="+convertCurrency($('#entered_currency').val(), $('#price_to').val());
     });
-    $('#back_to_one').click(function () {
-        $('.one').show();
-        $('.two').hide();
-    });
-    $('#price_to').on('change',function(){
+    $('#price_to').on('change', function () {
         let exchangeRate = $('#price_to').val();
         let input = $('#entered_currency').val();
-        $('#converted_price').html(numberWithCommas(convertCurrency(input,exchangeRate)));
-    })
-    $('#entered_currency').keyup(function(){
-        let exchangeRate = $('#price_to').val();
-        let input = $('#entered_currency').val();
-        $('#converted_price').html(numberWithCommas(convertCurrency(input,exchangeRate)));
-    })
+        $('.selected_amount').html(exchangeRate)
+        $('.selected_currency').html($("#price_to option:selected").text().replace('$ ','').replace('£ ','').replace('€ ',''))
 
-    $(document).ready(function(){
-    $(".checkbox-pay").click(function(){
-        $("#toggle2").removeClass("black-border");
-        $(".toggle1").addClass("black-border");
-  });
-});
-    $(document).ready(function(){
-    $("#checkbox-bank").click(function(){
-    $("#toggle2").addClass("black-border");
-    $("#toggle1").removeClass("black-border");
-  });
-});
+
+        $('#converted_price').html(numberWithCommas(convertCurrency(input, exchangeRate)));
+    })
+    $('#entered_currency').keyup(function () {
+        let exchangeRate = $('#price_to').val();
+        let input = $('#entered_currency').val();
+        $('#converted_price').html(numberWithCommas(convertCurrency(input, exchangeRate)));
+    })
 
 
 </script>

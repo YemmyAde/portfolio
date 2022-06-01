@@ -40,11 +40,11 @@
                                         <div class="convert-order-info-data">
                                             <div class="data-wrapper">
                                                 <p class="info-title-convert">Amount</p>
-                                                <p class="info-amount">$ 30</p>
+                                                <p class="info-amount">$ <?=$amount?></p>
                                             </div>
                                             <div class="data-wrapper">
                                                 <p class="info-title-convert">Total Value</p>
-                                                <p class="info-amount value-col">N 17,250</p>
+                                                <p class="info-amount value-col"><?=$_SESSION['currency']?> <?=number_format($equivalent)?></p>
                                             </div>
                                             <div class="data-wrapper">
                                                 <p class="info-title-convert">Status</p>

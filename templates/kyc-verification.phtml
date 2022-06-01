@@ -35,12 +35,18 @@
                             </div>
                             <div class="bank-details">
                                 <p class="m0 detail-title">Bank details to receive funds</p>
-                                <div class="bank_section">
+                                <div class="bank-box">
+                                <div class="">
                                     <p class="m0 bank-name">
                                         Bank Name
                                     </p>
-                                    <input type="text" class="form-control bank_name_wrapper" name="bank_name" id="bank_name"
-                                           placeholder="Bank Name">
+                                   
+                                    <select class="form-control bank_name_wrapper select-bank" name="bank_name" id="bank_name" aria-placeholder="Choose Bank">
+                                        <option>Choose Bank</option>
+                                        <option>GTB</option>
+                                        <option>First Bank</option>
+                                        <option>UBA</option>
+                                    </select>
                                 </div>
                                 <div class="bank_section">
                                     <p class="m0 bank-name">
@@ -58,6 +64,7 @@
                                 </div>
                                 <button type="submit" class="btn-send">Submit <span class="sub-btn-kyc"><img
                                                 src="/assets/images/submit.svg" alt=""></span></button>
+                                </div>
                             </div>
                         </form>
                     </div>
