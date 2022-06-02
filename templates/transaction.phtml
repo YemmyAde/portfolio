@@ -24,70 +24,10 @@
                                 <th scope="col" class="blt"></th>
                             </tr>
                             </thead>
-                            <tbody class="bl">
-                                <tr class="bl">
-                                    <th class="bl">Fund Conversion</th>
-                                    <td class="bl">01 Apr 2022</td>
-                                    <td class="bl">N 17,250</td>
-                                    <td class="bl"><span class="successful">Successful</span></td>
-                                    <!-- <td class="bl"><img src="/assets/images/time.svg" alt=""><span class="time-text">--:--</span></td> -->
-                                </tr>
-                                <tr class="bl">
-                                    <th class="bl">Fund Conversion</th>
-                                    <td class="bl">01 Apr 2022</td>
-                                    <td class="bl">N 17,250</td>
-                                    <td class="bl"><span class="failed">Failed</span></td>
-                                    <!-- <td class="bl"><img src="/assets/images/time.svg" alt=""><span class="time-text">--:--</span></td> -->
-                                </tr>
-                                <tr class="bl">
-                                    <th class="bl">Fund Conversion</th>
-                                    <td class="bl">01 Apr 2022</td>
-                                    <td class="bl">N 17,250</td>
-                                    <td class="bl"><span class="pending">Pending</span></td>
-                                    <!-- <td class="bl"><img src="/assets/images/time.svg" alt=""><span class="time-text">12:04</span></td> -->
-                                </tr>
-                                <tr class="bl">
-                                    <th class="bl">Fund Conversion</th>
-                                    <td class="bl">01 Apr 2022</td>
-                                    <td class="bl">N 17,250</td>
-                                    <td class="bl"><span class="successful">Successful</span></td>
-                                    <!-- <td class="bl"><img src="/assets/images/time.svg" alt=""><span class="time-text">--:--</span></td> -->
-                                </tr>
-                                <tr class="bl">
-                                    <th class="bl">Fund Conversion</th>
-                                    <td class="bl">01 Apr 2022</td>
-                                    <td class="bl">N 17,250</td>
-                                    <td class="bl"><span class="failed">Failed</span></td>
-                                    <!-- <td class="bl"><img src="/assets/images/time.svg" alt=""><span class="time-text">--:--</span></td> -->
-                                </tr>
-                                <tr class="bl">
-                                    <th class="bl">Fund Conversion</th>
-                                    <td class="bl">01 Apr 2022</td>
-                                    <td class="bl">N 17,250</td>
-                                    <td class="bl"><span class="pending">Pending</span></td>
-                                    <!-- <td class="bl"><img src="/assets/images/time.svg" alt=""><span class="time-text">12:04</span></td> -->
-                                </tr>
-                                <tr class="bl">
-                                    <th class="bl">Fund Conversion</th>
-                                    <td class="bl">01 Apr 2022</td>
-                                    <td class="bl">N 17,250</td>
-                                    <td class="bl"><span class="successful">Successful</span></td>
-                                    <!-- <td class="bl"><img src="/assets/images/time.svg" alt=""><span class="time-text">--:--</span></td> -->
-                                </tr>
-                                <tr class="bl">
-                                    <th class="bl">Fund Conversion</th>
-                                    <td class="bl">01 Apr 2022</td>
-                                    <td class="bl">N 17,250</td>
-                                    <td class="bl"><span class="failed">Failed</span></td>
-                                    <!-- <td class="bl"><img src="/assets/images/time.svg" alt=""><span class="time-text">--:--</span></td> -->
-                                </tr>
-                                <tr class="bl">
-                                    <th class="bl">Fund Conversion</th>
-                                    <td class="bl">01 Apr 2022</td>
-                                    <td class="bl">N 17,250</td>
-                                    <td class="bl"><span class="pending">Pending</span></td>
-                                    <!-- <td class="bl"><img src="/assets/images/time.svg" alt=""><span class="time-text">12:04</span></td> -->
-                                </tr>
+                            <tbody class="bl item_listing">
+                            <tr>
+                                <td colspan="9" class="text-center">Loading...</td>
+                            </tr>
                             </tbody>
                         </table>
                     </div>
@@ -108,6 +48,7 @@
 </div>
 <?php include 'templates/footer.phtml'; ?>
 <script>
+
     $('.arrow-right').click(function(e){
         e.preventDefault();
         $(this).hide();
@@ -146,4 +87,16 @@
         $('.arrow-right-later').show();
         $('.sendreq-btn').hide(150);
     })
+    function getData(){
+        $.ajax({
+            url: "/ajax/get_transaction",
+            data:{},
+            method: "POST",
+            cache:false,
+            dataType:"html"
+        }).done(function(data){
+            $(".item_listing").html(data);
+        });
+    }
+    getData();
 </script>

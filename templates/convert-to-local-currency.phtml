@@ -82,7 +82,9 @@
 
             return
         }
-        window.location.href = "/bank-transfer?q=" + $('#residing_method').val() +"&am="+ $('#entered_currency').val() + "&eq="+convertCurrency($('#entered_currency').val(), $('#price_to').val());
+        let sign = $("#price_to option:selected").text().replace(' USD','').replace(' GBP','').replace(' EUR','');
+        sign =encode( $.trim(sign))
+       window.location.href = "/bank-transfer?q=" + encode( $('#residing_method').val()) +"&am="+encode( $('#entered_currency').val()) + "&eq="+encode(String(convertCurrency($('#entered_currency').val(), $('#price_to').val())))+ '&s='+sign;
     });
     $('#price_to').on('change', function () {
         let exchangeRate = $('#price_to').val();

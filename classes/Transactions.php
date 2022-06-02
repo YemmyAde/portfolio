@@ -20,4 +20,24 @@ class Transactions {
             return false;
         }
     }
+    public static function get($data){
+        global $DB;
+        $sql = "SELECT * FROM transactions WHERE 1";
+        if($data['id']!=''){
+            $sql .=" AND user_id = '".$data['id']."'";
+        }
+        $stmt = $DB->prepare($sql);
+        try {
+            $stmt->execute([]);
+            $row = $stmt->fetchAll();
+            if(!$row){
+                return false;
+            }else{
+                return $row;
+            }
+        } catch (Exception $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
 }

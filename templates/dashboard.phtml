@@ -156,6 +156,6 @@
         e.preventDefault();
         let exchangeRate = $('#price_to').val();
         let input = $('#entered_currency').val();
-        window.location.href = '/convert-to-local-currency?am=' + input + "&eq=" + convertCurrency(input, exchangeRate);
+        window.location.href = '/convert-to-local-currency?am=' + encode(input) + "&eq=" + encode(String(convertCurrency(input, exchangeRate)));
     })
 </script>

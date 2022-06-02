@@ -22,7 +22,7 @@ if ($kyc_info) {
     $res = "2";
 }
 
-$amount = (isset($_REQUEST['am'])) ? $_REQUEST['am']:"";
-$equivalent = (isset($_REQUEST['eq'])) ? $_REQUEST['eq']:"0";
+$amount = (isset($_REQUEST['am'])) ? base64_decode($_REQUEST['am']):"";
+$equivalent = (isset($_REQUEST['eq'])) ?base64_decode( $_REQUEST['eq']):"0";
 include 'templates/header.phtml';
 include 'templates/convert-to-local-currency.phtml';
