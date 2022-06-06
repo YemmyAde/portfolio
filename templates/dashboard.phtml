@@ -6,7 +6,7 @@
             <div class="col-md-9 ceda-wrapper bg-right col-9-ceda">
                 <div class="content-wrapper pt150">
                     <div class="right-header">
-                        <div class="user-name"><span class="welcome">Hi,</span> <?= $_SESSION['name'] ?>! </div>
+                        <div class="user-name"><span class="welcome">Hi,</span> <?= $_SESSION['name'] ?>!</div>
                     </div>
 
                 </div>
@@ -14,21 +14,22 @@
                 <div class="content-wrapper bottom-content">
 
 
-
                     <div class="trans-box">
                         <div class="trans-box-left">
                             <div class="inner-left">
-                            <div class="pending-left">Pending Transaction <span class="in-naira-left">(In Naira)</span></div>
-                            <div class="timer"><Span><img src="/assets/images/time.svg" alt=""></Span> 00:04:04</div>
+                                <div class="pending-left">Pending Transaction <span
+                                            class="in-naira-left">(In <?=ucfirst( $_SESSION['currency'])?>)</span></div>
+                                <div class="timer"><Span><img src="/assets/images/time.svg" alt=""></Span> <span id="clock"></span>
+                                </div>
                             </div>
 
-                            <div class="trans-price-left">₦ 585,200</div>
-                         
+                            <div class="trans-price-left"><?=$_SESSION['currency_sign']?> 585,200</div>
+
                         </div>
 
                         <div class="trans-box-right">
-                        <div class="total" >Total Transaction <span class="in-naira-right">(In Naira)</span></div>
-                        <div class="trans-price-right">₦ 585,200</div>
+                            <div class="total">Total Transaction <span class="in-naira-right">(In <?=ucfirst( $_SESSION['currency'])?>)</span></div>
+                            <div class="trans-price-right"><?=$_SESSION['currency_sign']?> <?=number_format($transactions['total'])?></div>
                         </div>
                     </div>
 
@@ -37,22 +38,23 @@
                         <div class="border-header"></div>
                         <div class="rate-row">
                             <?php foreach ($exchange_rates as $exchange_rate) { ?>
-                            <div class="single-rate">
-                                1 <?= $exchange_rate['currency_from'] ?> <span class="divider"><img src="/assets/images/<?= $exchange_rate['currency_from_iso'] ?>.svg" alt=""></span>
-                                <span class="price"><?= $exchange_rate['currency_to_sign'] ?><?= $exchange_rate['ceda_rate'] ?></span>
-                            </div>
+                                <div class="single-rate">
+                                    1 <?= $exchange_rate['currency_from'] ?> <span class="divider"><img
+                                                src="/assets/images/<?= $exchange_rate['currency_from_iso'] ?>.svg"
+                                                alt=""></span>
+                                    <span class="price"><?= $exchange_rate['currency_to_sign'] ?><?= $exchange_rate['ceda_rate'] ?></span>
+                                </div>
                             <?php } ?>
-                           <!-- <div class="single-rate">
-                                1 GBP <span class="divider"><img src="/assets/images/uk.svg" alt=""></span> <span class="price">₦767</span>
-                            </div>
-                            <div class="single-rate">
-                                1 EUR <span class="divider"><img src="/assets/images/eu.svg" alt=""></span> <span class="price">₦645</span>
-                            </div>-->
+                            <!-- <div class="single-rate">
+                                 1 GBP <span class="divider"><img src="/assets/images/uk.svg" alt=""></span> <span class="price">₦767</span>
+                             </div>
+                             <div class="single-rate">
+                                 1 EUR <span class="divider"><img src="/assets/images/eu.svg" alt=""></span> <span class="price">₦645</span>
+                             </div>-->
                         </div>
 
 
                     </div>
-
 
 
                     <form action="" method="post">
@@ -75,7 +77,8 @@
                                     </select>-->
                                     <select name="countries" id="price_to" class="price_to">
                                         <?php foreach ($exchange_rates as $exchange_rate) { ?>
-                                            <option value="<?= $exchange_rate['ceda_rate'] ?>"><?= $exchange_rate['currency_from_sign'] ?>&emsp;<?= $exchange_rate['currency_from'] ?></option>
+                                            <option value="<?= $exchange_rate['ceda_rate'] ?>">
+                                                <?= $exchange_rate['currency_from_sign'] ?>&emsp;<?= $exchange_rate['currency_from'] ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
@@ -88,7 +91,9 @@
                                         <option value="POU">POU</option>
                                         <option value="EU">EU</option>
                                     </select>-->
-                                    <div class="price_to" id="price_to"><span><img src="/assets/images/<?= $_SESSION['iso'] ?>.svg" alt="" class="converted_to_img"></span><span><?= $_SESSION['currency'] ?></span>
+                                    <div class="price_to" id="price_to"><span><img
+                                                    src="/assets/images/<?= $_SESSION['iso'] ?>.svg" alt=""
+                                                    class="converted_to_img"></span><span><?= $_SESSION['currency'] ?></span>
                                     </div>
                                 </div>
                             </div>
@@ -102,36 +107,18 @@
                         <div class="ceda-rate">Transactions</div>
                         <table class="table  table-borderless">
                             <thead>
-                                <!-- <tr>
+                            <tr>
                                 <th scope="col" class="blt">Description</th>
                                 <th scope="col" class="blt">Date</th>
                                 <th scope="col" class="blt">Amount</th>
                                 <th scope="col" class="blt">Status</th>
                                 <th scope="col" class="blt"></th>
-                            </tr> -->
+                            </tr>
                             </thead>
-                            <tbody class="bl">
-                                <tr class="bl">
-                                    <th class="bl">Fund Conversion</th>
-                                    <td class="bl">01 Apr 2022</td>
-                                    <td class="bl">N 17,250</td>
-                                    <td class="bl"><span class="successful">Successful</span></td>
-                                    <td class="bl"><img src="/assets/images/time.svg" alt=""><span class="time-text">--:--</span></td>
-                                </tr>
-                                <tr class="bl">
-                                    <th class="bl">Fund Conversion</th>
-                                    <td class="bl">01 Apr 2022</td>
-                                    <td class="bl">N 17,250</td>
-                                    <td class="bl"><span class="failed">Failed</span></td>
-                                    <td class="bl"><img src="/assets/images/time.svg" alt=""><span class="time-text">--:--</span></td>
-                                </tr>
-                                <tr class="bl">
-                                    <th class="bl">Fund Conversion</th>
-                                    <td class="bl">01 Apr 2022</td>
-                                    <td class="bl">N 17,250</td>
-                                    <td class="bl"><span class="pending">Pending</span></td>
-                                    <td class="bl"><img src="/assets/images/time.svg" alt=""><span class="time-text">12:04</span></td>
-                                </tr>
+                            <tbody class="bl item_listing">
+                            <tr>
+                                <td colspan="9" class="text-center">Loading...</td>
+                            </tr>
                             </tbody>
                         </table>
                     </div>
@@ -142,20 +129,61 @@
 </div>
 <script>
     //convertCurrency('30','185.27')
-    $('#price_to').on('change', function() {
+    $('#price_to').on('change', function () {
         let exchangeRate = $('#price_to').val();
         let input = $('#entered_currency').val();
         $('#converted_price').html(numberWithCommas(convertCurrency(input, exchangeRate)));
     })
-    $('#entered_currency').keyup(function() {
+    $('#entered_currency').keyup(function () {
         let exchangeRate = $('#price_to').val();
         let input = $('#entered_currency').val();
         $('#converted_price').html(numberWithCommas(convertCurrency(input, exchangeRate)));
     })
-    $('.trans-btn').click(function(e) {
+    $('.trans-btn').click(function (e) {
         e.preventDefault();
         let exchangeRate = $('#price_to').val();
         let input = $('#entered_currency').val();
         window.location.href = '/convert-to-local-currency?am=' + encode(input) + "&eq=" + encode(String(convertCurrency(input, exchangeRate)));
-    })
+    });
+
+    function getData() {
+        $.ajax({
+            url: "/ajax/get_transaction",
+            data: {},
+            method: "POST",
+            cache: false,
+            dataType: "html"
+        }).done(function (data) {
+            $(".item_listing").html(data);
+        });
+    }
+
+    getData();
+    var countDownDate = new Date("2022-06-06 18:25:31").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Output the result in an element with id="demo"
+        document.getElementById("clock").innerHTML = hours + "h "
+            + minutes + "m " + seconds + "s ";
+
+        // If the count down is over, write some text
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED";
+        }
+    }, 1000);
 </script>

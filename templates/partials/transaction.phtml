@@ -1,12 +1,26 @@
-<?php if ($transactions!='') { ?>
-    <tr class="bl">
-        <th class="bl">Fund Conversion</th>
-        <td class="bl">01 Apr 2022</td>
-        <td class="bl">N 17,250</td>
-        <td class="bl"><span class="successful">Successful</span></td>
-        <!-- <td class="bl"><img src="/assets/images/time.svg" alt=""><span class="time-text">--:--</span></td> -->
-    </tr>
-<?php } else { ?>
+<?php if ($transactions != '') {
+    foreach ($transactions as $transaction) {
+        print_r($transaction);
+        ?>
+
+        <tr class="bl">
+            <th class="bl"><?= $transaction['description'] ?></th>
+            <td class="bl"><?= date("j F Y", strtotime($transaction['transaction_date'])) ?></td>
+            <td class="bl"><?= $_SESSION['currency_sign'] ?> <?= number_format($transaction['amount_to']) ?></td>
+            <?php if ($transaction['status'] == 'Successful') { ?>
+                <td class="bl"><span class="successful">Successful</span></td>
+            <?php } ?>
+
+            <?php if ($transaction['status'] == 'Pending') { ?>
+                <td class="bl"><span class="pending">Pending</span></td>
+            <?php } ?>
+
+            <?php if ($transaction['status'] == 'Failed') { ?>
+                <td class="bl"><span class="failed">Failed</span></td>
+            <?php } ?>
+        </tr>
+    <?php }
+} else { ?>
     <tr>
         <td colspan="9" class="text-center">No data found</td>
     </tr>

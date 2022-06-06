@@ -1,6 +1,6 @@
 <?php
 session_start();
-$title = "transaction";
+$title = "Transaction";
 require 'config/config.php';
 
 if($_SESSION['id']==""){

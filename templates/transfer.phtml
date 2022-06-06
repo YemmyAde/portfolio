@@ -44,7 +44,7 @@
                                             </div>
                                             <div class="data-wrapper">
                                                 <p class="info-title-convert">Total Value</p>
-                                                <p class="info-amount value-col"><?= $_SESSION['currency'] ?> <?= number_format($equivalent) ?></p>
+                                                <p class="info-amount value-col"><?= $_SESSION['currency_sign'] ?> <?= number_format($equivalent) ?></p>
                                             </div>
                                             <div class="data-wrapper">
                                                 <p class="info-title-convert">Status</p>
@@ -215,7 +215,7 @@
                                 <div class="trans-id-wrapper">
                                     <div class="trans-id">
                                         <div class="id-title">Input Transaction ID</div>
-                                        <input type="text" class="id-input" name="id-input">
+                                        <input type="text" class="id-input" name="trans_id">
                                     </div>
                                 </div>
                                 <div class="gateway-btn-wrapper mlr-55 jc">
@@ -282,6 +282,8 @@
         if(res.message!=undefined) {
             $('#snackbar').html(res.message);
             showToast();
+            $('#transaction_form').hide();
+            $('.complete-trans').show();
             return;
         }
     }

@@ -1,4 +1,5 @@
 <?php
+session_start();
 require '../config/config.php';
 
 $data =[
@@ -6,5 +7,5 @@ $data =[
 ];
 
 $transactions = Transactions::get($data);
-print_r($transactions);
+
 include('../templates/partials/transaction.phtml');
