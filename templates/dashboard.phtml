@@ -17,19 +17,22 @@
                     <div class="trans-box">
                         <div class="trans-box-left">
                             <div class="inner-left">
-                                <div class="pending-left">Pending Transaction <span
-                                            class="in-naira-left">(In <?=ucfirst( $_SESSION['currency'])?>)</span></div>
-                                <div class="timer"><Span><img src="/assets/images/time.svg" alt=""></Span> <span id="clock"></span>
+                                <div class="pending-left">Last Pending Transaction <span
+                                            class="in-naira-left">(In <?= ucfirst($_SESSION['currency']) ?>)</span>
+                                </div>
+                                <div class="timer"><Span><img src="/assets/images/time.svg" alt=""></Span> <span
+                                            id="clock">00:00:00</span>
                                 </div>
                             </div>
 
-                            <div class="trans-price-left"><?=$_SESSION['currency_sign']?> 585,200</div>
+                            <div class="trans-price-left"><?= $_SESSION['currency_sign'] ?> <?= number_format($pending['amount_to']) ?></div>
 
                         </div>
 
                         <div class="trans-box-right">
-                            <div class="total">Total Transaction <span class="in-naira-right">(In <?=ucfirst( $_SESSION['currency'])?>)</span></div>
-                            <div class="trans-price-right"><?=$_SESSION['currency_sign']?> <?=number_format($transactions['total'])?></div>
+                            <div class="total">Total Successful Transactions <span
+                                        class="in-naira-right">(In <?= ucfirst($_SESSION['currency']) ?>)</span></div>
+                            <div class="trans-price-right"><?= $_SESSION['currency_sign'] ?> <?= number_format($total['total']) ?></div>
                         </div>
                     </div>
 
@@ -159,31 +162,34 @@
     }
 
     getData();
-    var countDownDate = new Date("2022-06-06 18:25:31").getTime();
+    let time = '<?=$date_time?>';
+    let now = '<?=$now?>';
+
+    var countDownTarget = new Date(time).getTime() + 60 * 60 * 1000;
+    if(time!=''){
+        showClock(countDownTarget);
+    }
+    // console.log(new Date('Wed Jun 8 2022 22:42:12').getTime());
+
+    function showClock(target) {
+        console.log('called')
+        const distance = target - new Date().getTime();
+        const hours = distance < 0 ? 0 : Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const mins = distance < 0 ? 0 : Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = distance < 0 ? 0 : Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Output the results
+        document.getElementById("clock").innerHTML = hours + ":" + mins + ":" + secs;
+        //  document.getElementById("seconds").innerHTML = secs;
+    }
+
+
 
     // Update the count down every 1 second
-    var x = setInterval(function() {
-
-        // Get today's date and time
-        var now = new Date().getTime();
-
-        // Find the distance between now and the count down date
-        var distance = countDownDate - now;
-
-        // Time calculations for days, hours, minutes and seconds
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        // Output the result in an element with id="demo"
-        document.getElementById("clock").innerHTML = hours + "h "
-            + minutes + "m " + seconds + "s ";
-
-        // If the count down is over, write some text
-        if (distance < 0) {
+    var x = setInterval(function () {
+        showClock(countDownTarget);
+        if (countDownTarget - new Date().getTime() < 0) {
             clearInterval(x);
-            document.getElementById("demo").innerHTML = "EXPIRED";
         }
     }, 1000);
 </script>

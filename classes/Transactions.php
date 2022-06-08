@@ -1,6 +1,9 @@
 <?php
-class Transactions {
-    public static function addTransaction($data ) {
+
+class Transactions
+{
+    public static function addTransaction($data)
+    {
         global $DB;
         $keys_array = array();
         $values_array = array();
@@ -20,18 +23,20 @@ class Transactions {
             return false;
         }
     }
-    public static function updateTransaction( $data ) {
+
+    public static function updateTransaction($data)
+    {
         global $DB;
         $fields = array();
 
         foreach ($data as $key => $value) {
-            if ($key=='token') {
+            if ($key == 'token') {
                 continue;
             }
 
-            $fields[] = $key ."='".str_replace("'", "\'", $value)."'";
+            $fields[] = $key . "='" . str_replace("'", "\'", $value) . "'";
         }
-        $sql  = "UPDATE transactions SET ".implode(',', $fields)." WHERE id = '".$data['id']."'";
+        $sql = "UPDATE transactions SET " . implode(',', $fields) . " WHERE id = '" . $data['id'] . "'";
         //echo $sql;
         $stmt = $DB->prepare($sql);
         try {
@@ -42,20 +47,22 @@ class Transactions {
 
         return true;
     }
-    public static function get($data){
+
+    public static function get($data)
+    {
         global $DB;
         $sql = "SELECT * FROM transactions WHERE 1";
-        if($data['id']!=''){
-            $sql .=" AND user_id = '".$data['id']."'";
+        if ($data['id'] != '') {
+            $sql .= " AND user_id = '" . $data['id'] . "'";
         }
-       // echo $sql;
+        // echo $sql;
         $stmt = $DB->prepare($sql);
         try {
             $stmt->execute([]);
             $row = $stmt->fetchAll();
-            if(!$row){
+            if (!$row) {
                 return false;
-            }else{
+            } else {
                 return $row;
             }
         } catch (Exception $e) {
@@ -63,20 +70,46 @@ class Transactions {
             return false;
         }
     }
-    public static function getTotalTransactions($data){
+
+    public static function getSumOfTransactions($data)
+    {
         global $DB;
         $sql = "SELECT SUM(amount_to) as total FROM transactions WHERE 1";
-        if($data['id']!=''){
-            $sql .=" AND user_id = '".$data['id']."'";
+        if ($data['id'] != '') {
+            $sql .= " AND user_id = '" . $data['id'] . "'";
         }
-       // echo $sql;
+        if ($data['status'] != '') {
+            $sql .= " AND status = '" . $data['status'] . "'";
+        }
+        //echo $sql;
         $stmt = $DB->prepare($sql);
         try {
             $stmt->execute([]);
             $row = $stmt->fetch();
-            if(!$row){
+            if (!$row) {
                 return false;
-            }else{
+            } else {
+                return $row;
+            }
+        } catch (Exception $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
+
+    public static function lastPendingTransaction($id)
+    {
+        global $DB;
+        $sql = "SELECT * FROM transactions WHERE user_id ='" . $id . "' AND status= 'Pending' ORDER BY id ASC LIMIT 1";
+        $stmt = $DB->prepare($sql);
+        //echo $sql;
+        try {
+            $stmt->execute([]);
+            $row = $stmt->fetch();
+            if (!$row) {
+                return false;
+            } else {
+
                 return $row;
             }
         } catch (Exception $e) {

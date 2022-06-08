@@ -262,6 +262,11 @@
 
     $('#transaction_form').on('submit',function (e){
         e.preventDefault();
+        if($('#file').val()=='' && $('.id-input').val()==''){
+            $('#snackbar').html('Please add transaction image or transaction ID');
+            showToast();
+            return;
+        }
         $(this).ajaxSubmit({
             //	target: '#output',
             dataType:  'json',
