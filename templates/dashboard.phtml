@@ -172,13 +172,22 @@
     // console.log(new Date('Wed Jun 8 2022 22:42:12').getTime());
 
     function showClock(target) {
-        console.log('called')
         const distance = target - new Date().getTime();
-        const hours = distance < 0 ? 0 : Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const mins = distance < 0 ? 0 : Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const secs = distance < 0 ? 0 : Math.floor((distance % (1000 * 60)) / 1000);
+        let hours = distance < 0 ? 0 : Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let mins = distance < 0 ? 0 : Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        let secs = distance < 0 ? 0 : Math.floor((distance % (1000 * 60)) / 1000);
 
         // Output the results
+        if(isNaN(hours) ){
+            hours = '00';
+        }
+
+        if(isNaN(mins) ){
+            mins = '00'
+        }
+        if(isNaN(secs) ){
+            secs ='00'
+        }
         document.getElementById("clock").innerHTML = hours + ":" + mins + ":" + secs;
         //  document.getElementById("seconds").innerHTML = secs;
     }
