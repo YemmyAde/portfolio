@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="702eea54-ccff-406c-a6cf-7210aed0e7f2" name="JoinCeda" url="http://joinceda.com">
-        <fileTransfer host="joinceda.com" port="21">
+      <webServer id="702eea54-ccff-406c-a6cf-7210aed0e7f2" name="JoinCeda" url="http://ftp.cedamoney.com">
+        <fileTransfer host="ftp.cedamoney.com" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
