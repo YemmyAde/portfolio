@@ -5,7 +5,7 @@
       <paths name="JoinCeda">
         <serverdata>
           <mappings>
-            <mapping deploy="/joinceda.com/public_html" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/cedamoney.com/public_html" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
