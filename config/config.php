@@ -17,9 +17,9 @@ foreach (glob(dirname(__FILE__) ."/../classes/*.php") as $filename) {
     include $filename;
 }
 
-$username='u5h4xv3u9cjon';
-$password='1q]x1i1ctd)2';
-$database='dbuc8comjcdvge';
+$username='uhy0thqmh3rgd';
+$password='61h%r4r117%(';
+$database='dbaqyobxxpnqai';
 $host='localhost';
 $charset = 'utf8';
 

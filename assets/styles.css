@@ -21,21 +21,23 @@
 
 /* @font-face {
     font-family: Sora;
-    src: url(/brace/ceda/assets/font/sora/Sora-Bold.ttf);
+    src: url(/brace/joinceda/assets/font/sora/Sora-Bold.ttf);
 }
 
 @font-face {
     font-family: Sora-regular;
-    src: url(/brace/ceda/assets/font/sora/Sora-Regular.ttf);
+    src: url(/brace/joinceda/assets/font/sora/Sora-Regular.ttf);
 }
 
 @font-face {
     font-family: Inter;
-    src: url(/brace/ceda/assets/font/inter/Inter-Regular.otf);
+    src: url(/brace/joinceda/assets/font/inter/Inter-Regular.otf);
 } */
 
 
-
+.hidden{
+    display: none;
+}
 
 /*toast*/
 .flexBar {
@@ -271,9 +273,8 @@ a.footer-nav {
 }
 .side-img{
     position: relative;
-    top: -40px !important;
-    left: -60px !important;
-    /* width: 150%; */
+    left: 13.5% !important; 
+    width: 120%;
 }
 
 .hero-description {
@@ -408,6 +409,11 @@ a.btn.btn-get-hiw-cta {
     position: relative;
     z-index: 5;
     top: -50px;
+}
+.convert-up-bus{
+    position: relative;
+    z-index: 5;
+    top: 0px !important;
 }
 .convert{
     background-color:#1E1E1E;
@@ -921,7 +927,8 @@ img.section-image {
 
 .left-col {
     background-color: #E1E3E4;
-    height: 220vh;
+    height: auto;
+    min-height: 100vh;
     padding: 195px 0px;
 }
 
@@ -1756,7 +1763,7 @@ button.btn-submit {
 }
 
 .selected {
-    background: #272727;
+    background: #5E3EEB;
  
 }
 
@@ -1994,11 +2001,15 @@ input[type=number]{
     border: 0;
     box-shadow: none;
 }
+.capita{
+    text-transform: capitalize !important; 
+}
 .price_to {
     font-size: 12px;
     width: 21%;
     padding: 4px;
     border: none;
+    
 }
 .price_to-convert {
     font-size: 12px;
@@ -2343,6 +2354,10 @@ th.bl {
     border-radius: 4px;
     width: 86px;
     height: 32px;
+}
+
+.sign-img{
+    width: 100px;
 }
 
 .change {
@@ -2944,7 +2959,7 @@ label.m0.label-kyc {
 }
 
 
-@media only screen and (max-width: 1460px) {
+@media only screen and (max-width: 1465px) {
 
     .price_to-convert{
         width: 26%;
@@ -2961,11 +2976,21 @@ label.m0.label-kyc {
     }
     .side-img{
        
-        left: -101px !important;
-        /* width: 150%; */
+        left: 6.5% !important; 
+        width: 120%;
+    }
+    
+    .convert-up{
+
+        top: 1px;
+    }
+    .why-choose-header{
+        margin-top: 52px;
+        font-size: 28px;
     }
 
 }
+
 @media only screen and (max-width: 1380px) {
 
     .price_to-convert{
@@ -2992,6 +3017,13 @@ label.m0.label-kyc {
     }
     .globe{
     width: 100%;
+}
+.convert-up{
+
+    top: -40px;
+}
+.left-col{
+    min-height: auto;
 }
 
 .float-r{
@@ -3027,9 +3059,11 @@ label.m0.label-kyc {
         background-image: none;
     }
     .side-img{
-        width: 127%;
-        margin-top: 20px;
-        left: -90px !important;
+        margin-top: 10px;
+        /* width: 127%; */
+        
+        left: 3% !important; 
+        width: 100%;
     }
     .convert-1, .convert-2 {
         border-right: none;
@@ -3119,6 +3153,11 @@ label.m0.label-kyc {
         box-sizing: border-box;
         align-items: center;
     }
+    .side-img{
+        margin-top: 10px;
+        left: 1% !important; 
+        width: 100%;
+    }
     .trans-box{
         display: block;
         
@@ -3187,8 +3226,11 @@ label.m0.label-kyc {
         padding-left: 40px !important;
         padding-right: 40px !important;
     }
-    .hl-150 {
+    /* .hl-150 {
         height: 200vh !important;
+    } */
+    .left-col{
+        min-height: auto;
     }
 }
 
@@ -3219,6 +3261,10 @@ label.m0.label-kyc {
     }
     .hl-150 {
         height: 40vh !important;
+        
+    }
+    .left-col{
+        min-height: auto;
     }
 
     .right-col {
@@ -3261,9 +3307,9 @@ label.m0.label-kyc {
 
     .side-img{
         display: block;
-        width: 120%;
-        margin-top: 20px;
-        left: -90px !important;
+        margin-top: 10px;
+        left: 1% !important; 
+        width: 100%;
     }
 
     .hero-section {
@@ -3350,9 +3396,9 @@ label.m0.label-kyc {
     }
 
     .side-img{
-        width: 130%;
+        width: 100%;
         margin-top: 20px;
-        left: -90px !important;
+        left: 0% !important;
     }
 
     .header-main-ceda {

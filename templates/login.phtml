@@ -4,9 +4,9 @@
         <div class="row login-row col-rev-ceda">
             <div class="col-md-5 left-col hl-150">
                 <div class="inner-col">
-                    <a href="/">  <img src="/assets/images/Ceda-Black.svg" alt="CEDA Logo"></a>
-                    <h2 class="left-content">Lorem ipsum is placeholder text commonly</h2>
-                    <p class="left-content-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <a href="/">  <img src="./assets/images/Ceda-Black.svg" class="sign-img" alt="CEDA Logo"></a>
+                    <h2 class="left-content">A new world of financial possibilities is within reach with Ceda.</h2>
+                    <p class="left-content-text">Enjoy seamless currency exchange and conduct international transactions with ease.</p>
                 </div>
             </div>
             <div class="col-md-7 right-col others">
@@ -71,10 +71,10 @@
                         // $(this).html(`<p>Register</p> &nbsp; <img src="/assets/images/register.png" alt="">`)
                         if(data.message!==undefined) {
                             $('#snackbar').html(data.message);
-                            showToast();
+                            // showToast();
                             setTimeout(function () {
                                 window.location.href="/dashboard";
-                            },3000)
+                            },1000)
 
                         }
                         else{

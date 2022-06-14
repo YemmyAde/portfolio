@@ -3,11 +3,9 @@
         <div class="row login-row col-rev-ceda">
             <div class="col-md-5 left-col hl-150">
                 <div class="inner-col">
-                    <a href="/"> <img src="/assets/images/Ceda-Black.svg" alt="CEDA Logo"></a>
-                    <h2 class="left-content">Lorem ipsum is placeholder text commonly</h2>
-                    <p class="left-content-text">Lorem Ipsum is simply dummy text of the printing and typesetting
-                        industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                        unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <a href="/"> <img src="/assets/images/Ceda-Black.svg" class="sign-img" alt="CEDA Logo"></a>
+                    <h2 class="left-content">A new world of financial possibilities is within reach with Ceda.</h2>
+                    <p class="left-content-text">Enjoy seamless currency exchange and conduct international transactions with ease.</p>
                 </div>
             </div>
             <div class="col-md-7 right-col">
@@ -28,7 +26,7 @@
                                         <label class="form-labels" for="name">Name</label>
                                         <input type="text" class="form-control input-login" id="name" name="name"
                                                required
-                                               placeholder="Full legal name as written on  ID card">
+                                               placeholder="Full legal name as written on ID card">
                                     </div>
                                 </div>
                             </div>
@@ -78,7 +76,7 @@
                                        placeholder="Min. of 8 characters">
                             </div>
                         </div>
-                        <div class="bellow-content-wrapper">
+                        <div class="bellow-content-wrapper hidden">
                             <p class="acc-type mb-0">What type of account do you own?</p>
                             <div class="below-content">
                                 <div class="type">
@@ -105,7 +103,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button class="btn-submit">Register &nbsp; <img src="/assets/images/register.png" alt="">
+                        <button class="btn-submit">Create my account &nbsp; <img src="/assets/images/register.png" alt="">
                         </button>
                         <div class="register-redirect">
                             Already have an account? <a href="/login">Login here</a>
@@ -119,26 +117,26 @@
 <?php include 'templates/footer.phtml'; ?>
 
 <script>
-    let type = ""
+    let type = "individual"
 
     function check(input) {
         type = input.value;
         console.log(type)
         let checkboxes = document.getElementsByClassName("checkbox-type");
 
-        for (let i = 0; i < checkboxes.length; i++) {
-            //uncheck all
-            if (checkboxes[i].checked == true) {
-                checkboxes[i].checked = false;
-            }
-        }
+        // for (let i = 0; i < checkboxes.length; i++) {
+        //     //uncheck all
+        //     if (checkboxes[i].checked == true) {
+        //         checkboxes[i].checked = false;
+        //     }
+        // }
 
-        //set checked of clicked object
-        if (input.checked == true) {
-            input.checked = false;
-        } else {
-            input.checked = true;
-        }
+        // //set checked of clicked object
+        // if (input.checked == true) {
+        //     input.checked = false;
+        // } else {
+        //     input.checked = true;
+        // }
     }
     var phone_number = window.intlTelInput(document.querySelector("#phone_number"), {
         separateDialCode: true,

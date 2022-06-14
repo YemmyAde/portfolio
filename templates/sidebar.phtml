@@ -18,7 +18,7 @@
                     <img class="nav-icons"
                          src="/assets/images/convert<?= ($title == 'Covert To Local Currency') ? '' : '-in' ?>.svg"
                          alt="convert-to-local-icon">
-                    <span class="<?= ($title == "Covert To Local Currency") ? 'sidebar-title-active' : 'sidebar-title' ?>">Convert to Local Currency</span>
+                    <span class="<?= ($title == "Covert To Local Currency") ? 'sidebar-title-active' : 'sidebar-title' ?>">Convert Money</span>
                 </a>
             </li>
             <li class="nav-item nav-li">
@@ -26,16 +26,16 @@
                     <img class="nav-icons"
                          src="/assets/images/dollar<?= ($title == 'Sell Digital Products') ? '' : '-in' ?>.svg"
                          alt="sell-digital-products-icon">
-                    <span class="<?= ($title == "Sell Digital Products") ? 'sidebar-title-active' : 'sidebar-title' ?>">Send Money</span>
+                    <span class="<?= ($title == "Sell Digital Products") ? 'sidebar-title-active' : 'sidebar-title' ?>">Intl. Bank Accounts <br> for Salary & Payments</span>
                     <span class="coming-soon">Coming Soon</span>
                 </a>
             </li>
-            <li class="nav-item nav-li">
-                <a href="/transaction" class="nav-link  sidebar-nav" aria-current="page">
+           <li class="nav-item nav-li">
+                <a href="/transaction" class="nav-link  sidebar-nav <?= ($title == "Transaction") ? 'selected' : '' ?>" aria-current="page">
                     <img class="nav-icons"
-                         src="/assets/images/transaction<?= ($title == 'transaction') ? '' : '-in' ?>.svg"
+                         src="/assets/images/transaction<?= ($title == 'Transaction') ? '' : '-in' ?>.svg"
                          alt="transactions-icon">
-                    <span class="<?= ($title == "transaction") ? 'sidebar-title-active' : 'sidebar-title' ?>">Transaction</span>
+                    <span class="<?= ($title == "Transaction") ? 'sidebar-title-active' : 'sidebar-title' ?>">Transactions</span>
 
                 </a>
             </li>
@@ -59,7 +59,7 @@
                 <a href="/logout" class="nav-link sidebar-nav aria-current="page">
                     <img class="nav-icons" src="/assets/images/logout.svg"
                          alt="setting-icon">
-                    <span class="sidebar-title">Log Out</span>
+                    <span class="sidebar-title">Log out</span>
                 </a>
             </li>
         </ul>
