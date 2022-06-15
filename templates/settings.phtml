@@ -21,20 +21,20 @@
                                     <p class="info-text"><?= $user['email'] ?></p>
                                     <p class="info-title">Email address</p>
                                 </div>
-                                <div class="edit-wrapper">
+                                <!-- <div class="edit-wrapper">
                                     <span class="change">Change</span>
                                     <span class="edit"><img src="/assets/images/edit.svg" alt=""/></span>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="info-detail mt16">
                                 <div class="info-detail-text">
                                     <p class="info-text"><?= $user['phone_number'] ?></p>
                                     <p class="info-title">Phone number</p>
                                 </div>
-                                <div class="edit-wrapper">
+                                <!-- <div class="edit-wrapper">
                                     <span class="change">Change</span>
                                     <span class="edit"><img src="/assets/images/edit.svg" alt=""/></span>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <p class="info mt40">Security</p>
@@ -44,7 +44,7 @@
                                     <p class="action-text">Update Password</p>
                                     <p class="action-sub">Change your old password to a new one</p>
                                 </div>
-                                <div class="edit-wrapper security">
+                                <div class="edit-wrapper security" id="changePass">
                                     <span class="change">Change password</span>
                                     <img src="/assets/images/off.svg" alt="" class="off" id="offPass">
                                     <img src="/assets/images/on.svg" alt="" class="on" id="onPass">
@@ -59,9 +59,9 @@
                                     </div>
                                     <div class="input-wrapper-settings">
                                         <input type="password" class="input-field" name="confirm_password"
-                                               id="confirm_password" placeholder="ConfConfirm Password"/>
+                                               id="confirm_password" placeholder="Confirm Password"/>
                                     </div>
-                                    <div class="upd-btn">Update Password</div>
+                                    <div class="upd-btn">Update </div>
                                 </div>
                             </div>
                             <div class="info-detail mt16">
@@ -76,7 +76,7 @@
                                     <p class="action-sub">Add an extra layer of security and protection to your
                                         account to protect it from unauthorized transactions</p>
                                 </div>
-                                <div class="edit-wrapper security">
+                                <div class="edit-wrapper security" id="changeAuth" >
                                     <span class="change">Enable Auth 2FA</span>
                                     <img src="/assets/images/off.svg" alt="" class="off" id="off2FA">
                                     <img src="/assets/images/on.svg" alt="" class="on" id="on2FA">
@@ -113,34 +113,46 @@
 
 <script>
     /*************Password****************/
-    $('#offPass').click(function () {
-        $('#onPass').show();
-        $(this).hide();
-        $('#showPassView').show(150)
+    $('#changePass').click(function () {
+
+        if($(this).children(".change").hasClass("active")){
+
+            $(this).children(".change").removeClass("active");
+            $('#offPass').show();
+            $('#onPass').hide();
+            $('#showPassView').hide(150)
+
+        } else{
+            $(this).children(".change").addClass("active");
+            $('#onPass').show();
+            $('#offPass').hide();
+            $('#showPassView').show(150)
+        }
+                   
     });
-    $('#onPass').click(function () {
-        $('#offPass').show();
-        $(this).hide();
-        $('#showPassView').hide(150)
-    });
+
+  
     /*************2FA****************/
-    $('#off2FA').click(function () {
-        $('#on2FA').show();
-        $(this).hide();
-        $('#show2FaView').show(150);
-        /*$('.enabled').show();
-        $('.disabled').hide();*/
 
-    });
-    $('#on2FA').click(function () {
-        $('#off2FA').show();
-        $(this).hide();
-        $('#show2FaView').hide(150)
 
-        $('.disabled').show();
-        $('.enabled').hide();
+    $('#changeAuth').click(function () {
 
-    });
+        if($(this).children(".change").hasClass("active")){
+
+            $(this).children(".change").removeClass("active");
+            $('#on2FA').hide();
+            $('#off2FA').show();
+            $('#show2FaView').hide(150);
+
+        } else{
+            $(this).children(".change").addClass("active");
+            $('#on2FA').show();
+            $('#off2FA').hide();
+            $('#show2FaView').show(150);
+        }
+                
+        });
+
     //update Password
 
     $('.upd-btn').click(function (e) {
