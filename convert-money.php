@@ -1,6 +1,6 @@
 <?php
 session_start();
-$title = 'Covert To Local Currency';
+$title = 'Convert Money';
 require 'config/config.php';
 if($_SESSION['id']==""){
     header('Location:/login');
@@ -25,4 +25,4 @@ if ($kyc_info) {
 $amount = (isset($_REQUEST['am'])) ? base64_decode($_REQUEST['am']):"";
 $equivalent = (isset($_REQUEST['eq'])) ?base64_decode( $_REQUEST['eq']):"0";
 include 'templates/header.phtml';
-include 'templates/convert-to-local-currency.phtml';
+include 'templates/convert-money.phtml';
