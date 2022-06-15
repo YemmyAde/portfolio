@@ -1,29 +1,19 @@
 <section class="hero-section">
     <div class="hero-bg">
         <div class="container hero-container">
-            <div class="row">
+            <div class="row hero-row">
                 <div class="col-md-6 hero-content">
 
-                    <h2 class="hero-heading">Send money anywhere in the world instantly!</h2>
+                    <h2 class="hero-heading">Simplify Money for Freelancers</h2>
                     <p class="hero-description">Get the best exchange rates on Ceda and change your money easily. Send
                         and receive money anywhere in the world at your convenience. </p>
-
                     <div class="join-ceda">
                         <a href="/register" class="btn btn-get-start-cta">Get started today</a>
-                        <a href="/register" class="btn btn-get-hiw-cta">Login into account <img
-                                    src="./assets/images/arrow.png" class="btn-arrow" alt="CEDA arrow"></a>
-                    </div>
-
-                    <p class="today-rate">Today’s Rate:&nbsp;<span class="title-val">₦610</span></p>
-                    <div class="hero-flags">
-                        <img class="hero-flag-img" src="/assets/images/usa.svg" alt="">
-                        <img class="hero-flag-img" src="/assets/images/uk.svg" alt="">
-                        <img class="hero-flag-img" src="/assets/images/eu.svg" alt="">
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 hero-content">
 
-                    <img class="side-img" src="/assets/images/hero-new-img.svg" alt="CEDA Banner">
+                    <img class="side-img" src="/assets/images/hero-img-facelift.svg" alt="CEDA Banner">
 
                 </div>
             </div>
@@ -34,115 +24,54 @@
 
 <!------------Convert Section------------->
 
-<section class="convert convert-up">
-
+<section class="convert">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-4">
-                <img class="convert-imgs" src="/assets/images/convert-name.svg" alt="">
-            </div>
-            <div class="col-lg-4">
-                <img class="convert-imgs" src="/assets/images/convert-payoneer.svg" alt="">
-            </div>
-            <div class="col-lg-4">
-                <img class="convert-imgs" src="/assets/images/abroad.svg" alt="">
+        <div class="convert-wrapper-main">
+            <div class="row row-sb">
+                <div class="convert-content">
+                    <p class="mb0 convert-title">Convert</p>
+                    <div class="dropdown show dropdown-convert-wrapper">
+                        <a class="btn btn-secondary dropdown-toggle dropdown-btn-convert" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="/assets/images/usa.svg" alt="">
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+                    <div class="convert-right-content">
+                        <input type="number" class="price-from" id="entered_currency">
+                        <img src="/assets/images/line-convert.svg" alt="">
+                        <p class="mb0 currency-name">USD</p>
+                    </div>
+                </div>
+                <div class="convert-content">
+                    <p class="mb0 convert-title">Value</p>
+                    <div class="dropdown show dropdown-convert-wrapper">
+                        <a class="btn btn-secondary dropdown-toggle dropdown-btn-convert" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="/assets/images/usa.svg" alt="">
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+                    <div class="convert-right-content">
+                        <input type="number" class="price-from" id="entered_currency">
+                        <img src="/assets/images/line-convert.svg" alt="">
+                        <p class="mb0 currency-name">USD</p>
+                    </div>
+                </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-
-<!------------WHy choose Ceda------------->
-<section class="why-choose">
-    <div class="container">
-        <h3 class="why-choose-header">Why Choose Ceda?</h3>
-
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="why-col-1">
-                    <div class="why-title">Simplified Conversion mode</div>
-                    <p class="why-text">It’s one simple platform for Currency exchange, Foreign Account,
-                        Sell digital service or product Internationally, Micro Business Account,
-                        Micro Business POS and much more.
-                    </p>
-
-                    <div class="why-1 why-top">
-                        <div class="why-1a">
-                            <p class="why-1-title">Amount to convert</p>
-                            <div class="flex">
-                                <input type="number" class="why-1-amount" value="30" id="entered_currency">
-
-                                <div class="why-1-select">
-                                    <div class="why-1-currency"><img src="./assets/images/us-flag.png" class="flags"
-                                                                     alt=""> <span class="why-currency">USD </span><img
-                                                src="./assets/images/arrow-down.png" alt="" class="why-arrow-down">
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="why-1b">
-                            <p class="why-1-title">Equivalent Value</p>
-                            <div class="flex">
-                                <input type="number" class="why-1-amount" value="17250" id="entered_currency">
-                                <div class="why-1-select">
-                                    <div class="why-1-currency"><img src="./assets/images/nigeria-flag.png"
-                                                                     class="flags" alt=""> <span class="why-currency"> NGN</span>
-                                        <img src="./assets/images/arrow-down.png" alt="" class="why-arrow-down"></div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <button class="btn-con-trans"><a href="">Continue Transaction</a></button>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="why-col-2">
-                    <div class="why-title">Stressfree Payoneer Withdrawal</div>
-                    <p class="why-text">It’s one simple platform for Currency exchange, Foreign Account,
-                        Sell digital service or product Internationally, Micro Business Account,
-                        Micro Business POS and much more.
-                    </p>
-
-                    <div class="why-2a why-top">
-                        <div><img src="./assets/images/Payoneer.png" alt=""><span class="why-p">Payoneer Account</span>
-                        </div>
-
-                        <h2 class="why-2-amount">$300</h2>
-                    </div>
-
-                    <div class="why-2-down">
-                        <img src="./assets/images/down-arrow.png" alt="">
-                    </div>
-
-                    <div class="why-2a">
-                        <div><img src="./assets/images/ceda.png" alt=""></div>
-
-                        <h2 class="why-2-amount">$300</h2>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-lg-4">
-                <div class="why-col-3">
-                    <div class="why-title">Global Transfer Made Easy</div>
-                    <p class="why-text">It’s one simple platform for Currency exchange, Foreign Account,
-                        Sell digital service or product Internationally, Micro Business Account,
-                        Micro Business POS and much more.
-                    </p>
-
-                    <div class="why-3 why-top">
-                        <img src="./assets/images/globe.png" class="globe" alt="">
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-</section>
 <!------------Faq section ------------->
 <section class="faq-sec">
     <div class="container">

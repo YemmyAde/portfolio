@@ -15,4 +15,15 @@ class CedaExchangeRate {
             return false;
         }
     }
+   /* public static function get(){
+        global $DB;
+        $sql = "SELECT * FROM `from_currency_details`";
+        $stmt = $DB->prepare($sql);
+        try {
+            $stmt->execute([]);
+            return $stmt->fetchAll();
+        }catch (Exception $e){
+            return false;
+        }
+    }*/
 }
