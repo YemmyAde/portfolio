@@ -1,9 +1,8 @@
 <section class="hero-section">
     <div class="hero-bg">
         <div class="container hero-container">
-            <div class="row hero-row">
+            <div class="hero-row">
                 <div class="col-md-6 hero-content">
-
                     <h2 class="hero-heading">Simplify Money for Freelancers</h2>
                     <p class="hero-description">Get the best exchange rates on Ceda and change your money easily. Send
                         and receive money anywhere in the world at your convenience. </p>
@@ -11,10 +10,8 @@
                         <a href="/register" class="btn btn-get-start-cta">Get started today</a>
                     </div>
                 </div>
-                <div class="col-md-6 hero-content">
-
+                <div class="col-md-6 hero-content hero-img-wrapper">
                     <img class="side-img" src="/assets/images/hero-img-facelift.svg" alt="CEDA Banner">
-
                 </div>
             </div>
         </div>
@@ -27,12 +24,13 @@
 <section class="convert">
     <div class="container">
         <div class="convert-wrapper-main">
-            <div class="row row-sb">
+            <div class="convert-row">
                 <div class="convert-content">
                     <p class="mb0 convert-title">Convert</p>
                     <div class="dropdown show dropdown-convert-wrapper">
-                        <a class="btn btn-secondary dropdown-toggle dropdown-btn-convert" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="/assets/images/usa.svg" alt="">
+                        <a class="btn btn-secondary dropdown-toggle dropdown-btn-convert mobile-view" href="#" role="button"
+                           id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="flag-landing" src="/assets/images/usa.svg" alt="">
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -42,16 +40,20 @@
                         </div>
                     </div>
                     <div class="convert-right-content">
-                        <input type="number" class="price-from" id="entered_currency">
-                        <img src="/assets/images/line-convert.svg" alt="">
+                        <!--<input type="number" class="price-from" id="entered_currency" value="1,000">-->
+                        <p class="price-from-landing mb0" id="entered_currency">1,000</p>
+                        <div class="line-convert">
+                            <img class="line-convert-img" src="/assets/images/line-convert.svg" alt="">
+                        </div>
                         <p class="mb0 currency-name">USD</p>
                     </div>
                 </div>
                 <div class="convert-content">
                     <p class="mb0 convert-title">Value</p>
                     <div class="dropdown show dropdown-convert-wrapper">
-                        <a class="btn btn-secondary dropdown-toggle dropdown-btn-convert" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="/assets/images/usa.svg" alt="">
+                        <a class="btn btn-secondary dropdown-toggle dropdown-btn-convert mobile-view" href="#" role="button"
+                           id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="flag-landing" src="/assets/images/ng.svg" alt="">
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -61,109 +63,208 @@
                         </div>
                     </div>
                     <div class="convert-right-content">
-                        <input type="number" class="price-from" id="entered_currency">
-                        <img src="/assets/images/line-convert.svg" alt="">
+                        <!--<input type="number" class="price-from" id="entered_currency" value="60,000">-->
+                        <p class="price-from-landing mb0" id="entered_currency">60,000</p>
+                        <div class="line-convert">
+                            <img class="line-convert-img" src="/assets/images/line-convert.svg" alt="">
+                        </div>
                         <p class="mb0 currency-name">USD</p>
                     </div>
                 </div>
+                <div class="todays-rate">
+                    <p class="today mb0">Today’s rate: </p>&nbsp;<p class="rate mb0">1.00 USD = 600 NGN</p><img
+                            src="/assets/images/i-landing.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<!------------Do section ------------->
+
+<section class="payments">
+    <div class="container">
+        <div class="convert-wrapper-main">
+            <div class="row">
+                <div class="col-md-4 convert-most-left mobile-view-payment">
+                    <div class="left-main">
+                        <div class="img-payment">
+                            <img src="/assets/images/bank-acc.svg" alt="">
+                        </div>
+                        <div class="below-text-payment">
+                            <p class="mb0">Intl. Bank Accounts <br> for Salary & Payment</p>
+                        </div>
+                    </div>
+                    <div class="right-main"></div>
+                </div>
+                <div class="col-md-4 text-center mobile-view-payment">
+                    <div class="img-payment">
+                        <img src="/assets/images/convert-money.svg" alt="">
+                    </div>
+                    <div class="below-text-payment">
+                        <p class="mb0">Convert Money <br>
+                            Simple and Easy</p>
+                    </div>
+                </div>
+                <div class="col-md-4 convert-most-left mobile-view-payment">
+                    <div class="convert-right"></div>
+                    <div class="convert-right-most">
+                        <div class="img-payment">
+                            <img src="/assets/images/convert-wise.svg" alt="">
+                        </div>
+                        <div class="below-text-payment">
+                            <p class="mb0">Convert Payoneer <br> or Wise funds</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<!------------Do section ------------->
 
+<section class="below-section">
+    <div class="container">
+        <div class="convert-wrapper-main">
+            <div class="row row-sb">
+                <div class="col-md-6">
+                    <p class="mb0 bellow-sec-heading">Reliable 24/7 Customer Support and Live Chat</p>
+                    <p class="mb0 bellow-sec-info">
+                        We provide dedicated customer support that you can rely on. Our live chat is open 24/7 and ready
+                        to
+                        respond to your queries. We will never ignore you or leave your messages hanging. Your queries
+                        are
+                        important to us and we will always resolve them.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <img src="/assets/images/reliable.svg" alt="" class="below-section-imgs">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!------------Do section ------------->
+
+<section class="below-section">
+    <div class="container">
+        <div class="convert-wrapper-main">
+            <div class="row row-sb">
+                <div class="col-md-6">
+                    <img src="/assets/images/payment.svg" alt="" class="below-section-imgs">
+                </div>
+                <div class="col-md-6 text-below-section">
+                    <p class="mb0 bellow-sec-heading">Intl. Bank Accounts for Salary & Payments</p>
+                    <p class="mb0 bellow-sec-info">
+                        Ceda provides an easy way for you to send money overseas. Transfer money seamlessly to anywhere
+                        in
+                        the world. No international money transfer hassles.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!------------Do section ------------->
+
+<section class="below-section">
+    <div class="container">
+        <div class="convert-wrapper-main">
+            <div class="row row-sb">
+                <div class="col-md-6">
+                    <p class="mb0 bellow-sec-heading">Stress-free Payoneer or Wise Funds Withdrawal</p>
+                    <p class="mb0 bellow-sec-info">
+                        With Ceda, you can change your Payoneer or Wise funds for local money at the most favourable
+                        rates.
+                        We offer the best exchange rates on the market. You never lose money when you change with us.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <img src="/assets/images/withdrawal.svg" alt="" class="below-section-imgs">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!------------Do section ------------->
+
+<section class="below-section">
+    <div class="container">
+        <div class="convert-wrapper-main">
+
+            <div class="row row-sb">
+                <div class="col-md-6">
+                    <img src="/assets/images/conversion.svg" alt="" class="below-section-imgs">
+                </div>
+                <div class="col-md-6 text-bellow-se text-below-section">
+                    <p class="mb0 bellow-sec-heading">Simplified Conversion Mode</p>
+                    <p class="mb0 bellow-sec-info">
+                        Our conversion algorithm makes it easy for you to change your money into any currency you want.
+                        Say
+                        goodbye to stress and annoying queues.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <!------------Faq section ------------->
 <section class="faq-sec">
     <div class="container">
-        <div class="faq" id="faq">
+        <div class="convert-wrapper-main">
+            <div class="faq" id="faq">
+                <p class="mb0 faq-title">Frequently Asked Questions</p>
+                <div class="show-faq">
+                    <div class="flex q">
+                        <p class="faqQues">How do I contact Ceda for support? </p>
+                        <i class="fa fa-plus plus icon-faq" aria-hidden="true"></i>
 
-
+                    </div>
+                    <div class="faqAns hide">
+                        <p class="show-data">Even though we’d hate to see you go, you can cancel your subscription at
+                            any
+                            time.
+                        </p>
+                    </div>
+                </div>
+            </div>
             <div class="show-faq">
                 <div class="flex q">
-                    <p class="faqQues">How long does it take to build a Product ? </p>
+                    <p class="faqQues">How long do international transfers take? </p>
                     <i class="fa fa-plus plus icon-faq" aria-hidden="true"></i>
-
-
                 </div>
-
-
                 <div class="faqAns hide">
-                    <p>Even though we’d hate to see you go, you can cancel your subscription at any time.
+                    <p class="show-data">Even though we’d hate to see you go, you can cancel your subscription at any
+                        time.
+                    </p>
+                </div>
+            </div>
+            <div class="show-faq">
+                <div class="flex q">
+                    <p class="faqQues">Are there any hidden charges? </p>
+                    <i class="fa fa-plus plus icon-faq" aria-hidden="true"></i>
+                </div>
+                <div class="faqAns hide">
+                    <p class="show-data">Even though we’d hate to see you go, you can cancel your subscription at any
+                        time.
                     </p>
                 </div>
 
             </div>
-
-
+            <div class="show-faq">
+                <div class="flex q">
+                    <p class="faqQues">Will I get debited for failed transactions?</p>
+                    <i class="fa fa-plus plus icon-faq" aria-hidden="true"></i>
+                </div>
+                <div class="faqAns hide">
+                    <p class="show-data">Even though we’d hate to see you go, you can cancel your subscription at any
+                        time.
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="show-faq">
-            <div class="flex q">
-                <p class="faqQues">How long does it take to build a Product ? </p>
-                <i class="fa fa-plus plus icon-faq" aria-hidden="true"></i>
-
-
-            </div>
-
-
-            <div class="faqAns hide">
-                <p>Even though we’d hate to see you go, you can cancel your subscription at any time.
-                </p>
-            </div>
-
-        </div>
-        <div class="show-faq">
-            <div class="flex q">
-                <p class="faqQues">How long does it take to build a Product ? </p>
-                <i class="fa fa-plus plus icon-faq" aria-hidden="true"></i>
-
-
-            </div>
-
-
-            <div class="faqAns hide">
-                <p>Even though we’d hate to see you go, you can cancel your subscription at any time.
-                </p>
-            </div>
-
-        </div>
-        <div class="show-faq">
-            <div class="flex q">
-                <p class="faqQues">How long does it take to build a Product ? </p>
-                <i class="fa fa-plus plus icon-faq" aria-hidden="true"></i>
-
-
-            </div>
-
-
-            <div class="faqAns hide">
-                <p>Even though we’d hate to see you go, you can cancel your subscription at any time.
-                </p>
-            </div>
-
-        </div>
-        <div class="show-faq">
-            <div class="flex q">
-                <p class="faqQues">How long does it take to build a Product ? </p>
-                <i class="fa fa-plus plus icon-faq" aria-hidden="true"></i>
-
-
-            </div>
-
-
-            <div class="faqAns hide">
-                <p>Even though we’d hate to see you go, you can cancel your subscription at any time.
-                </p>
-            </div>
-
-        </div>
-
-
     </div>
-
-
-    </div>
-    </div>
-
 </section>
 
 <script>

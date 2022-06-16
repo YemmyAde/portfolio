@@ -34,7 +34,10 @@
     src: url(/brace/joinceda/assets/font/inter/Inter-Regular.otf);
 } */
 
-
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
 .hidden{
     display: none;
 }
@@ -164,7 +167,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .modal-heading{
     font-family: 'Sora';
-    font-style: normal;
+.icon-faq: normal;
     font-weight: 600;
     font-size: 24px;
     line-height: 93.1%;
@@ -241,8 +244,8 @@ input[type=number]::-webkit-outer-spin-button {
 /*toast end*/
 .container {
     max-width: 1440px;
-    padding-left: 148px;
-    padding-right: 148px;
+    padding-left: 184px;
+    padding-right: 184px;
 }
 .container-header {
     max-width: 1440px;
@@ -252,14 +255,16 @@ input[type=number]::-webkit-outer-spin-button {
 .convert-wrapper-main {
     margin: 0 25px;
 }
-.convert-content {
-    padding: 20px;
-    border: 1px solid #D6D6D6;
-    border-radius: 8px;
-    width: 49%;
+.convert-most-left{
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+.left-main {
+    text-align: center;
+}
+.convert-right-most {
+    text-align: center;
 }
 .convert-title {
     font-family: 'Sora-regular';
@@ -271,6 +276,7 @@ input[type=number]::-webkit-outer-spin-button {
     align-items: center;
     color: #313131;
     width: 15%;
+    justify-content: center;
 }
 .convert-right-content {
     display: flex;
@@ -320,22 +326,14 @@ footer {
     margin-top: 11px !important;
 }
 .convert-content {
-    padding: 20px 10px;
     border: 1px solid #D6D6D6;
     border-radius: 8px;
     width: 49%;
     display: flex;
     align-items: center;
-}
-.convert-title {
-    font-family: 'Sora-regular';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 18px;
-    display: flex;
-    align-items: center;
-    color: #313131;
+    padding: 18px 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 .navbar-toggler:focus {
     text-decoration: none;
@@ -399,16 +397,70 @@ footer {
 }
 
 .nav-item-ceda {
-    padding: 0px 20px;
+    padding: 0px 10px;
 }
-
+.convert-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.hero-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.hero-img-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
 /***************Footer**************/
 .main-footer {
-    background: #1E1E1E;
-    margin-top: 0px;
-    
+    background: #ffffff;
+    padding: 104px 0;
 }
-
+.bottom-row-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 66px;
+    flex-wrap: wrap;
+}
+.left-content-footer {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    flex-wrap: wrap;
+}
+.footer-right {
+    width: 15%;
+}
+.link-item {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 93.1%;
+    display: flex;
+    align-items: center;
+    color: #1E1E1E;
+}
+.footer-left {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.right-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 154.6%;
+    color: #1E1E1E;
+}
 .footer-border{
     border-top: 1px solid #9F9F9F;
     margin-top: 75px;
@@ -423,16 +475,16 @@ footer {
 
 a.footer-nav {
     font-family: 'Sora';
+    text-decoration: none;
+    font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    line-height: 14.9px;
-    color: #FFFFFF;
-    text-decoration: none;
-    position: relative;
-    top: 1.8px
+    line-height: 93.1%;
+    display: flex;
+    align-items: center;
+    color: #1E1E1E;
 }
-
 /**********Hero Section***********/
 /* .hero-section {
     background: #FFFFFF;
@@ -495,7 +547,7 @@ a.footer-nav {
     margin-top: 48px;
 }
 .side-img {
-    width: 100%;
+    width: 90%;
     height: 308px;
 }
 .hero-login a {
@@ -794,7 +846,9 @@ a.btn.btn-get-hiw-cta {
 .why-p{
     padding-left: 4px;
 }
-
+.text-below-section {
+    text-align: right;
+}
 .why-2-amount{
     font-family: "Sora";
     font-size: 16px;
@@ -887,12 +941,12 @@ a.btn.btn-get-hiw-cta {
 .faq-sec{
     background-color: #F3F6F8;
     padding-top: 98px;
-    /* padding-bottom: 82.19px; */
+     padding-bottom: 82.19px;
     margin-top: 54.77px;
 }
 
 .icon-faq{
-    color: #FFFFFF;
+    color: #000000;
 }
 
 .minus{
@@ -901,29 +955,138 @@ a.btn.btn-get-hiw-cta {
 .plus{
     display: flex;
 }
+.flag-landing {
+    width: 32px;
+    height: 24px;
+    border-radius: 10px;
+}
 
+.todays-rate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 32px;
+}
+
+.today {
+    font-family: 'Sora-regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    color: #717171;
+}
+
+.rate {
+    font-family: 'Sora-regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    color: #5E3EEB;
+    margin-right: 9px;
+}
+
+.price-from-landing {
+    font-family: 'Sora-regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #313131;
+    width: 75%;
+}
+
+.currency-name {
+    width: 20%;
+}
+
+.line-convert {
+    width: 5%;
+}
+.payments {
+    margin: 122px 0;
+}
+
+.below-text-payment {
+    margin-top: 32px;
+}
+
+.bellow-sec-heading {
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    display: flex;
+    align-items: flex-end;
+    color: #000000;
+}
+
+.bellow-sec-info {
+    font-family: 'Sora-regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    margin-top: 24px;
+}
+.show-data {
+    font-family: 'Sora-regular';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 93.1%;
+    color: #2D2D2D;
+}
+.below-section-imgs {
+    width: 100%;
+}
+
+.below-section {
+    margin-bottom: 82px;
+}
 .show-faq{
-    background-color: #2D2D2D;
+    background-color: #ffffff;
+    border: 1px solid #E0E5E9;
+    border-radius: 8px;
     padding-top: 32.2px;
     padding-bottom: 20px;
     padding-left: 34.05px;
     padding-right: 34.05px;
     box-shadow: 0px 13px 33px rgba(0, 0, 0, 0.03);
-    border-radius: 8px;
     margin-bottom: 15.59px;
     cursor: pointer;
     list-style: none;
 }
-.faqQues{
-    font-family: "Sora";
-    font-size: 21px;
+.faq-title {
+    font-family: 'Sora';
+    font-style: normal;
     font-weight: 700;
-    line-height: 20px;
-    letter-spacing: 0em;
-    text-align: left;
-    color:#FFFFFF;
-    
-
+    font-size: 40px;
+    line-height: 56px;
+    color: #000000;
+    margin-bottom: 32px !important;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.faqQues{
+    font-family: 'Sora';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 93.1%;
+    color: #2D2D2D;
 }
 .faqAns{
     font-family: "Sora";
@@ -3250,6 +3413,9 @@ label.m0.label-kyc {
     .modal-content{
         width: 60%;
     }
+    .hero-bg {
+        padding: 15px 0;
+    }
     .what-btn {
         width: 58% !important;
     }
@@ -3264,16 +3430,6 @@ label.m0.label-kyc {
 .float-r{
     margin-left: 0%;
     margin-top: 20px;
-}
-.hero-heading {
-    font-family: 'Sora';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 56px;
-    display: flex;
-    align-items: center;
-    color: #1E1E1E;
 }
 .why-col-1, .why-col-2 , .why-col-3 {
     margin-top: 32px;
@@ -3305,6 +3461,10 @@ label.m0.label-kyc {
     }
 
     .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .container-header {
         padding-left: 15px;
         padding-right: 15px;
     }
@@ -3468,16 +3628,57 @@ label.m0.label-kyc {
         min-height: auto;
     }
 }
-
+@media only screen and (max-width: 900px) {
+    .convert-row{
+        display: block
+    }
+    .convert-content {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
 @media only screen and (max-width: 768px) {
     .convert-local-currency {
         padding: 15px;
     }
-
+    a.btn.btn-get-start-cta {
+        width: 100%;
+    }
+    .top-header-text {
+        text-align: center;
+    }
+    .top-right-content {
+        justify-content: center;
+    }
+    .left-content-footer {
+        width: 100%;
+    }
+    .footer-right {
+        width: 20%;
+    }
+    .footer-left {
+        width: 100%;
+        margin-top: 30px;
+        justify-content: center;
+    }
+    .text-below-section {
+        text-align: inherit;
+    }
     .upper-covert {
         display: block;
     }
-
+    .convert-most-left {
+        display: block;
+    }
+    .payments {
+        margin: 70px 0;
+    }
+    .below-section-imgs {
+        margin: 40px 0;
+    }
+    .mobile-view-payment {
+        margin-bottom: 30px;
+    }
     .currency {
         width: 100%;
     }
@@ -3532,6 +3733,10 @@ label.m0.label-kyc {
     /*******************Header********************/
     .logo-wrapper {
         width: 30%;
+    }
+    .footer-right {
+        width: 50%;
+        margin-bottom: 20px;
     }
     .modal-content{
         width: 70%;
@@ -3626,7 +3831,7 @@ label.m0.label-kyc {
 
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 480px) {
     /*Small smartphones [325px -> 425px]*/
     /*******************Header********************/
     .logo-wrapper {
@@ -3637,6 +3842,18 @@ label.m0.label-kyc {
         width: 80%;
     }
 
+.mobile-view{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+    .convert-right-content {
+        width: 100%;
+    }
+    .convert-title {
+        width: 50%;
+        justify-content: flex-start;
+    }
     .side-img{
         width: 100%;
         margin-top: 20px;

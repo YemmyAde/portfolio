@@ -1,46 +1,80 @@
 <?php if ($title == "CEDA" || $title == 'Privacy' || $title == 'Terms Of Use') { ?>
     <footer class="bd-footer main-footer">
-        <div class="container">
-            <div class="footer-border"></div>
-            <div class="row border-bottom">
-                <div class="col-lg-2 ">
-                    <a class="d-inline-flex align-items-center mb-2 link-dark text-decoration-none footer-logo" href="/"
-                       aria-label="Bootstrap">
-                        <img src="./assets/images/ceda-sidebar.svg" class="footer-img" alt="">
-
-                    </a>
-                </div>
-                <div class="col-6 col-lg-2">
-                    <ul class="list-unstyled">
-                        <li class="mb-4"><a class="footer-nav" href="/index">Individual</a></li>
-
-                    </ul>
-                </div>
-                <div class="col-6 col-lg-2">
-                    <ul class="list-unstyled">
-                        <li class="mb-4"><a class="footer-nav" href="/business">Business</a></li>
-
-                    </ul>
-                </div>
-                <div class="col-6 col-lg-2">
-                    <ul class="list-unstyled">
-                        <li class="mb-4"><a class="footer-nav" href="#">Help</a></li>
-
-                    </ul>
-                </div>
-                <div class="col-6 col-lg-2">
-                    <ul class="list-unstyled">
-                        <li class="mb-4"><a class="footer-nav" href="/terms-of-use">Terms of use</a></li>
-
-                    </ul>
-                </div>
-                <div class="col-6 col-lg-2">
-                    <ul class="list-unstyled">
-                        <li class="mb-4"><a class="footer-nav" href="/privacy">Privacy</a></li>
-
-                    </ul>
-                </div>
+        <div class="container-header">
+            <div class="logo-footer">
+                <a href="/"><img src="./assets/images/cedaBlack.svg" alt="Ceda Logo"
+                                 class=""></a>
             </div>
+            <class class="bottom-row-footer">
+                <div class="left-content-footer">
+                    <div class="footer-right">
+                        <div class="footer-link">
+                            <a href="/" class="link-item">Individual</a>
+                        </div>
+                    </div>
+                    <div class="footer-right">
+                        <div class="footer-link">
+                            <a href="/business" class="link-item">Business</a>
+                        </div>
+                    </div>
+                    <div class="footer-right">
+                        <div class="footer-link">
+                            <a href="#" class="link-item">Support</a>
+                        </div>
+                    </div>
+                    <div class="footer-right">
+                        <div class="footer-link">
+                            <a href="/terms-of-use" class="link-item">Terms of use</a>
+                        </div>
+                    </div>
+                    <div class="footer-right">
+                        <div class="footer-link">
+                            <a href="/privacy" class="link-item">Privacy</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-left">
+                    <p class="mb0 right-text">Ceda | 2022</p>
+                </div>
+            </class>
+            <!--<div class="col-lg-2 ">
+                <a class="d-inline-flex align-items-center mb-2 link-dark text-decoration-none footer-logo" href="/"
+                   aria-label="Bootstrap">
+                    <img src="./assets/images/cedaBlack.svg" alt="Ceda Logo"
+                         class="footer-img">
+                </a>
+            </div>
+            <div class="col-6 col-lg-2">
+                <ul class="list-unstyled">
+                    <li class="mb-4"><a class="footer-nav" href="/index">Individual</a></li>
+
+                </ul>
+            </div>
+            <div class="col-6 col-lg-2">
+                <ul class="list-unstyled">
+                    <li class="mb-4"><a class="footer-nav" href="/business">Business</a></li>
+
+                </ul>
+            </div>
+            <div class="col-6 col-lg-2">
+                <ul class="list-unstyled">
+                    <li class="mb-4"><a class="footer-nav" href="#">Help</a></li>
+
+                </ul>
+            </div>
+            <div class="col-6 col-lg-2">
+                <ul class="list-unstyled">
+                    <li class="mb-4"><a class="footer-nav" href="/terms-of-use">Terms of use</a></li>
+
+                </ul>
+            </div>
+            <div class="col-6 col-lg-2">
+                <ul class="list-unstyled">
+                    <li class="mb-4"><a class="footer-nav" href="/privacy">Privacy</a></li>
+
+                </ul>
+            </div>-->
         </div>
 
     </footer>
@@ -142,7 +176,7 @@
 
     }
 
-    function encode (cipher ){
+    function encode(cipher) {
 
         const encodedString = Base64.encode(cipher)
 
