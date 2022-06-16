@@ -1,4 +1,4 @@
-<div class="ceda-wrapper plr">
+<div class="ceda-wrapper plr" onload="UseEffect()">
     <div class="col-md-12 ceda-wrapper">
         <div class="row w100">
             <?php include "sidebar.phtml" ?>
@@ -38,23 +38,128 @@
                                 </div>
                             </div>
                         </div>
-                        <p class="title-res-amount">Select Residing Account For <span class="selected_currency">USD</span></p>
+                        <p class="title-res-amount">Select Residing Account / Payment Method </p>
 
-                        <select class="method" name="residing_method" id="residing_method">
-                            <option value="payoneer">Payoneer Account</option>
-                            <option value="bank">NGN Domiciliary Account</option>
+                        <select class="method" name="residing_method" id="residing_method" >
+                            <option value="">Select Payment Method</option>
+                            <option value="payoneer">Pay with Payoneer Fund</option>
+                            <option value="wise fund">Pay with Wise Fund</option>
+                            <option value="us bank">Pay with US Bank Transfer</option>
+                            <option value="bank">Pay with Local Bank Transfer</option>
+                            <option value="card">Pay with Card</option>
+
                         </select>
+
+                        <p class="title-res-amount">Choose NGN Destination</p>
+
+                        <select class="method" name="choose_NGN" id="choose_NGN" onChange="handlechange()">
+                            <option value="">Select NGN Destination</option>
+                            <option value="account details">0002222111 - Access bank</option>
+                            <option value="add" > Add New Recipient </option>
+                        </select>
+
                         <button class="btn-submit m0 m40" id="first_sec">Continue Transaction</button>
+
+                        <div id="myModal" class="mymodal">
+
+                            <!-- Modal content -->
+                            <div class="close-modal"> <span>&times;</span> </div>
+                            <div class="modal-content">
+
+                                <div class="modal_head">
+
+                                    <div class="modal-heading">Add a Recipient</div>
+
+                                    <div class="modal-text">Kindly enter your recipient's bank details below</div>
+
+                                </div>
+
+                                <div class="modal_body">
+
+                                    <p class="title-input">Bank Account Number </p>
+
+                                    <input type="number" PLACEHOLDER="Enter Bank Account Number" class="account-no">
+
+                                    <p class="title-input">Recipient Bank Name  </p>
+
+                                    <select class="method" name="recipient-bank-name" id="recipient-bank-name" >
+                                        <option value="">-- Select Recipient account bank --</option>
+
+                                    </select>
+
+                                    <button class="btn-submit m0 m40" id="add-bank-acc">Add Bank Account</button>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 </div>
 <?php include 'templates/footer.phtml'; ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
+
+    // Get the modal
+    let modal = document.getElementById("myModal");
+
+
+    document.addEventListener("DOMContentLoaded", ()=>{
+        console.log("its working now")
+
+        fetch('https://nigerianbanks.xyz/')
+            .then(response => response.json())
+            .then(result => {
+
+                let bankOption = result.map((item,i)=>{
+                    return (
+                        ` <option value="${item.slug}">${item.name}</option>`
+                    )
+
+                })
+                document.getElementById("recipient-bank-name").innerHTML= bankOption;
+                console.log('Success:', result);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+    })
+
+
+
+
+    const handlechange = ()=>{
+        let choose_NGN = document.getElementById("choose_NGN");
+        let value = choose_NGN.options[choose_NGN.selectedIndex].value;
+
+        if(value == "add"){
+            modal.style.display = "block";
+
+
+        }
+    }
+
+    let span = document.getElementsByClassName("close-modal")[0];
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+
+
+
+
     let exchangeRate = $('#price_to').val();
     let input = $('#entered_currency').val();
 

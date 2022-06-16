@@ -124,6 +124,120 @@ input[type=number]::-webkit-outer-spin-button {
     }
 }
 
+/* The Modal (background) */
+.mymodal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    margin: 0 auto;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+
+
+.modal-content {
+    background-color: #FFFFFF;
+    margin: auto;
+
+    /*padding: 20px;*/
+    border: 1px solid #888;
+    width: 40%;
+    border-radius: 8px;
+}
+
+.modal_head{
+    background: #EFECFD;
+    text-align: center;
+    padding-bottom: 42px;
+    padding-top: 42px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.modal-heading{
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 93.1%;
+}
+.modal-text{
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 93.1%;
+    margin-top: 16px;
+}
+
+.modal_body{
+    padding: 36px 71px;
+}
+.title-input{
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+}
+.account-no{
+    border: 1px solid #DDDDDD !important;
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.account-no::placeholder{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 143.5%;
+}
+
+/* The Close Button */
+.close-modal {
+
+    background: rgba(255, 255, 255, 0.5);
+    color: #000000;
+    border-radius: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    margin-bottom: 16px;
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.close-modal span{
+
+    position: relative;
+    top: -5px;
+}
+
+.cedaMoney{
+    background: #E5EBF5;
+    border-radius: 18px;
+    padding: 10px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #1E1E1E;
+}
 /*toast end*/
 .container {
     max-width: 1440px;
@@ -3133,6 +3247,9 @@ label.m0.label-kyc {
     .logo-wrapper {
         width: 30%;
     }
+    .modal-content{
+        width: 60%;
+    }
     .what-btn {
         width: 58% !important;
     }
@@ -3416,6 +3533,9 @@ label.m0.label-kyc {
     .logo-wrapper {
         width: 30%;
     }
+    .modal-content{
+        width: 70%;
+    }
 
     .hero-image {
         display: block;
@@ -3511,6 +3631,10 @@ label.m0.label-kyc {
     /*******************Header********************/
     .logo-wrapper {
         width: 30%;
+    }
+
+    .modal-content{
+        width: 80%;
     }
 
     .side-img{
