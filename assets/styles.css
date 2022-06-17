@@ -363,6 +363,10 @@ footer {
     border: 2px solid #DEDBEC;
     border-radius: 4px;
     color: #1E1E1E;
+    transition: 1s;
+}
+.login-account:hover{
+    color: #8275EB;
 }
 
 .nav-ceda, a.nav-ceda {
@@ -435,6 +439,7 @@ footer {
     flex-wrap: wrap;
 }
 .footer-right {
+    cursor: pointer;
     width: 15%;
 }
 .link-item {
@@ -1284,10 +1289,19 @@ img.section-image {
 }
 
 .left-col {
-    background-color: #E1E3E4;
+    background-color: #EFECFD;
+    /*background: url('/assets/images/sign-img.png'), #EFECFD;*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: auto;*/
+    /*background-attachment: fixed;*/
     height: auto;
     min-height: 100vh;
     padding: 195px 0px;
+    padding-bottom: 0px !important;
+}
+.left-col-img{
+    margin-top: 48px;
+    width: 100%;
 }
 
 .right-col {
@@ -2483,9 +2497,9 @@ input[type=number]{
 
 /*********Privacy*********/
 .hero-title {
-    background: #FBF9FC;
-    text-align: center;
-    padding: 189px 0;
+    background: #fff;
+    text-align: left;
+    padding: 114px 0;
 }
 
 .page-title {
@@ -2499,7 +2513,8 @@ input[type=number]{
 }
 
 section.ceda-content-wrapper {
-    margin: 144px 0;
+    padding: 69px 0;
+    background: #F3F6F8;
 }
 
 .content-title {
@@ -3424,7 +3439,7 @@ label.m0.label-kyc {
 }
 
 .left-col{
-    min-height: auto;
+    min-height: 100vh;
 }
 
 .float-r{
@@ -3625,7 +3640,7 @@ label.m0.label-kyc {
         height: 200vh !important;
     } */
     .left-col{
-        min-height: auto;
+        min-height: 100vh;
     }
 }
 @media only screen and (max-width: 900px) {
@@ -3700,7 +3715,7 @@ label.m0.label-kyc {
         
     }
     .left-col{
-        min-height: auto;
+        min-height: 100vh;
     }
 
     .right-col {
@@ -3829,6 +3844,14 @@ label.m0.label-kyc {
         padding-left: 20px !important;
     }
 
+    .modal_body {
+        padding: 36px 31px;
+    }
+    .modal_head{
+        padding-left:10px;
+        padding-right:10px;
+    }
+
 }
 
 @media only screen and (max-width: 480px) {
@@ -3839,7 +3862,7 @@ label.m0.label-kyc {
     }
 
     .modal-content{
-        width: 80%;
+        width: 90%;
     }
 
 .mobile-view{

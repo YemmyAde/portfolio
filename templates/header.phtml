@@ -34,7 +34,7 @@
                     <p class="top-header-text mb0">With Ceda, you can send money anywhere in the world with ease.</p>
                 </div>
                 <div class="col-md-6 top-right-content">
-                    <a href="#" class="career">Career</a>
+                    <a href="#" class="career">Careers</a>
                     <div class="top-line">
                         <img src="/assets/images/top-line.svg" class="top-img" alt="line">
                     </div>
@@ -63,12 +63,12 @@
                     <li class="nav-item nav-item-ceda ">
                         <a class="nav-link nav-ceda sora-bold" href="/index"> Individual </a>
                     </li>
-                    <li class="nav-item nav-item-ceda">
-                        <a class="nav-link nav-ceda" href="/business">Business APIs</a>
+                    <li class="nav-item nav-item-ceda" onclick="openModal()">
+                        <a class="nav-link nav-ceda" >Business APIs</a>
                     </li>
 
                     <li class="nav-item nav-item-ceda">
-                        <a class="nav-link nav-ceda" href="#"> Live Chat <img class="live-chat"
+                        <a class="nav-link nav-ceda" href="javascript:;" onclick="tidioChatApi.display(true);tidioChatApi.open()"> Live Chat <img class="live-chat"
                                                                               src="/assets/images/live-chat.svg" alt=""></a>
                     </li>
                 </ul>
@@ -81,6 +81,63 @@
 
             </div>
         </nav>
+
+        <div id="myModal" class="mymodal">
+
+            <!-- Modal content -->
+            <div class="close-modal"> <span>&times;</span> </div>
+            <div class="modal-content">
+
+                <div class="modal_head">
+
+                    <div class="modal-heading">Business APIs Coming Soon</div>
+
+                    <div class="modal-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+
+                </div>
+
+                <div class="modal_body">
+
+                    <p class="title-input">Fullname </p>
+
+                    <input type="text" PLACEHOLDER="Enter Fullname" class="account-no">
+
+                    <p class="title-input">Email </p>
+
+                    <input type="email" PLACEHOLDER="Enter Email" class="account-no">
+
+                    <p class="title-input">Phone Number </p>
+
+                    <input type="text" PLACEHOLDER="Enter Phone Number" class="account-no">
+
+                    <button class="btn-submit m0 m40" id="add-bank-acc">Proceed</button>
+                </div>
+            </div>
+
+        </div>
+
+        <script src="//code.tidio.co/ouwhjlrqllifkhobctz1kxhobnfjyfcz.js" async>
+
+        </script>
+        <script>
+
+            let modal = document.getElementById("myModal");
+
+            let span = document.getElementsByClassName("close-modal")[0];
+            const openModal = ()=>{
+                modal.style.display = "block";
+            }
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+
+        </script>
         <!---------->
 
         <!-- <?php if ($_SESSION['id'] == "") { ?>
