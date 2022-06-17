@@ -15,9 +15,10 @@ class CedaExchangeRate {
             return false;
         }
     }
-   /* public static function get(){
+    public static function getAll(){
         global $DB;
-        $sql = "SELECT * FROM `from_currency_details`";
+        $sql = "SELECT * FROM ceda_exchange_rate INNER JOIN from_currency_details ON ceda_exchange_rate.currency_from = from_currency_details.id
+                INNER JOIN to_currency_details  ON ceda_exchange_rate.currency_to = to_currency_details.id ";
         $stmt = $DB->prepare($sql);
         try {
             $stmt->execute([]);
@@ -25,5 +26,5 @@ class CedaExchangeRate {
         }catch (Exception $e){
             return false;
         }
-    }*/
+    }
 }
