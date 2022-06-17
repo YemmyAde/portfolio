@@ -27,57 +27,65 @@
             <div class="convert-row">
                 <div class="convert-content">
                     <p class="mb0 convert-title">Convert</p>
-                    <div class="dropdown show dropdown-convert-wrapper">
-                        <a class="btn btn-secondary dropdown-toggle dropdown-btn-convert mobile-view" href="#" role="button"
-                           id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="flag-landing" src="/assets/images/usa.svg" alt="">
+                    <div class="dropdown show dropdown-convert-wrapper" date-rate="<?= $exchange_rates_temp[0]['ceda_rate'] ?>">
+                        <a class="btn btn-secondary dropdown-toggle dropdown-btn-convert mobile-view" href="#"
+                           role="button"
+                           id="dropdownMenuLinkfrom"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="flag-landing"
+                                 src="/assets/images/<?= $exchange_rates_temp[0]['currency_from_iso'] ?>.svg" alt="">
+                            <input type="hidden" id="rate" value="<?= $exchange_rates_temp[0]['ceda_rate'] ?>" >
                         </a>
 
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <!--<div class="dropdown-menu" aria-labelledby="dropdownMenuLinkfrom">
                             <a class="dropdown-item" href="#">Action</a>
                             <a class="dropdown-item" href="#">Another action</a>
                             <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
+                        </div>-->
                     </div>
                     <div class="convert-right-content">
-                        <!--<input type="number" class="price-from" id="entered_currency" value="1,000">-->
-                        <p class="price-from-landing mb0" id="entered_currency">1,000</p>
+                        <input type="number" class="price-from" id="entered_currency" value="1000">
+                        <!--<p class="price-from-landing mb0" id="entered_currency">1,000</p>-->
                         <div class="line-convert">
                             <img class="line-convert-img" src="/assets/images/line-convert.svg" alt="">
                         </div>
-                        <p class="mb0 currency-name">USD</p>
+                        <p class="mb0 currency-name"><?= $exchange_rates_temp[0]['currency_from'] ?></p>
                     </div>
                 </div>
                 <div class="convert-content">
                     <p class="mb0 convert-title">Value</p>
                     <div class="dropdown show dropdown-convert-wrapper">
-                        <a class="btn btn-secondary dropdown-toggle dropdown-btn-convert mobile-view" href="#" role="button"
+                        <a class="btn btn-secondary dropdown-toggle dropdown-btn-convert mobile-view" href="#"
+                           role="button"
                            id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="flag-landing" src="/assets/images/ng.svg" alt="">
+                            <img class="flag-landing"
+                                 src="/assets/images/<?= $exchange_rates_temp[0]['currency_to_iso'] ?>.svg" alt="">
                         </a>
 
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <?php /*foreach ($exchange_rates as $key=>$value) {
+                        <!--<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <?php /*/*foreach ($exchange_rates as $key=>$value) {
                                     foreach ($exchange_rates[$key])
-                                */?>
+                                */ ?>
 
                                 <a class="dropdown-item" href="#">Action</a>
-                            <?php /*} */ ?>
+                            <?php /*/*} */ ?>
                             <a class="dropdown-item" href="#">Another action</a>
                             <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
+                        </div>-->
                     </div>
                     <div class="convert-right-content">
                         <!--<input type="number" class="price-from" id="entered_currency" value="60,000">-->
-                        <p class="price-from-landing mb0" id="entered_currency">60,000</p>
+                        <p class="price-from-landing mb0" id="converted_price">60,000</p>
                         <div class="line-convert">
                             <img class="line-convert-img" src="/assets/images/line-convert.svg" alt="">
                         </div>
-                        <p class="mb0 currency-name">USD</p>
+                        <p class="mb0 currency-name"><?= $exchange_rates_temp[0]['currency_to'] ?></p>
                     </div>
                 </div>
                 <div class="todays-rate">
-                    <p class="today mb0">Today’s rate: </p>&nbsp;<p class="rate mb0">1.00 USD = 600 NGN</p><img
+                    <p class="today mb0">Today’s rate: </p>&nbsp;<p class="rate mb0">
+                        1.00 <?= $exchange_rates_temp[0]['currency_from'] ?>
+                        = <?= $exchange_rates_temp[0]['ceda_rate'] ?> <?= $exchange_rates_temp[0]['currency_to_sign'] ?></p>
+                    <img
                             src="/assets/images/i-landing.svg" alt="">
                 </div>
             </div>
@@ -271,7 +279,7 @@
         </div>
     </div>
 </section>
-
+<?php include 'templates/footer.phtml'; ?>
 <script>
 
     function faqControl() {
@@ -291,10 +299,18 @@
     }
 
     $(document).ready(function () {
+        $('#rate').val('1000')
+        let exchangeRate = $('#rate').val();
+        let input = $('#entered_currency').val();
+        $('#converted_price').html(numberWithCommas(convertCurrency(input, exchangeRate)));
         faqControl()
+        $('#entered_currency').keyup(function () {
+            let exchangeRate = $('#rate').val();
+            let input = $('#entered_currency').val();
+            $('#converted_price').html(numberWithCommas(convertCurrency(input, exchangeRate)));
+        })
 
     });
 
 
 </script>
-<?php include 'templates/footer.phtml'; ?>

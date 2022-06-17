@@ -45,102 +45,105 @@
             </div>
         </div>
     </div>
-    <div class="container-header">
-        <!---------->
-        <nav class="navbar navbar-expand-lg my-header">
+    <div class="down-header">
+        <div class="container-header">
+            <!---------->
+            <nav class="navbar navbar-expand-lg my-header">
 
-            <a href="/" class="navbar-brand logo-wrapper"><img src="./assets/images/cedaBlack.svg" alt="Ceda Logo"
-                                                               class=""></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
-            </button>
+                <a href="/" class="navbar-brand logo-wrapper"><img src="./assets/images/cedaBlack.svg" alt="Ceda Logo"
+                                                                   class=""></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
+                </button>
 
 
-            <div class="collapse navbar-collapse header-right" id="navbarText" style="">
+                <div class="collapse navbar-collapse header-right" id="navbarText" style="">
 
-                <ul class="navbar-nav">
-                    <li class="nav-item nav-item-ceda ">
-                        <a class="nav-link nav-ceda sora-bold" href="/index"> Individual </a>
-                    </li>
-                    <li class="nav-item nav-item-ceda" onclick="openModal()">
-                        <a class="nav-link nav-ceda" >Business APIs</a>
-                    </li>
+                    <ul class="navbar-nav">
+                        <li class="nav-item nav-item-ceda ">
+                            <a class="nav-link nav-ceda sora-bold" href="/index"> Individual </a>
+                        </li>
+                        <li class="nav-item nav-item-ceda" onclick="openModal()">
+                            <a class="nav-link nav-ceda">Business APIs</a>
+                        </li>
 
-                    <li class="nav-item nav-item-ceda">
-                        <a class="nav-link nav-ceda" href="javascript:;" onclick="tidioChatApi.display(true);tidioChatApi.open()"> Live Chat <img class="live-chat"
-                                                                              src="/assets/images/live-chat.svg" alt=""></a>
-                    </li>
-                </ul>
-                <span class="navbar-text">
+                        <li class="nav-item nav-item-ceda">
+                            <a class="nav-link nav-ceda" href="javascript:;"
+                               onclick="tidioChatApi.display(true);tidioChatApi.open()"> Live Chat <img
+                                        class="live-chat"
+                                        src="/assets/images/live-chat.svg" alt=""></a>
+                        </li>
+                    </ul>
+                    <span class="navbar-text">
                 <div class="form-inline my-2 my-lg-0">
                     <a class="mr-4s login-account" href="/login">Login to account</a>
                 </div>
                 </span>
 
 
-            </div>
-        </nav>
+                </div>
+            </nav>
 
-        <div id="myModal" class="mymodal">
+            <div id="myModal" class="mymodal">
 
-            <!-- Modal content -->
-            <div class="close-modal"> <span>&times;</span> </div>
-            <div class="modal-content">
+                <!-- Modal content -->
+                <div class="close-modal"><span>&times;</span></div>
+                <div class="modal-content">
 
-                <div class="modal_head">
+                    <div class="modal_head">
 
-                    <div class="modal-heading">Business APIs Coming Soon</div>
+                        <div class="modal-heading">Business APIs Coming Soon</div>
 
-                    <div class="modal-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                        <div class="modal-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
 
+                    </div>
+
+                    <div class="modal_body">
+
+                        <p class="title-input">Fullname </p>
+
+                        <input type="text" PLACEHOLDER="Enter Fullname" class="account-no">
+
+                        <p class="title-input">Email </p>
+
+                        <input type="email" PLACEHOLDER="Enter Email" class="account-no">
+
+                        <p class="title-input">Phone Number </p>
+
+                        <input type="text" PLACEHOLDER="Enter Phone Number" class="account-no">
+
+                        <button class="btn-submit m0 m40" id="add-bank-acc">Proceed</button>
+                    </div>
                 </div>
 
-                <div class="modal_body">
-
-                    <p class="title-input">Fullname </p>
-
-                    <input type="text" PLACEHOLDER="Enter Fullname" class="account-no">
-
-                    <p class="title-input">Email </p>
-
-                    <input type="email" PLACEHOLDER="Enter Email" class="account-no">
-
-                    <p class="title-input">Phone Number </p>
-
-                    <input type="text" PLACEHOLDER="Enter Phone Number" class="account-no">
-
-                    <button class="btn-submit m0 m40" id="add-bank-acc">Proceed</button>
-                </div>
             </div>
 
-        </div>
+            <script src="//code.tidio.co/ouwhjlrqllifkhobctz1kxhobnfjyfcz.js" async>
 
-        <script src="//code.tidio.co/ouwhjlrqllifkhobctz1kxhobnfjyfcz.js" async>
+            </script>
+            <script>
 
-        </script>
-        <script>
+                let modal = document.getElementById("myModal");
 
-            let modal = document.getElementById("myModal");
-
-            let span = document.getElementsByClassName("close-modal")[0];
-            const openModal = ()=>{
-                modal.style.display = "block";
-            }
-            span.onclick = function() {
-                modal.style.display = "none";
-            }
-
-            window.onclick = function(event) {
-                if (event.target == modal) {
+                let span = document.getElementsByClassName("close-modal")[0];
+                const openModal = () => {
+                    modal.style.display = "block";
+                }
+                span.onclick = function () {
                     modal.style.display = "none";
                 }
-            }
 
-        </script>
-        <!---------->
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
 
-        <!-- <?php if ($_SESSION['id'] == "") { ?>
+            </script>
+            <!---------->
+
+            <!-- <?php if ($_SESSION['id'] == "") { ?>
     <div class="form-inline my-2 my-lg-0">
        <a class="mr-4 text-dark login-account" href="/login">Login to account</a>
         <a class="btn btn-primary my-2 my-sm-0 text-white" href="/signup" type="submit">Sign Up</a>
@@ -152,6 +155,7 @@
     </ul>
   </div>
   <?php } ?> -->
+        </div>
     </div>
 <?php } ?>
 <?php if ($title == 'Dashboard' || $title == 'Settings' || $title == 'Covert To Local Currency' || $title == 'Transfer' || $title == 'KYC Verification') { ?>

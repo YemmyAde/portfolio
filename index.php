@@ -7,6 +7,7 @@ require 'config/config.php';
      die();
  }*/
 $all_rates = CedaExchangeRate::getAll();
+$exchange_rates_temp = CedaExchangeRate::getUserByUserISO('ng');
 $exchange_rates = [];
 
 foreach ($all_rates as $rate) {
