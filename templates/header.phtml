@@ -27,6 +27,27 @@
 </head>
 <body>
 <?php if ($title == "CEDA" || $title == 'Privacy' || $title == 'Terms Of Use') { ?>
+    <style>
+        /* CSS used here will be applied after bootstrap.css */
+
+        .nav {
+            margin-bottom: 0;
+        }
+
+        .nav > li.dropdown.open {
+            position: static;
+        }
+
+        .nav > li.dropdown.open .dropdown-menu {
+            display: block;
+            width: 100%;
+        }
+
+        .dropdown-menu > li {
+            display: block;
+        }
+
+    </style>
     <div class="top-header">
         <div class="container-header">
             <div class="row">
@@ -38,9 +59,12 @@
                     <div class="top-line">
                         <img src="/assets/images/top-line.svg" class="top-img" alt="line">
                     </div>
-                    <a href="https://www.instagram.com/cedamoney/" target="_blank"><img src="/assets/images/top-insta.svg" class="top-img" alt="CEDA Instagram"></a>
-                    <a href="#" target="_blank"><img src="/assets/images/top-fb.svg" class="top-img" alt="CEDA Facebook"></a>
-                    <a href="https://www.linkedin.com/in/cedamoney/" target="_blank"> <img src="/assets/images/top-linkedin.svg" class="top-img" alt="CEDA LinkedIn"></a>
+                    <a href="https://www.instagram.com/cedamoney/" target="_blank"><img
+                                src="/assets/images/top-insta.svg" class="top-img" alt="CEDA Instagram"></a>
+                    <a href="#" target="_blank"><img src="/assets/images/top-fb.svg" class="top-img"
+                                                     alt="CEDA Facebook"></a>
+                    <a href="https://www.linkedin.com/in/cedamoney/" target="_blank"> <img
+                                src="/assets/images/top-linkedin.svg" class="top-img" alt="CEDA LinkedIn"></a>
                 </div>
             </div>
         </div>
@@ -61,8 +85,106 @@
                 <div class="collapse navbar-collapse header-right" id="navbarText" style="">
 
                     <ul class="navbar-nav">
-                        <li class="nav-item nav-item-ceda ">
-                            <a class="nav-link nav-ceda sora-bold" href="/index"> Individual </a>
+                        <li class="nav-item nav-item-ceda dropdown-list-item-ceda">
+                            <a href="#" class="dropdown-toggle list-name-ceda" data-toggle="dropdown">Convert Money</a>
+                            <ul class="dropdown-menu dropdown-header-main">
+                                <div clas="row">
+                                    <li>
+                                        <div class="row">
+                                            <div class="list-unstyled coverage col-md-4">
+                                                <p class="submenu-title mb0 coverage-title">Coverage</p>
+                                                <div class="coverage-area-wrapper">
+                                                    <div class="coverage-areas">
+                                                        <div class="coverage-list">
+                                                            <img src="/assets/images/ng-coverage.svg" alt=""
+                                                                 class="coverage-flag">
+                                                            <p class="mb0 country-name-active">Nigeria</p>
+                                                            <div class="coverage-active">Active</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="coverage-areas">
+                                                        <div class="coverage-list">
+                                                            <img src="/assets/images/kenya-coverage.svg" alt=""
+                                                                 class="coverage-flag">
+                                                            <p class="mb0 country-name-in">Kenya</p>
+
+                                                            <div class="coverage-inactive">Inactive</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="coverage-areas">
+                                                        <div class="coverage-list">
+                                                            <img src="/assets/images/togo-overage.svg" alt=""
+                                                                 class="coverage-flag">
+                                                            <p class="mb0 country-name-in">Togo</p>
+
+                                                            <div class="coverage-inactive">Inactive</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="coverage-areas">
+                                                        <div class="coverage-list">
+                                                            <img src="/assets/images/ghana-coverage.svg" alt=""
+                                                                 class="coverage-flag">
+                                                            <p class="mb0 country-name-in">Ghana</p>
+
+                                                            <div class="coverage-inactive">Inactive</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="row">
+                                                    <div class="list-unstyled col-md-4 ">
+                                                        <div class="dropdown-right-content">
+                                                            <img src="/assets/images/local-bank.svg" alt=""
+                                                                 class="icon-drop">
+                                                            <div class="titles-sub">
+                                                                <p class="mbo right-title-drop">Convert from Local
+                                                                    Bank</p>
+                                                                <p class="mb0-lower-drop">Lörem ipsum anasade jäss</p>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="list-unstyled col-md-4">
+                                                        <p class="submenu-title">TITLE</p>
+                                                    </div>
+                                                    <div class="list-unstyled col-md-4">
+                                                        <p class="submenu-title">TITLE</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </div>
+                            </ul>
+                        </li>
+                        <li class="nav-item nav-item-ceda dropdown-list-item-ceda">
+                            <a href="#" class="dropdown-toggle list-name-ceda" data-toggle="dropdown">Int’l Bank
+                                Accounts</a>
+                            <ul class="dropdown-menu dropdown-header-main">
+                                <div clas="row">
+                                    <li>
+                                        <div class="row">
+                                            <div class="list-unstyled coverage col-md-3">
+                                                <p class="submenu-title mb0">Coverage</p>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="row">
+                                                    <div class="list-unstyled col-md-4">
+                                                        <p class="submenu-title mb0">TITLE</p>
+                                                    </div>
+                                                    <div class="list-unstyled col-md-4">
+                                                        <p class="submenu-title">TITLE</p>
+                                                    </div>
+                                                    <div class="list-unstyled col-md-4">
+                                                        <p class="submenu-title">TITLE</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </div>
+                            </ul>
                         </li>
                         <li class="nav-item nav-item-ceda" onclick="openModal()">
                             <a class="nav-link nav-ceda">Business APIs</a>
