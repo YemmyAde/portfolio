@@ -1055,8 +1055,37 @@ a.btn.btn-get-hiw-cta {
     font-family: 'Sora-regular';
     font-style: normal;
     font-size: 16px;
-    line-height: 93.1%;
+    line-height: 20px;
     color: #2D2D2D;
+}
+.hero-text{
+    display: inline-block !important;
+    position: relative;
+
+
+}
+
+.hero-text::after{
+    content: "Simplify Money for Freelancers";
+    animation: animate infinite 8s;
+
+}
+@keyframes animate {
+
+    0% {
+        content: "Simplify Money for Freelancers";
+    }
+
+
+    50% {
+        content: "Simplify Money for Remote Working";
+    }
+
+    75% {
+        content: "Simplify Money for Microbusinesses";
+    }
+
+
 }
 .below-section-imgs {
     width: 100%;
