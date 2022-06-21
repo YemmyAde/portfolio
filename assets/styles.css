@@ -324,6 +324,7 @@ footer {
 /*******************Header********************/
 .logo-wrapper {
     width: 20%;
+    padding-left: 104px;
 }
 .mt-convert{
     margin-top: 8px !important;
@@ -351,10 +352,13 @@ footer {
     border:none;
     background: #FFFFFF;
     box-shadow: 0px 44px 97px rgb(0 0 0 / 8%);
-    padding: 69px 0;
+    padding: 55px 0;
 }
 .dropdown-list-item-ceda {
     display: flex;
+    align-items: center;
+}
+.alc {
     align-items: center;
 }
 .list-name-ceda {
@@ -626,13 +630,25 @@ a.btn.btn-get-start-cta {
     padding: 70px 0;
 }
 .coverage {
-    border-right: 1px solid;
+    border-right: 1px solid #DEE2E6;
+    padding-left: 104px;
 }
 .join-ceda {
     display: flex;
     align-items: center;
     /* justify-content: space-between; */
     margin-top: 38px;
+}
+.mt56{
+    margin-top: 56px;
+}
+.right-sec-drop {
+    padding-right: 104px;
+}
+.right-sec-row {
+    border-top: 1px solid #DEE2E6;
+    border-bottom: 1px solid #DEE2E6;
+    padding: 35px 0;
 }
 .coverage-title {
     font-family: 'Inter';
@@ -1101,6 +1117,33 @@ a.btn.btn-get-hiw-cta {
     color: #5E3EEB;
     margin-right: 9px;
 }
+.lower-drop {
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    color: #717171;
+    margin-top: 16px;
+    margin-left: 8px;
+}
+.titles-sub {
+    display: flex;
+}
+.right-title-drop {
+    font-family: 'Sora-regular';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: #000000;
+    margin-left: 8px;
+}
+.w36px{
+    width:36px
+}
 
 .price-from-landing {
     font-family: 'Sora-regular' !important;
@@ -1508,11 +1551,16 @@ h2.form-heading {
 .header-right {
     align-items: center;
     justify-content: flex-end;
+    padding-right: 104px;
 }
 #reg-form {
     margin-top: 50px;
 }
-
+.header-row-drop {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
 p.contact-form-sub-heading {
     font-family: 'Inter';
     font-style: normal;

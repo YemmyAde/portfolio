@@ -10,14 +10,14 @@ if ($check_email) {
         'name'              => $_REQUEST['name'],
         'email'             => $_REQUEST['email'],
         'country'           => $_REQUEST['country'],
-        'ios2'              => $_REQUEST['ios2'],
+        'iso2'              => $_REQUEST['iso2'],
         'dial_code'         => $_REQUEST['dial_code'],
         'phone_number'      => $_REQUEST['phone_number'],
         'password'          => hash('sha512', $_REQUEST['password']),
         'type'              => $_REQUEST['type'],
         'token'             => $token,
     ];
-    /* print_r($_REQUEST);
+    /*print_r($data);
      die();*/
     $user = User::addUser($data);
     if ($user) {

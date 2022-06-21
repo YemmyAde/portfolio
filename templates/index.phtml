@@ -43,7 +43,7 @@
                         </div>-->
                     </div>
                     <div class="convert-right-content">
-                        <input type="number" class="price-from-landing" id="entered_currency" value="">
+                        <input type="text" class="price-from-landing" id="entered_currency" value="">
                         <!--<p class="price-from-landing mb0" id="entered_currency">1,000</p>-->
                         <div class="line-convert">
                             <img class="line-convert-img" src="/assets/images/line-convert.svg" alt="">
@@ -74,7 +74,7 @@
                     </div>
                     <div class="convert-right-content">
                         <!--<input type="number" class="price-from" id="entered_currency" value="60,000">-->
-                        <input type="number" class="price-from-landing" id="converted_price" value="">
+                        <input type="text" class="price-from-landing" id="converted_price" value="">
 
                         <!--<p class="price-from-landing mb0" id="converted_price">60,000</p>-->
                         <div class="line-convert">
@@ -309,15 +309,20 @@
     }
 
     $(document).ready(function () {
-        $('#rate').val('1000')
+        $('#entered_currency').val('1000')
         let exchangeRate = $('#rate').val();
         let input = $('#entered_currency').val();
-        $('#converted_price').val(numberWithCommas(convertCurrency(input, exchangeRate)));
+        $('#converted_price').val(convertCurrency(input, exchangeRate));
         faqControl()
         $('#entered_currency').keyup(function () {
             let exchangeRate = $('#rate').val();
             let input = $('#entered_currency').val();
-            $('#converted_price').val(numberWithCommas(convertCurrency(input, exchangeRate)));
+            $('#converted_price').val(convertCurrency(input, exchangeRate));
+        })
+        $('#converted_price').keyup(function () {
+            let exchangeRate = $('#rate').val();
+            let input = $('#converted_price').val();
+            $('#entered_currency').val(convertCurrencyBack(input, exchangeRate));
         })
 
     });
