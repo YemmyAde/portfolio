@@ -427,7 +427,7 @@
         </div>
     </div>
 <?php } ?>
-<?php if ($title == 'Dashboard' || $title == 'Settings' || $title == 'Covert To Local Currency' || $title == 'Transfer' || $title == 'KYC Verification') { ?>
+<?php if ($title == 'Dashboard' || $title == 'Settings' || $title == 'Convert Money' || $title == 'Transfer' || $title == 'Transaction' || $title == 'KYC Verification') { ?>
 <div class="flexBar">
     <div>
         <a href="index">
@@ -443,38 +443,59 @@
     <div class="sidebar-wrapper">
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item nav-li">
-                <a href="/dashboard" class="nav-link  sidebar-nav <?= ($title == "Dashboard") ? 'selected' : '' ?>"
-                   aria-current="page">
-                    <img class="nav-icons" src="./assets/images/home<?= ($title == 'Dashboard') ? '' : '-in' ?>.svg"
+                <a href="/dashboard" class="nav-link  sidebar-nav <?= ($title == "Dashboard") ? 'selected' : '' ?>" aria-current="page">
+                    <img class="nav-icons" src="/assets/images/home<?= ($title == 'Dashboard') ? '' : '-in' ?>.svg"
                          alt="home-icon">
                     <span class="<?= ($title == "Dashboard") ? 'sidebar-title-active' : 'sidebar-title' ?>">Home</span>
                 </a>
             </li>
             <li class="nav-item nav-li">
-                <a href="/convert-money.php"
-                   class="nav-link  sidebar-nav  <?= ($title == "Covert To Local Currency" || $title == 'Transfer') ? 'selected' : '' ?>"
-                   aria-current="page">
+                <a href="/convert-money" class="nav-link  sidebar-nav  <?= ($title == "Convert Money") ? 'selected' : '' ?>" aria-current="page">
                     <img class="nav-icons"
-                         src="./assets/images/convert<?= ($title == 'Covert To Local Currency' || $title == 'Transfer') ? '' : '-in' ?>.svg"
+                         src="/assets/images/convert<?= ($title == 'Convert Money') ? '' : '-in' ?>.svg"
                          alt="convert-to-local-icon">
-                    <span class="<?= ($title == "Covert To Local Currency" || $title == 'Transfer') ? 'sidebar-title-active' : 'sidebar-title' ?>">Convert to Local Currency</span>
+                    <span class="<?= ($title == "Convert Money") ? 'sidebar-title-active' : 'sidebar-title' ?>">Convert Money</span>
                 </a>
             </li>
             <li class="nav-item nav-li">
                 <a href="#" class="nav-link  sidebar-nav" aria-current="page">
                     <img class="nav-icons"
-                         src="./assets/images/dollar<?= ($title == 'Sell Digital Products') ? '' : '-in' ?>.svg"
+                         src="/assets/images/dollar<?= ($title == 'Sell Digital Products') ? '' : '-in' ?>.svg"
                          alt="sell-digital-products-icon">
-                    <span class="<?= ($title == "Sell Digital Products") ? 'sidebar-title-active' : 'sidebar-title' ?>">Sell Digital Products</span>
-                    <span class="coming-soon">Coming Soon</span>
+                    <span class="<?= ($title == "Sell Digital Products") ? 'sidebar-title-active' : 'sidebar-title' ?>">Intl. Bank Accounts <br> for Salary & Payments</span>
+                    <!--                    <span class="coming-soon">Coming Soon</span>-->
                 </a>
             </li>
             <li class="nav-item nav-li">
-                <a href="/settings" class="nav-link sidebar-nav <?= ($title == "Settings") ? 'selected' : '' ?>""
-                aria-current="page">
-                <img class="nav-icons" src="./assets/images/setting<?= ($title == 'Settings') ? '' : '-in' ?>.svg"
+                <a href="/transaction" class="nav-link  sidebar-nav <?= ($title == "Transaction") ? 'selected' : '' ?>" aria-current="page">
+                    <img class="nav-icons"
+                         src="/assets/images/transaction<?= ($title == 'Transaction') ? '' : '-in' ?>.svg"
+                         alt="transactions-icon">
+                    <span class="<?= ($title == "Transaction") ? 'sidebar-title-active' : 'sidebar-title' ?>">Transactions</span>
+
+                </a>
+            </li>
+            <!-- <li class="nav-item nav-li">
+                <a href="/get-freelancing-advice" class="nav-link  sidebar-nav" aria-current="page">
+                    <img class="nav-icons"
+                         src="/assets/images/transaction<?= ($title == 'Get Freelancing Advice') ? '' : '-in' ?>.svg"
+                         alt="sell-digital-products-icon">
+                    <span class="<?= ($title == "Get Freelancing Advice") ? 'sidebar-title-active' : 'sidebar-title' ?>">Get Freelancing Advice</span>
+
+                </a>
+            </li> -->
+            <li class="nav-item nav-li">
+                <a href="/settings" class="nav-link sidebar-nav <?= ($title == "Settings") ? 'selected' : '' ?>" aria-current="page">
+                    <img class="nav-icons" src="/assets/images/setting<?= ($title == 'Settings') ? '' : '-in' ?>.svg"
+                         alt="setting-icon">
+                    <span class="<?= ($title == "Settings") ? 'sidebar-title-active' : 'sidebar-title' ?>">Settings</span>
+                </a>
+            </li>
+            <li class="nav-item nav-li">
+                <a href="/logout" class="nav-link sidebar-nav aria-current="page">
+                <img class="nav-icons" src="/assets/images/logout.svg"
                      alt="setting-icon">
-                <span class="<?= ($title == "Settings") ? 'sidebar-title-active' : 'sidebar-title' ?>">Settings</span>
+                <span class="sidebar-title">Log out</span>
                 </a>
             </li>
         </ul>

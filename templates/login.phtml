@@ -23,7 +23,7 @@
                             <label class="form-labels" for="password">Enter Password</label>
                             <div class="input-group pass-wrapper pl-0" id="show_hide_password">
                                 <input class="form-control input-login login-pass" type="password" name="password" id="password" placeholder="Min. of 8 characters">
-                                <div class="input-group-addon show">
+                                <div class="input-group-addon show ">
                                     <i class="fa fa-eye" aria-hidden="true"></i>
                                 </div>
                                 <div class="input-group-addon hide">
@@ -90,6 +90,7 @@
 
 
     })
+    $('.show').hide();
 
     $('.show').click(function(){
         $(this).hide();

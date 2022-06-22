@@ -1205,6 +1205,7 @@ a.btn.btn-get-hiw-cta {
 .hero-text{
     display: inline-block !important;
     position: relative;
+    transition: all 1s ease;
 
 
 }
@@ -1283,9 +1284,37 @@ a.btn.btn-get-hiw-cta {
     padding: none;
 
 }
-/* .hide{
-    display: none;
-} */
+.ceda-charge{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #303030;
+    background: #F4F2FD;
+    border-radius: 61px;
+    padding: 10px;
+
+}
+.mt-10{
+    margin-top: 10px;
+}
+.value-after{
+
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    margin-top: 23px;
+}
+.value-after span{
+    font-size: 24px;
+    line-height: 30px;
+}
+
+
 
 /* .fa-plus,
 .fa-minus {
