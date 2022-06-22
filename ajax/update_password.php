@@ -5,7 +5,7 @@ require '../config/config.php';
 if($_REQUEST['password'] != ''){
     $data = [
       'password'    =>  hash('sha512', $_REQUEST['password']),
-      'token'       => $_SESSION['token'],
+      'id'       => $_SESSION['id'],
     ];
     $update = User::updateUser($data);
     if($update){

@@ -172,6 +172,10 @@
                 url: '/ajax/update_password',
                 method: 'POST',
                 dataType: 'JSON',
+                headers: {
+                    "accept": "application/json",
+                    "Access-Control-Allow-Origin":"*"
+                },
                 data: {
                     password: $('#new_password').val(),
                 },

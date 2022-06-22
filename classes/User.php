@@ -92,7 +92,7 @@ class User {
 
             $fields[] = $key ."='".str_replace("'", "\'", $value)."'";
         }
-        $sql  = "UPDATE users SET ".implode(',', $fields)." WHERE token = '".$data['token']."'";
+        $sql  = "UPDATE users SET ".implode(',', $fields)." WHERE id = '".$data['id']."'";
         //echo $sql;
         $stmt = $DB->prepare($sql);
         try {

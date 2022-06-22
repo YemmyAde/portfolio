@@ -295,7 +295,7 @@
     function faqControl() {
         $(".faqAns").hide();
         $(".q").on("click", function () {
-
+            //e.stopPropagation();
             if ($(this).next(".faqAns").hasClass("active")) {
                 $(this).next().slideToggle().removeClass("active");
                 $(this).children("i").removeClass("fa-minus").addClass("fa-plus")
@@ -314,12 +314,14 @@
         let input = $('#entered_currency').val();
         $('#converted_price').val(convertCurrency(input, exchangeRate));
         faqControl()
-        $('#entered_currency').keyup(function () {
+        $('#entered_currency').keyup(function (e) {
+            e.stopPropagation();
             let exchangeRate = $('#rate').val();
             let input = $('#entered_currency').val();
             $('#converted_price').val(convertCurrency(input, exchangeRate));
         })
-        $('#converted_price').keyup(function () {
+        $('#converted_price').keyup(function (e) {
+            e.stopPropagation();
             let exchangeRate = $('#rate').val();
             let input = $('#converted_price').val();
             $('#entered_currency').val(convertCurrencyBack(input, exchangeRate));
@@ -327,5 +329,48 @@
 
     });
 
+    $('.convert-moneny-header').click(function(e){
+        e.stopPropagation();
+        if( $('.convert-ul').hasClass('show')){
+            $('.convert-ul').removeClass('show')
+        }
+        else{
+            $('.convert-ul').addClass('show')
 
+        }
+        if ( $(this).hasClass("ffS") ){
+            $(this).removeClass("ffS")
+        } else {
+            $(this).addClass('ffS');
+        }
+        $('.international').removeClass("ffS")
+    })
+    $('.international').click(function(e){
+        e.stopPropagation();
+        if( $('.international-ul').hasClass('show')){
+            $('.international-ul').removeClass('show')
+        }
+        else{
+            $('.international-ul').addClass('show')
+
+        }
+        $('.convert-ul').removeClass('show')
+        if ( $(this).hasClass("ffS") ){
+            $(this).removeClass("ffS")
+        } else {
+            $(this).addClass('ffS');
+        }
+        $('.convert-moneny-header').removeClass("ffS")
+    })
+    $(document).click(function(e) {
+        e.stopPropagation();
+        $('.international-ul').removeClass('show')
+        $('.convert-ul').removeClass('show')
+        if ( $('.convert-moneny-header').hasClass("ffS") ){
+            $('.convert-moneny-header').removeClass("ffS")
+        }
+        if ( $('.international').hasClass("ffS") ){
+            $('.international').removeClass("ffS")
+        }
+    });
 </script>

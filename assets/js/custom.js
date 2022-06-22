@@ -1,10 +1,10 @@
 function convertCurrency(input, exchangeRate) {
     let convertedVal = Number(input) * Number(exchangeRate);
-    return convertedVal.toFixed(1);
+    return convertedVal.toFixed(2);
 }
 function convertCurrencyBack(input, exchangeRate) {
     let convertedVal = Number(input) / Number(exchangeRate);
-    return convertedVal.toFixed(1);
+    return convertedVal.toFixed(2);
 }
 function getFlagEmoji(countryCode) {
     const codePoints = countryCode
