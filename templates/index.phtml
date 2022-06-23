@@ -329,48 +329,45 @@
 
     });
 
-    $('.convert-moneny-header').click(function(e){
-        e.stopPropagation();
-        if( $('.convert-ul').hasClass('show')){
-            $('.convert-ul').removeClass('show')
-        }
-        else{
-            $('.convert-ul').addClass('show')
 
-        }
-        if ( $(this).hasClass("ffS") ){
-            $(this).removeClass("ffS")
-        } else {
-            $(this).addClass('ffS');
-        }
+    $('.convert-moneny-header').hover(function(e){
+        e.stopPropagation();
+
+        $('.international-ul').removeClass('show');
+        $('.angledown-int').show(150);
+        $('.angleup-int').hide(150);
         $('.international').removeClass("ffS")
-    })
-    $('.international').click(function(e){
-        e.stopPropagation();
-        if( $('.international-ul').hasClass('show')){
-            $('.international-ul').removeClass('show')
-        }
-        else{
-            $('.international-ul').addClass('show')
 
-        }
-        $('.convert-ul').removeClass('show')
-        if ( $(this).hasClass("ffS") ){
-            $(this).removeClass("ffS")
-        } else {
-            $(this).addClass('ffS');
-        }
-        $('.convert-moneny-header').removeClass("ffS")
+        $('.convert-ul').addClass('show');
+        $('.angledown-convert').hide(150);
+        $('.angleup-convert').show(150);
+        $('.convert-moneny-header').addClass('ffS');
+
+
+    })
+    $('.international').hover(function(e){
+        e.stopPropagation();
+        $('.convert-ul').removeClass('show');
+        $('.angledown-convert').show(150);
+        $('.angleup-convert').hide(150);
+        $('.convert-moneny-header').removeClass('ffS');
+
+        $('.international-ul').addClass('show');
+        $('.angledown-int').hide(150);
+        $('.angleup-int').show(150);
+        $('.international').addClass("ffS")
+
     })
     $(document).click(function(e) {
         e.stopPropagation();
         $('.international-ul').removeClass('show')
         $('.convert-ul').removeClass('show')
-        if ( $('.convert-moneny-header').hasClass("ffS") ){
-            $('.convert-moneny-header').removeClass("ffS")
-        }
-        if ( $('.international').hasClass("ffS") ){
-            $('.international').removeClass("ffS")
-        }
+        $('.angleup-convert').hide();
+        $('.angleup-int').hide();
+        $('.angledown-convert').show();
+        $('.angledown-int').show();
+        $('.international').removeClass("ffS")
+        $('.convert-moneny-header').removeClass("ffS")
+
     });
 </script>

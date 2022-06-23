@@ -1652,10 +1652,15 @@ img.section-image {
 }
 
 .ffS {
-    font-family: 'Sora' !important
-
+    font-family: 'Sora' !important;
+    font-weight:700;
 }
-
+.angleup-convert{
+    display: none
+}
+.angleup-int{
+    display: none
+}
 .dropdown-btn-convert {
     border: 0;
     background-color: #ffffff !important;
