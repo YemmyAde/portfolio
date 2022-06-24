@@ -77,7 +77,7 @@
                 </ul>
             </div>-->
         </div>
-        <div id="myModal" class="mymodal-h">
+        <div id="myModal-h" class="mymodal-h">
 
             <!-- Modal content -->
 
@@ -141,7 +141,9 @@
 <script src="https://cdn.tutorialjinni.com/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <script>
 
-
+    const openModal = ()=>{
+        modal.style.display = "block";
+    }
     function showToast() {
         let x = document.getElementById("snackbar");
         x.className = "showToast";
