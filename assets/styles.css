@@ -809,7 +809,7 @@ a.btn.btn-get-start-cta {
 }
 
 .coverage {
-    border-right: 1px solid #DEE2E6;
+    /*border-right: 1px solid #DEE2E6;*/
     padding-left: 104px;
 }
 
@@ -1343,6 +1343,7 @@ a.btn.btn-get-hiw-cta {
 
 .titles-sub {
     display: flex;
+    align-items: center;
 }
 
 .right-title-drop {
@@ -1780,10 +1781,18 @@ img.section-image {
     font-weight:700;
 }
 .angleup-convert{
-    display: none
+    display: none;
+    margin-left:8px;
 }
 .angleup-int{
-    display: none
+    display: none;
+    margin-left:8px;
+}
+.angledown-convert{
+    margin-left:8px;
+}
+.angledown-int{
+    margin-left:8px;
 }
 .dropdown-btn-convert {
     border: 0;

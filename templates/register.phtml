@@ -176,6 +176,8 @@
         }
         var full_number = phone_number.getNumber(intlTelInputUtils.numberFormat.E164);
         let countryData = phone_number.getSelectedCountryData()
+
+        // var regularExpression = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
         console.log(countryData);
         if (password == cpassword) {
             //$(this).html(` <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span><span class="sr-only">Loading...</span>`)

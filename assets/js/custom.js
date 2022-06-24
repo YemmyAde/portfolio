@@ -30,3 +30,28 @@ function readURL(input) {
         reader.readAsDataURL(input.files[0]);
     }
 }
+// Get the modal
+let modal = document.getElementById("myModal");
+let span = document.getElementsByClassName("close-modal")[0];
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+span.onclick = function() {
+
+}
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+const handlechange = ()=>{
+    let choose_NGN = document.getElementById("choose_NGN");
+    let value = choose_NGN.options[choose_NGN.selectedIndex].value;
+
+    if(value == "add"){
+        modal.style.display = "block";
+
+
+    }
+}

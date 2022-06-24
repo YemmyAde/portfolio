@@ -289,6 +289,25 @@
 </section>
 <?php include 'templates/footer.phtml'; ?>
 <script>
+/*
+    let modal = document.getElementById("myModal");
+
+    let span = document.getElementsByClassName("close-modal-h")[0];
+
+    const openModal = () => {
+        modal.style.display = "block";
+    }
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+*/
+
 
     function faqControl() {
         $(".faqAns").hide();
@@ -328,7 +347,42 @@
     });
 
 
-    $('.convert-moneny-header').hover(function(e){
+    $('.convert-header-wrapper').hover(function(e){
+        e.stopPropagation();
+
+        $('.international-ul').removeClass('show');
+        $('.angledown-int').show(150);
+        $('.angleup-int').hide(150);
+        $('.international').removeClass("ffS")
+
+        $('.convert-ul').addClass('show');
+        $('.angledown-convert').hide(150);
+        $('.angleup-convert').show(150);
+        $('.convert-moneny-header').addClass('ffS');
+
+
+    },function(e){
+        e.stopPropagation();
+
+        $('.convert-ul').removeClass('show');
+        $('.angledown-convert').show(150);
+        $('.angleup-convert').hide(150);
+        $('.convert-moneny-header').removeClass('ffS');
+    })
+    $('.international-wrapper').hover(function(e){
+        e.stopPropagation();
+        $('.convert-ul').removeClass('show');
+        $('.angledown-convert').show(150);
+        $('.angleup-convert').hide(150);
+        $('.convert-moneny-header').removeClass('ffS');
+
+        $('.international-ul').addClass('show');
+        $('.angledown-int').hide(150);
+        $('.angleup-int').show(150);
+        $('.international').addClass("ffS")
+
+    })
+    $('.convert-header-wrapper').click(function(e){
         e.stopPropagation();
 
         $('.international-ul').removeClass('show');
@@ -343,7 +397,7 @@
 
 
     })
-    $('.international').hover(function(e){
+    $('.international-wrapper').click(function(e){
         e.stopPropagation();
         $('.convert-ul').removeClass('show');
         $('.angledown-convert').show(150);

@@ -108,22 +108,10 @@
 
 </div>
 <?php include 'templates/footer.phtml'; ?>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
 
     // Get the modal
     let modal = document.getElementById("myModal");
-
-    function handlechange(){
-        let choose_NGN = document.getElementById("choose_NGN");
-        let value = choose_NGN.options[choose_NGN.selectedIndex].value;
-
-        if(value == "add"){
-            modal.style.display = "block";
-
-
-        }
-    }
 
     let span = document.getElementsByClassName("close-modal")[0];
 
@@ -136,7 +124,16 @@
             modal.style.display = "none";
         }
     }
+    const handlechange = ()=>{
+        let choose_NGN = document.getElementById("choose_NGN");
+        let value = choose_NGN.options[choose_NGN.selectedIndex].value;
 
+        if(value == "add"){
+            modal.style.display = "block";
+
+
+        }
+    }
     document.addEventListener("DOMContentLoaded", ()=>{
         console.log("its working now")
 
@@ -158,16 +155,6 @@
             });
 
     })
-
-
-
-
-
-
-
-
-
-
     let exchangeRate = $('#price_to').val();
     let input = $('#entered_currency').val();
 
