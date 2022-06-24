@@ -127,9 +127,32 @@ input[type=number]::-webkit-outer-spin-button {
         opacity: 0;
     }
 }
+.nav-item-ceda a:hover{
+    font-weight: 700 !important;
+    color: #000000;
+}
+a.nav-bold:hover{
+    font-weight: 700 !important;
+    color: #000000;
+}
 
 /* The Modal (background) */
 .mymodal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    margin: 0 auto;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.mymodal-h {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -156,6 +179,15 @@ input[type=number]::-webkit-outer-spin-button {
     width: 40%;
     border-radius: 8px;
 }
+.modal-content-h {
+    background-color: #FFFFFF;
+    margin: auto;
+
+    /*padding: 20px;*/
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 0px;
+}
 
 .modal_head {
     background: #EFECFD;
@@ -164,6 +196,43 @@ input[type=number]::-webkit-outer-spin-button {
     padding-top: 42px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+}
+
+.modal_head-h {
+    background: url('/assets/images/modal-bg.png'), #EFECFD;
+    padding: 42px 90px;
+}
+.modal-title-h{
+    padding: 47px 90px;
+    padding-right: 80px;
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 160%;
+    color: #000000;
+}
+
+
+.modal-flex{
+    display: flex;
+    justify-content: space-between
+}
+.modal-heading-h {
+    font-family: 'Sora';
+    font-weight: 600;
+    font-size: 44.1055px;
+    line-height: 93.1%;
+    padding-top: 10px;
+}
+
+.modal-text-h {
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    margin-top: 16px;
 }
 
 .modal-heading {
@@ -183,10 +252,32 @@ input[type=number]::-webkit-outer-spin-button {
     margin-top: 16px;
 }
 
+.modal_body-h {
+    padding: 0px 50px;
+    padding-bottom: 103px;
+}
+
 .modal_body {
     padding: 36px 71px;
 }
+.coming-soon-img{
+    width: 100%;
+    margin-top: 25px;
+}
 
+.title-input-h {
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 3px !important;
+}
+
+.mt-20{
+    margin-top: 2px !important;
+}
 .title-input {
 
     font-family: 'Inter';
@@ -196,6 +287,21 @@ input[type=number]::-webkit-outer-spin-button {
     line-height: 17px;
 }
 
+.account-no-h {
+    border: 1px solid #DDDDDD !important;
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 8.9px;
+}
+
+.account-no-h::placeholder {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 143.5%;
+}
 .account-no {
     border: 1px solid #DDDDDD !important;
     border-radius: 5px;
@@ -211,8 +317,25 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 16px;
     line-height: 143.5%;
 }
-
 /* The Close Button */
+.close-modal-h {
+
+    background: #C6BEE9;
+    color: #000000;
+    cursor: pointer;
+    height: 56px;
+    width: 56px;
+    display: flex;
+    justify-content: center;
+    font-size: 48px;
+    font-weight: 400;
+
+}
+.close-modal-h span {
+
+    position: relative;
+    top: -7px;
+}
 .close-modal {
 
     background: rgba(255, 255, 255, 0.5);
@@ -332,7 +455,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    font-family: 'Sora', sans-serif;
+    font-family:  sans-serif;
 }
 
 footer {
@@ -444,10 +567,10 @@ footer {
     font-family: Sora !important
 }
 
-.nav-ceda:hover, a.nav-ceda:hover {
-    font-weight: 500;
-    color: #000000;
-}
+/*.nav-ceda:hover, a.nav-ceda:hover {*/
+/*    font-weight: 500;*/
+/*    color: #000000;*/
+/*}*/
 
 .collapse-wrapper {
     width: 80%;
@@ -615,7 +738,7 @@ a.footer-nav {
     font-weight: 400;
     font-size: 18px;
     line-height: 150%;
-    display: flex;
+    /*display: flex;*/
     align-items: center;
     color: #313131;
 }
@@ -1379,6 +1502,7 @@ a.btn.btn-get-hiw-cta {
     font-size: 16px;
     line-height: 93.1%;
     color: #2D2D2D;
+    font-weight: 700;
 }
 
 .faqAns {
@@ -1614,7 +1738,7 @@ img.section-image {
 /********************/
 /****************Login Page*****************/
 .login-service-section {
-    font-family: 'Sora', sans-serif;
+    font-family:  sans-serif;
     /*width: 1440px;*/
 }
 
@@ -3523,7 +3647,7 @@ th.bl {
 .top-header-text {
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 14px;
     line-height: 150%;
     color: #5E3EEB;
@@ -3943,6 +4067,13 @@ label.m0.label-kyc {
     .modal-content {
         width: 60%;
     }
+    .modal-content-h {
+        width: 60%;
+    }
+    .modal_head-h {
+
+        padding: 42px 80px;
+    }
 
     .hero-bg {
         padding: 15px 0;
@@ -4093,7 +4224,12 @@ label.m0.label-kyc {
         box-sizing: border-box;
         align-items: center;
     }
-
+    .modal-content-h {
+        width: 80%;
+    }
+    .coming-soon-img{
+        margin-bottom: 30px;
+    }
     .side-img {
         margin-top: 10px;
         left: 1% !important;
@@ -4103,6 +4239,13 @@ label.m0.label-kyc {
     .trans-box {
         display: block;
 
+    }
+    .modal-heading-h {
+        font-family: 'Sora';
+        font-weight: 600;
+        font-size: 34.1055px;
+        line-height: 93.1%;
+        padding-top: 10px;
     }
 
     .join-ceda {
@@ -4237,6 +4380,10 @@ label.m0.label-kyc {
 
     .left-content-footer {
         width: 100%;
+    }
+    .modal_head-h , .modal-title-h {
+
+        padding: 42px 50px;
     }
 
     .footer-right {

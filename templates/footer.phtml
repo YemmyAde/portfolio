@@ -9,28 +9,28 @@
                 <div class="left-content-footer">
                     <div class="footer-right">
                         <div class="footer-link">
-                            <a href="/login" class="link-item">Convert Money</a>
+                            <a href="/login" class="link-item nav-bold">Convert Money</a>
                         </div>
                     </div>
                     <div class="footer-right footer-rightr">
                         <div class="footer-link">
-                            <a href="/login" class="link-item">int'l Bank Accounts</a>
+                            <a href="/login" class="link-item nav-bold">int'l Bank Accounts</a>
                         </div>
                     </div>
                     <div class="footer-right" onclick="openModal()">
                         <div class="footer-link">
-                            <a  class="link-item">Business APIs</a>
+                            <a  class="link-item nav-bold">Business APIs</a>
                         </div>
                     </div>
 
                     <div class="footer-right">
                         <div class="footer-link">
-                            <a href="/terms-of-use" class="link-item">Terms of use</a>
+                            <a href="/terms-of-use" class="link-item nav-bold">Terms of use</a>
                         </div>
                     </div>
                     <div class="footer-right">
                         <div class="footer-link">
-                            <a href="/privacy" class="link-item privacy-footer">Privacy</a>
+                            <a href="/privacy" class="link-item privacy-footer nav-bold">Privacy Policy</a>
                         </div>
                     </div>
                 </div>
@@ -77,6 +77,54 @@
                 </ul>
             </div>-->
         </div>
+        <div id="myModal" class="mymodal-h">
+
+            <!-- Modal content -->
+
+            <div class="modal-content-h">
+
+                <div class="modal_head-h">
+
+                    <div class="modal-flex">
+                        <div class="modal-heading-h">Business API </div>
+                        <div class="close-modal-h"><span>&times;</span></div>
+                    </div>
+
+
+                    <div class="modal-text-h">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor
+                        sit amet, consectetur adipiscing elit.</div>
+
+                </div>
+
+                <div class="modal-title-h">Lorem ipsum dolor sit, consectetur adipiscing elit.</div>
+
+                <div class="modal_body-h">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <img src="/assets/images/coming-soon.png" class="coming-soon-img">
+                            </div>
+                            <div class="col-lg-7">
+                                <p class="title-input-h">Fullname </p>
+
+                                <input type="text" PLACEHOLDER="Enter Fullname" class="account-no-h">
+
+                                <p class="title-input-h">Email </p>
+
+                                <input type="email" PLACEHOLDER="Enter Email" class="account-no-h">
+
+                                <p class="title-input-h">Phone Number </p>
+
+                                <input type="text" PLACEHOLDER="Enter Phone Number" class="account-no-h">
+
+                                <button class="btn-submit mt-20" id="add-bank-acc">Sign Me Up</button>
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+
+        </div>
 
     </footer>
 <?php } ?>
@@ -92,6 +140,34 @@
 <script src="/assets/js/custom.js"></script>
 <script src="https://cdn.tutorialjinni.com/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <script>
+
+    let modal = document.getElementById("myModal");
+
+    let span = document.getElementsByClassName("close-modal-h")[0];
+
+    const openModal = () => {
+        modal.style.display = "block";
+    }
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    const handlechange = ()=>{
+        let choose_NGN = document.getElementById("choose_NGN");
+        let value = choose_NGN.options[choose_NGN.selectedIndex].value;
+
+        if(value == "add"){
+            modal.style.display = "block";
+
+
+        }
+    }
     function showToast() {
         let x = document.getElementById("snackbar");
         x.className = "showToast";
