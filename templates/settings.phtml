@@ -14,7 +14,7 @@
                 <!-- <div class="border-header"></div> -->
                 <div class="content-wrapper ">
                     <div class="setting-wrapper">
-                        <p class="info">Personal    Information</p>
+                        <p class="info">Personal Information</p>
                         <div class="info-wrapper">
                             <div class="info-detail">
                                 <div class="info-detail-text">
@@ -61,7 +61,12 @@
                                         <input type="password" class="input-field" name="confirm_password"
                                                id="confirm_password" placeholder="Confirm Password"/>
                                     </div>
-                                    <div class="upd-btn">Update </div>
+                                    <div class="upd-btn">Update</div>
+
+                                </div>
+                                <div class="alert alert-danger" id="error-pass" style="display: none;margin-top:15px">
+                                    Password must contain at least alphabets, number, special character, and 8
+                                    characters or longer
                                 </div>
                             </div>
                             <div class="info-detail mt16">
@@ -76,7 +81,7 @@
                                     <p class="action-sub">Add an extra layer of security and protection to your
                                         account to protect it from unauthorized transactions</p>
                                 </div>
-                                <div class="edit-wrapper security" id="changeAuth" >
+                                <div class="edit-wrapper security" id="changeAuth">
                                     <span class="change">Enable Auth 2FA</span>
                                     <img src="/assets/images/off.svg" alt="" class="off" id="off2FA">
                                     <img src="/assets/images/on.svg" alt="" class="on" id="on2FA">
@@ -115,43 +120,43 @@
     /*************Password****************/
     $('#changePass').click(function () {
 
-        if($(this).children(".change").hasClass("active")){
+        if ($(this).children(".change").hasClass("active")) {
 
             $(this).children(".change").removeClass("active");
             $('#offPass').show();
             $('#onPass').hide();
             $('#showPassView').hide(150)
 
-        } else{
+        } else {
             $(this).children(".change").addClass("active");
             $('#onPass').show();
             $('#offPass').hide();
             $('#showPassView').show(150)
         }
-                   
+
     });
 
-  
+
     /*************2FA****************/
 
 
     $('#changeAuth').click(function () {
 
-        if($(this).children(".change").hasClass("active")){
+        if ($(this).children(".change").hasClass("active")) {
 
             $(this).children(".change").removeClass("active");
             $('#on2FA').hide();
             $('#off2FA').show();
             $('#show2FaView').hide(150);
 
-        } else{
+        } else {
             $(this).children(".change").addClass("active");
             $('#on2FA').show();
             $('#off2FA').hide();
             $('#show2FaView').show(150);
         }
-                
-        });
+
+    });
 
     //update Password
 
@@ -162,11 +167,16 @@
             showToast();
             return
         }
-       if ($('#new_password').val() != $('#confirm_password').val()) {
+        if ($('#new_password').val() != $('#confirm_password').val()) {
             $('#snackbar').html('Passwords do not match');
             showToast();
             return
         }
+        if (!validatePassword($('#new_password').val())) {
+            $('#error-pass').show();
+            return
+        }
+        $('#error-pass').hide();
         try {
             $.ajax({
                 url: '/ajax/update_password',
@@ -174,7 +184,7 @@
                 dataType: 'JSON',
                 headers: {
                     "accept": "application/json",
-                    "Access-Control-Allow-Origin":"*"
+                    "Access-Control-Allow-Origin": "*"
                 },
                 data: {
                     password: $('#new_password').val(),

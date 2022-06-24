@@ -9,7 +9,9 @@
 
                     <div class="convert-wrapper one">
                         <div class="convert-dis-wrap">
-                            <p class="convert-display mb0">1 <span class="selected_currency">USD</span> ≈ <span class="selected_amount"></span> <?=$_SESSION['currency']?></p> <span><img src="../assets/images/rotated-convert.svg" alt=""></span>
+                            <p class="convert-display mb0">1 <span class="selected_currency">USD</span> ≈ <span
+                                        class="selected_amount"></span> <?= $_SESSION['currency'] ?></p> <span><img
+                                        src="../assets/images/rotated-convert.svg" alt=""></span>
                         </div>
                         <div class="amount-to-convert">
                             <p class="title">Amount to convert</p>
@@ -34,31 +36,29 @@
                                 <div class="price_to-convert" id="price_to"><span><img
                                                 src="/assets/images/<?= $_SESSION['iso'] ?>.svg"
                                                 alt=""
-                                                class="converted_to_img"></span><span class="capita"><?= $_SESSION['currency'] ?></span>
+                                                class="converted_to_img"></span><span
+                                            class="capita"><?= $_SESSION['currency'] ?></span>
                                 </div>
                             </div>
                         </div>
                         <p class="title-res-amount">Select Residing Account / Payment Method </p>
 
-                        <select class="method" name="residing_method" id="residing_method" >
+                        <select class="method" name="residing_method" id="residing_method">
                             <option value="">Select Payment Method</option>
-                            <option value="payoneer">Pay with Payoneer Fund</option>
-                            <option value="wise fund">Pay with Wise Fund</option>
-                            <option value="us bank">Pay with US Bank Transfer</option>
-                            <option value="bank">Pay with Local Bank Transfer</option>
-                            <option value="card">Pay with Card</option>
+                            <?php foreach ($payment_methods as $payment_method) { ?>
+                                <option value="<?= $payment_method['id'] ?>"><?= $payment_method['payment_method'] ?></option>
+                            <?php } ?>
 
                         </select>
-
                         <p class="title-res-amount">Select Recipient Details</p>
 
                         <select class="method" name="choose_NGN" id="choose_NGN" onChange="handlechange()">
                             <option value="">Select Recipients Details</option>
                             <option value="account details">0002222111 - Access bank</option>
-                            <option value="add" > Add New Recipient </option>
+                            <option value="add"> Add New Recipient</option>
                         </select>
 
-                        <div class="mt-10" >
+                        <div class="mt-10">
 
                             <span class="ceda-charge">Ceda Charge: 1% | Payment Charge 3%</span>
                             <div class="value-after">Value After Charges: <br>
@@ -70,7 +70,7 @@
                         <div id="myModal" class="mymodal">
 
                             <!-- Modal content -->
-                            <div class="close-modal"> <span>&times;</span> </div>
+                            <div class="close-modal"><span>&times;</span></div>
                             <div class="modal-content">
 
                                 <div class="modal_head">
@@ -87,9 +87,9 @@
 
                                     <input type="number" PLACEHOLDER="Enter Bank Account Number" class="account-no">
 
-                                    <p class="title-input">Recipient Bank Name  </p>
+                                    <p class="title-input">Recipient Bank Name </p>
 
-                                    <select class="method" name="recipient-bank-name" id="recipient-bank-name" >
+                                    <select class="method" name="recipient-bank-name" id="recipient-bank-name">
                                         <option value="">-- Select Recipient account bank --</option>
 
                                     </select>
@@ -110,25 +110,40 @@
 <?php include 'templates/footer.phtml'; ?>
 <script>
 
+    let paymentMethod = <?php echo json_encode($payment_methods); ?>;
+
+    $('#residing_method').on('change',function(){
+        let selectedMethod = paymentMethod.filter(function(item){
+           return item.id === Number($('#residing_method').val());
+
+            // console.log(item.id,$('#residing_method').val());
+        })
+        selectedMethod = selectedMethod[0];
+
+
+        let exchangeRate = $('#price_to').val();
+        let input = $('#entered_currency').val();
+        $('#converted_price').html(numberWithCommas(convertCurrency(input, exchangeRate)));
+    })
     // Get the modal
     let modalD = document.getElementById("myModal");
 
     let spanD = document.getElementsByClassName("close-modal")[0];
 
-    spanD.onclick = function() {
+    spanD.onclick = function () {
         modalD.style.display = "none";
     }
 
-    window.onclick = function(event) {
+    window.onclick = function (event) {
         if (event.target == modalD) {
             modalD.style.display = "none";
         }
     }
-    const handlechange = ()=>{
+    const handlechange = () => {
         let choose_NGN = document.getElementById("choose_NGN");
         let value = choose_NGN.options[choose_NGN.selectedIndex].value;
 
-        if(value == "add"){
+        if (value == "add") {
             modalD.style.display = "block";
 
 
@@ -136,21 +151,19 @@
     }
 
 
-    document.addEventListener("DOMContentLoaded", ()=>{
-        console.log("its working now")
+    document.addEventListener("DOMContentLoaded", () => {
 
         fetch('https://nigerianbanks.xyz/')
             .then(response => response.json())
             .then(result => {
 
-                let bankOption = result.map((item,i)=>{
+                let bankOption = result.map((item, i) => {
                     return (
                         ` <option value="${item.slug}">${item.name}</option>`
                     )
 
                 })
-                document.getElementById("recipient-bank-name").innerHTML= bankOption;
-                console.log('Success:', result);
+                document.getElementById("recipient-bank-name").innerHTML = bankOption;
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -161,13 +174,13 @@
     let input = $('#entered_currency').val();
 
     $('.selected_amount').html(exchangeRate)
-    $('.selected_currency').html($("#price_to option:selected").text().replace('$ ','').replace('£ ','').replace('€ ',''))
+    $('.selected_currency').html($("#price_to option:selected").text().replace('$ ', '').replace('£ ', '').replace('€ ', ''))
 
     $('#first_sec').click(function () {
         let res = '<?=$res?>';
 
         if (res === "0") {
-            window.location.href = "/bank-transfer?q=" + $('#residing_method').val +"&am="+ $('#entered_currency').val() + "&eq="+convertCurrency($('#entered_currency').val(), $('#price_to').val());
+            window.location.href = "/bank-transfer?q=" + $('#residing_method').val + "&am=" + $('#entered_currency').val() + "&eq=" + convertCurrency($('#entered_currency').val(), $('#price_to').val());
             return
         }
         if (res === "1") {
@@ -184,15 +197,15 @@
 
             return
         }
-        let sign = $("#price_to option:selected").text().replace(' USD','').replace(' GBP','').replace(' EUR','');
-        sign =encode( $.trim(sign))
-       window.location.href = "/bank-transfer?q=" + encode( $('#residing_method').val()) +"&am="+encode( $('#entered_currency').val()) + "&eq="+encode(String(convertCurrency($('#entered_currency').val(), $('#price_to').val())))+ '&s='+sign;
+        let sign = $("#price_to option:selected").text().replace(' USD', '').replace(' GBP', '').replace(' EUR', '');
+        sign = encode($.trim(sign))
+        window.location.href = "/bank-transfer?q=" + encode($('#residing_method').val()) + "&am=" + encode($('#entered_currency').val()) + "&eq=" + encode(String(convertCurrency($('#entered_currency').val(), $('#price_to').val()))) + '&s=' + sign;
     });
     $('#price_to').on('change', function () {
         let exchangeRate = $('#price_to').val();
         let input = $('#entered_currency').val();
         $('.selected_amount').html(exchangeRate)
-        $('.selected_currency').html($("#price_to option:selected").text().replace('$ ','').replace('£ ','').replace('€ ',''))
+        $('.selected_currency').html($("#price_to option:selected").text().replace('$ ', '').replace('£ ', '').replace('€ ', ''))
 
 
         $('#converted_price').html(numberWithCommas(convertCurrency(input, exchangeRate)));

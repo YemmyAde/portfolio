@@ -44,3 +44,10 @@ window.onclick = function(event) {
     }
 }
 
+function validatePassword(password){
+    let strongRegex = new RegExp("^(?=.*[a-z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+    if (!strongRegex.test(password)) {
+        return false
+    }
+    return true;
+}

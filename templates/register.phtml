@@ -5,7 +5,7 @@
                 <div class="inner-col">
                     <a href="/"> <img src="/assets/images/Ceda-Black.svg" class="sign-img" alt="CEDA Logo"></a>
                     <h2 class="left-content">A new world of financial possibilities is now within your reach.</h2>
-<!--                    <p class="left-content-text">A new world of financial possibilities is now within your reach.</p>-->
+                    <!--                    <p class="left-content-text">A new world of financial possibilities is now within your reach.</p>-->
                 </div>
                 <img src="/assets/images/sign-up-img.png" class="left-col-img">
             </div>
@@ -69,6 +69,9 @@
                                        placeholder="Min. of 8 characters">
                             </div>
                         </div>
+                        <div class="alert alert-danger" id="error-pass" style="display: none">Password must contain at
+                            least alphabets, number, special character, and 8 characters or longer
+                        </div>
                         <div class="col-md-12 input-wrapper">
                             <div class="form-group">
                                 <label class="form-labels" for="email">Confirm Password</label>
@@ -104,7 +107,8 @@
                                 </div>
                             </div>
                         </div>
-                        <button class="btn-submit">Create my account &nbsp; <img src="/assets/images/register.png" alt="">
+                        <button class="btn-submit">Create my account &nbsp; <img src="/assets/images/register.png"
+                                                                                 alt="">
                         </button>
                         <div class="register-redirect">
                             Already have an account? <a href="/login">Login here</a>
@@ -139,6 +143,7 @@
         //     input.checked = true;
         // }
     }
+
     var phone_number = window.intlTelInput(document.querySelector("#phone_number"), {
         separateDialCode: true,
         hiddenInput: "full",
@@ -147,6 +152,8 @@
     });
     $('.btn-submit').click(function (e) {
         e.preventDefault();
+        $('#error-pass').hide();
+
         let password = $('#password').val();
         let cpassword = $('#cpassword').val();
         if ($('#name').val() == '') {
@@ -177,10 +184,14 @@
         var full_number = phone_number.getNumber(intlTelInputUtils.numberFormat.E164);
         let countryData = phone_number.getSelectedCountryData()
 
-        // var regularExpression = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+
         console.log(countryData);
         if (password == cpassword) {
-            //$(this).html(` <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span><span class="sr-only">Loading...</span>`)
+            if (!validatePassword(password)) {
+                $('#error-pass').show();
+                return
+            }
+            $('#error-pass').hide();
             try {
                 $.ajax({
                     url: '/ajax/signup_user',
@@ -191,7 +202,7 @@
                         email: $('#email').val(),
                         country: countryData.name,
                         iso2: countryData.iso2,
-                        dial_code:countryData.dialCode,
+                        dial_code: countryData.dialCode,
                         phone_number: full_number,
                         password: $('#password').val(),
                         type: type,

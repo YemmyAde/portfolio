@@ -40,6 +40,26 @@ class User {
             return false;
         }
     }
+    public static function getUserByPhone($phone)
+    {
+        global $DB;
+        $sql = "SELECT * FROM users WHERE phone_number = :phone";
+        $stmt = $DB->prepare($sql);
+        try {
+            $stmt->execute([
+                'phone' => $phone
+            ]);
+            $row = $stmt->fetch();
+            if(!$row){
+                return false;
+            }else{
+                return true;
+            }
+        } catch (Exception $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
     public static function verifyUser($email = "",$password = "")
     {
         global $DB;
