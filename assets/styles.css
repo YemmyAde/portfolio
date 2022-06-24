@@ -455,7 +455,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    font-family:  sans-serif;
+    font-family: 'Sora', sans-serif;
 }
 
 footer {
