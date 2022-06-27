@@ -457,6 +457,42 @@ body {
     flex-direction: column;
     font-family: 'Sora', sans-serif;
 }
+*{
+    font-family: 'Sora', sans-serif;
+}
+
+.ceda-flex{
+    display: flex ;
+    justify-content: space-between;
+    margin-top: 16.19px;
+}
+
+.estimated-deli{
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 13px;
+    color: #858585;
+}
+.estimated-time{
+    background: #EBECEF;
+    border-radius: 64.7951px;
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10.6721px;
+    line-height: 13px;
+    color: #858585;
+    margin-top: 6px;
+    padding: 8.75px 7.62px;
+    display: inline-block;
+    float: right;
+
+}
+.estimated-time img{
+    padding-right: 4.57px;
+}
 
 footer {
     margin-top: auto;
@@ -1542,14 +1578,14 @@ a.btn.btn-get-hiw-cta {
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
-    line-height: 20px;
+    line-height: 22px;
     color: #000000;
-    margin-top: 23px;
+    margin-top: 6.1px;
 }
 
 .value-after span {
     font-size: 24px;
-    line-height: 30px;
+    line-height: 44px;
 }
 
 
@@ -4041,7 +4077,11 @@ label.m0.label-kyc {
         width: 53%
     }
 
-
+    .convert-wrapper {
+        background-color: #ffffff;
+        padding: 79px 135px;
+        border-radius: 8px;
+    }
 }
 
 

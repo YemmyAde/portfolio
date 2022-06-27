@@ -50,6 +50,14 @@
                             <?php } ?>
 
                         </select>
+
+                        <p class="title-res-amount">Select Bank You’re Paying From</p>
+
+                        <select class="method" name="select-bank" id="select-bank">
+
+                            <option value="" disabled selected hidden>Select Bank</option>
+
+                        </select>
                         <p class="title-res-amount">Select Recipient Details</p>
 
                         <select class="method" name="choose_NGN" id="choose_NGN" onChange="handlechange()">
@@ -60,9 +68,19 @@
 
                         <div class="mt-10">
 
-                            <span class="ceda-charge">Ceda Charge: 1% | Payment Charge 3%</span>
-                            <div class="value-after">Value After Charges: <br>
-                                <span>15,250 NGN</span></div>
+                            <span class="ceda-charge">Ceda Charge: 1% | Payment Charge 4%</span>
+
+                            <div class="ceda-flex">
+
+                                <div class="value-after">You will receive: <br>
+                                    <span>15,250 NGN</span></div>
+
+                                <div>
+                                    <div class="estimated-deli">Estimated Delivery Time</div>
+                                    <span class="estimated-time"><img src="/assets/images/Combined-Shape.png"> 1hr-24hrs</span>
+                                </div>
+                            </div>
+
                         </div>
 
                         <button class="btn-submit m0 m40" id="first_sec">Continue Transaction</button>
@@ -151,6 +169,7 @@
     }
 
 
+
     document.addEventListener("DOMContentLoaded", () => {
 
         fetch('https://nigerianbanks.xyz/')
@@ -164,12 +183,15 @@
 
                 })
                 document.getElementById("recipient-bank-name").innerHTML = bankOption;
+                document.getElementById("select-bank").innerHTML = bankOption;
             })
             .catch(error => {
                 console.error('Error:', error);
             });
 
     })
+
+
     let exchangeRate = $('#price_to').val();
     let input = $('#entered_currency').val();
 
