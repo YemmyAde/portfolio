@@ -68,16 +68,17 @@
 
                         <div class="mt-10">
 
-                            <span class="ceda-charge">Ceda Charge: 1% | Payment Charge 4%</span>
+                            <span class="ceda-charge" >Ceda Charge: 0% | Payment Charge 0%</span>
 
                             <div class="ceda-flex">
 
                                 <div class="value-after">You will receive: <br>
-                                    <span>15,250 NGN</span></div>
+                                    <span class="actual_amount"> 0 </span><?=" ". $_SESSION['currency'] ?>
+                                </div>
 
                                 <div>
                                     <div class="estimated-deli">Estimated Delivery Time</div>
-                                    <span class="estimated-time"><img src="/assets/images/Combined-Shape.png"> 1hr-24hrs</span>
+                                    <span class="estimated-time"><img src="/assets/images/Combined-Shape.png"> <span class="estimate">0hr-0hrs</span></span>
                                 </div>
                             </div>
 
@@ -127,9 +128,16 @@
 </div>
 <?php include 'templates/footer.phtml'; ?>
 <script>
-
+    //trigger on load
+    let exchangeRate = $('#price_to').val();
+    let input = $('#entered_currency').val();
+    $('.actual_amount').html(numberWithCommas(convertCurrency(input, exchangeRate)));
+    $('.selected_amount').html(exchangeRate)
+    $('.selected_currency').html($("#price_to option:selected").text().replace('$ ', '').replace('£ ', '').replace('€ ', ''))
+    let totalPercent = 0
     let paymentMethod = <?php echo json_encode($payment_methods); ?>;
 
+    //when residing method is changes
     $('#residing_method').on('change',function(){
         let selectedMethod = paymentMethod.filter(function(item){
            return item.id === Number($('#residing_method').val());
@@ -137,21 +145,24 @@
             // console.log(item.id,$('#residing_method').val());
         })
         selectedMethod = selectedMethod[0];
-
+        totalPercent = Number(selectedMethod.ceda_charge_inpercent) +  Number(selectedMethod.payment_charge_inpercent)
 
         let exchangeRate = $('#price_to').val();
-        let input = $('#entered_currency').val();
-        $('#converted_price').html(numberWithCommas(convertCurrency(input, exchangeRate)));
+        let input = Number($('#entered_currency').val()) - totalPercent;
+        let received = convertCurrency(input, exchangeRate);
+        $('.actual_amount').html(numberWithCommas(received));
+        $('.estimate').html(selectedMethod.estimate_time);
+        $('.ceda-charge').html('Ceda Charge: ' + selectedMethod.ceda_charge_inpercent + "% | " + "Payment Charge: " + selectedMethod.payment_charge_inpercent +"%");
     })
+
+
+
     // Get the modal
     let modalD = document.getElementById("myModal");
-
     let spanD = document.getElementsByClassName("close-modal")[0];
-
     spanD.onclick = function () {
         modalD.style.display = "none";
     }
-
     window.onclick = function (event) {
         if (event.target == modalD) {
             modalD.style.display = "none";
@@ -163,15 +174,10 @@
 
         if (value == "add") {
             modalD.style.display = "block";
-
-
         }
     }
-
-
-
+    //dom content loader
     document.addEventListener("DOMContentLoaded", () => {
-
         fetch('https://nigerianbanks.xyz/')
             .then(response => response.json())
             .then(result => {
@@ -188,15 +194,8 @@
             .catch(error => {
                 console.error('Error:', error);
             });
-
     })
 
-
-    let exchangeRate = $('#price_to').val();
-    let input = $('#entered_currency').val();
-
-    $('.selected_amount').html(exchangeRate)
-    $('.selected_currency').html($("#price_to option:selected").text().replace('$ ', '').replace('£ ', '').replace('€ ', ''))
 
     $('#first_sec').click(function () {
         let res = '<?=$res?>';
@@ -225,7 +224,11 @@
     });
     $('#price_to').on('change', function () {
         let exchangeRate = $('#price_to').val();
-        let input = $('#entered_currency').val();
+        let input = Number($('#entered_currency').val());
+        let inputAfterSub = Number($('#entered_currency').val()) - totalPercent;
+
+        let received = convertCurrency(inputAfterSub, exchangeRate);
+        $('.actual_amount').html(numberWithCommas(received));
         $('.selected_amount').html(exchangeRate)
         $('.selected_currency').html($("#price_to option:selected").text().replace('$ ', '').replace('£ ', '').replace('€ ', ''))
 
@@ -234,7 +237,11 @@
     })
     $('#entered_currency').keyup(function () {
         let exchangeRate = $('#price_to').val();
-        let input = $('#entered_currency').val();
+        let input = Number($('#entered_currency').val());
+        let inputAfterSub = Number($('#entered_currency').val()) - totalPercent;
+
+        let received = convertCurrency(inputAfterSub, exchangeRate);
+        $('.actual_amount').html(numberWithCommas(received));
         $('#converted_price').html(numberWithCommas(convertCurrency(input, exchangeRate)));
     })
 
