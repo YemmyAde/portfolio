@@ -26,12 +26,13 @@ class KycVerification
     {
         global $DB;
         $sql = "SELECT * FROM kyc_verification INNER JOIN users ON kyc_verification.user_id=users.id WHERE kyc_verification.user_id = :user_id ";
+        //echo $sql;
         $stmt = $DB->prepare($sql);
         try {
             $stmt->execute([
                 'user_id' => $id
             ]);
-            $row = $stmt->fetch();
+            $row = $stmt->fetchAll();
             if(!$row){
                 return false;
             }else{

@@ -12,12 +12,7 @@ $payment_methods = PaymentMethod::get();
 $res = "";
 if ($kyc_info) {
     if ($kyc_info['is_approved'] == '0') {
-        if($kyc_info['fist_transaction']=="0"){
-            $res = "0";
-        }
-        else {
-            $res = "1";
-        }
+        $res= '1';
     }
 } else {
     $res = "2";

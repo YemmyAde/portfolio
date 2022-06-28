@@ -51,18 +51,20 @@
 
                         </select>
 
-                        <p class="title-res-amount">Select Bank You’re Paying From</p>
+                        <!--<p class="title-res-amount">Select Bank You’re Paying From</p>
 
                         <select class="method" name="select-bank" id="select-bank">
 
                             <option value="" disabled selected hidden>Select Bank</option>
 
-                        </select>
+                        </select>-->
                         <p class="title-res-amount">Select Recipient Details</p>
 
                         <select class="method" name="choose_NGN" id="choose_NGN" onChange="handlechange()">
                             <option value="">Select Recipients Details</option>
-                            <option value="account details">0002222111 - Access bank</option>
+                            <?php foreach($kyc_info as $key=>$value){ ?>
+                            <option value="account details"><?=$kyc_info[$key]['bank_name']?></option>
+                            <?php } ?>
                             <option value="add"> Add New Recipient</option>
                         </select>
 
@@ -139,20 +141,25 @@
 
     //when residing method is changes
     $('#residing_method').on('change',function(){
-        let selectedMethod = paymentMethod.filter(function(item){
-           return item.id === Number($('#residing_method').val());
-
-            // console.log(item.id,$('#residing_method').val());
-        })
-        selectedMethod = selectedMethod[0];
-        totalPercent = Number(selectedMethod.ceda_charge_inpercent) +  Number(selectedMethod.payment_charge_inpercent)
-
         let exchangeRate = $('#price_to').val();
-        let input = Number($('#entered_currency').val()) - totalPercent;
-        let received = convertCurrency(input, exchangeRate);
-        $('.actual_amount').html(numberWithCommas(received));
-        $('.estimate').html(selectedMethod.estimate_time);
-        $('.ceda-charge').html('Ceda Charge: ' + selectedMethod.ceda_charge_inpercent + "% | " + "Payment Charge: " + selectedMethod.payment_charge_inpercent +"%");
+        let input = Number($('#entered_currency').val());
+
+        if(input!=='') {
+            let inputAfterSub = Number($('#entered_currency').val()) - totalPercent;
+
+            let selectedMethod = paymentMethod.filter(function (item) {
+                return item.id === Number($('#residing_method').val());
+
+                // console.log(item.id,$('#residing_method').val());
+            })
+            selectedMethod = selectedMethod[0];
+            totalPercent = Number(selectedMethod.ceda_charge_inpercent) + Number(selectedMethod.payment_charge_inpercent)
+
+            let received = convertCurrency(inputAfterSub, exchangeRate);
+            $('.actual_amount').html(numberWithCommas(received));
+            $('.estimate').html(selectedMethod.estimate_time);
+            $('.ceda-charge').html('Ceda Charge: ' + selectedMethod.ceda_charge_inpercent + "% | " + "Payment Charge: " + selectedMethod.payment_charge_inpercent + "%");
+        }
     })
 
 
@@ -199,11 +206,6 @@
 
     $('#first_sec').click(function () {
         let res = '<?=$res?>';
-
-        if (res === "0") {
-            window.location.href = "/bank-transfer?q=" + $('#residing_method').val + "&am=" + $('#entered_currency').val() + "&eq=" + convertCurrency($('#entered_currency').val(), $('#price_to').val());
-            return
-        }
         if (res === "1") {
             $('#snackbar').html('Your KYC verification under review');
             showToast();
@@ -239,9 +241,11 @@
         let exchangeRate = $('#price_to').val();
         let input = Number($('#entered_currency').val());
         let inputAfterSub = Number($('#entered_currency').val()) - totalPercent;
-
+        console.log(totalPercent,inputAfterSub)
         let received = convertCurrency(inputAfterSub, exchangeRate);
-        $('.actual_amount').html(numberWithCommas(received));
+        if(Number($('#entered_currency').val()) >totalPercent ) {
+            $('.actual_amount').html(numberWithCommas(received));
+        }
         $('#converted_price').html(numberWithCommas(convertCurrency(input, exchangeRate)));
     })
 
