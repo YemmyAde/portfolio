@@ -4,12 +4,7 @@ $check_email = User::getUserByEmail($_REQUEST['email']);
 $check_phone = User::getUserByPhone($_REQUEST['phone_number']);
 if ($check_email) {
     echo json_encode(['error' => 'Email already used, please use another mail']);
-    die();
-}
-if ($check_phone) {
-    echo json_encode(['error' => 'Phone number already used, please use anther phone number']);
-
-} else {
+}else {
     $token = openssl_random_pseudo_bytes(16);
     $token = bin2hex($token);
     $data = [

@@ -361,14 +361,20 @@
         $('.convert-moneny-header').addClass('ffS');
 
 
-    },function(e){
-        e.stopPropagation();
-
-        $('.convert-ul').removeClass('show');
-        $('.angledown-convert').show(150);
-        $('.angleup-convert').hide(150);
-        $('.convert-moneny-header').removeClass('ffS');
     })
+$('.down-header').hover(function(e){},function(e){
+    e.preventDefault();
+
+    $('.international-ul').removeClass('show')
+    $('.convert-ul').removeClass('show')
+    $('.angleup-convert').hide();
+    $('.angleup-int').hide();
+    $('.angledown-convert').show();
+    $('.angledown-int').show();
+    $('.international').removeClass("ffS")
+    $('.convert-moneny-header').removeClass("ffS")
+})
+
     $('.international-wrapper').hover(function(e){
         e.stopPropagation();
         $('.convert-ul').removeClass('show');
