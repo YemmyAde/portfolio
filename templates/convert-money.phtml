@@ -62,25 +62,26 @@
 
                         <select class="method" name="choose_NGN" id="choose_NGN" onChange="handlechange()">
                             <option value="">Select Recipients Details</option>
-                            <?php foreach($kyc_info as $key=>$value){ ?>
-                            <option value="account details"><?=$kyc_info[$key]['bank_name']?></option>
+                            <?php foreach ($kyc_info as $key => $value) { ?>
+                                <option value="account details"><?= $kyc_info[$key]['bank_name'] ?></option>
                             <?php } ?>
                             <option value="add"> Add New Recipient</option>
                         </select>
 
                         <div class="mt-10">
 
-                            <span class="ceda-charge" >Ceda Charge: 0% | Payment Charge 0%</span>
+                            <span class="ceda-charge">Ceda Charge: 0% | Payment Charge 0%</span>
 
                             <div class="ceda-flex">
 
                                 <div class="value-after">You will receive: <br>
-                                    <span class="actual_amount"> 0 </span><?=" ". $_SESSION['currency'] ?>
+                                    <span class="actual_amount"> 0 </span><?= " " . $_SESSION['currency'] ?>
                                 </div>
 
                                 <div>
                                     <div class="estimated-deli">Estimated Delivery Time</div>
-                                    <span class="estimated-time"><img src="/assets/images/Combined-Shape.png"> <span class="estimate">0hr-0hrs</span></span>
+                                    <span class="estimated-time"><img src="/assets/images/Combined-Shape.png"> <span
+                                                class="estimate">0hr-0hrs</span></span>
                                 </div>
                             </div>
 
@@ -105,17 +106,19 @@
                                 <div class="modal_body">
 
                                     <p class="title-input">Bank Account Number </p>
+                                    <form id="kyc_form" method="post" action="/ajax/insert_kyc_data"
+                                          enctype="multipart/form-data">
+                                        <input type="number" PLACEHOLDER="Enter Bank Account Number" class="account-no" name="account_number">
 
-                                    <input type="number" PLACEHOLDER="Enter Bank Account Number" class="account-no">
+                                        <p class="title-input">Recipient Bank Name </p>
 
-                                    <p class="title-input">Recipient Bank Name </p>
+                                        <select class="method" name="bank_name" id="recipient-bank-name">
+                                            <option value="">-- Select Recipient account bank --</option>
 
-                                    <select class="method" name="recipient-bank-name" id="recipient-bank-name">
-                                        <option value="">-- Select Recipient account bank --</option>
+                                        </select>
 
-                                    </select>
-
-                                    <button class="btn-submit m0 m40" id="add-bank-acc">Add Bank Account</button>
+                                        <button  type="submit" class="btn-submit m0 m40" id="add-bank-acc">Add Bank Account</button>
+                                    </form>
                                 </div>
                             </div>
 
@@ -140,12 +143,12 @@
     let paymentMethod = <?php echo json_encode($payment_methods); ?>;
 
     //when residing method is changes
-    $('#residing_method').on('change',function(){
-        let exchangeRate = $('#price_to').val();
-        let input = Number($('#entered_currency').val());
+    $('#residing_method').on('change', function () {
 
-        if(input!=='') {
-            let inputAfterSub = Number($('#entered_currency').val()) - totalPercent;
+        let exchangeRate = $('#price_to').val();
+
+        if ($('#entered_currency').val() !== '') {
+
 
             let selectedMethod = paymentMethod.filter(function (item) {
                 return item.id === Number($('#residing_method').val());
@@ -154,14 +157,13 @@
             })
             selectedMethod = selectedMethod[0];
             totalPercent = Number(selectedMethod.ceda_charge_inpercent) + Number(selectedMethod.payment_charge_inpercent)
-
+            let inputAfterSub = Number($('#entered_currency').val()) - totalPercent;
             let received = convertCurrency(inputAfterSub, exchangeRate);
             $('.actual_amount').html(numberWithCommas(received));
             $('.estimate').html(selectedMethod.estimate_time);
             $('.ceda-charge').html('Ceda Charge: ' + selectedMethod.ceda_charge_inpercent + "% | " + "Payment Charge: " + selectedMethod.payment_charge_inpercent + "%");
         }
     })
-
 
 
     // Get the modal
@@ -191,7 +193,7 @@
 
                 let bankOption = result.map((item, i) => {
                     return (
-                        ` <option value="${item.slug}">${item.name}</option>`
+                        ` <option value="${item.name}">${item.name}</option>`
                     )
 
                 })
@@ -241,13 +243,33 @@
         let exchangeRate = $('#price_to').val();
         let input = Number($('#entered_currency').val());
         let inputAfterSub = Number($('#entered_currency').val()) - totalPercent;
-        console.log(totalPercent,inputAfterSub)
+        console.log(totalPercent, inputAfterSub)
         let received = convertCurrency(inputAfterSub, exchangeRate);
-        if(Number($('#entered_currency').val()) >totalPercent ) {
+        if (Number($('#entered_currency').val()) > totalPercent) {
             $('.actual_amount').html(numberWithCommas(received));
         }
         $('#converted_price').html(numberWithCommas(convertCurrency(input, exchangeRate)));
     })
 
-
+    $('#kyc_form').on('submit', function (e) {
+        e.preventDefault();
+        $(this).ajaxSubmit({
+            //	target: '#output',
+            dataType: 'json',
+            success: showResponse //call function after success
+        });
+    });
+    function showResponse(res){
+        if(res.error!=undefined) {
+            $('#snackbar').html(res.error);
+            showToast();
+            return;
+        }
+        if(res.message!=undefined) {
+            $('#snackbar').html(res.message);
+            window.location.reload();
+            showToast();
+            return;
+        }
+    }
 </script>

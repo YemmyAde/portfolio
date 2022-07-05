@@ -11,7 +11,7 @@ $kyc_info = KycVerification::getInfoByUserID($_SESSION['id']);
 $payment_methods = PaymentMethod::get();
 $res = "";
 if ($kyc_info) {
-    if ($kyc_info['is_approved'] == '0') {
+    if ($kyc_info[0]['is_approved'] == '0') {
         $res= '1';
     }
 } else {
