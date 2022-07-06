@@ -61,11 +61,11 @@
                         <p class="title-res-amount">Select Recipient Details</p>
 
                         <select class="method" name="choose_NGN" id="choose_NGN" onChange="handlechange()">
-                            <option value="">Select Recipients Details</option>
-                            <?php foreach ($kyc_info as $key => $value) { ?>
-                                <option value="account details"><?= $kyc_info[$key]['bank_name'] ?></option>
-                            <?php } ?>
-                            <option value="add"> Add New Recipient</option>
+                           <!-- <option value="">Select Recipients Details</option>
+                            <?php /*foreach ($kyc_info as $key => $value) { */?>
+                                <option value="account details"><?/*= $kyc_info[$key]['bank_name'] */?></option>
+                            <?php /*} */?>
+                            <option value="add"> Add New Recipient</option>-->
                         </select>
 
                         <div class="mt-10">
@@ -133,6 +133,18 @@
 </div>
 <?php include 'templates/footer.phtml'; ?>
 <script>
+    function getBanks() {
+        $.ajax({
+            url: "/ajax/get_banks",
+            data: {},
+            method: "POST",
+            cache: false,
+            dataType: "html"
+        }).done(function (data) {
+            $("#choose_NGN").html(data);
+        });
+    }
+    getBanks()
     //trigger on load
     let exchangeRate = $('#price_to').val();
     let input = $('#entered_currency').val();
@@ -267,9 +279,10 @@
         }
         if(res.message!=undefined) {
             $('#snackbar').html(res.message);
-            window.location.reload();
+            getBanks()
             showToast();
             return;
         }
     }
+
 </script>
