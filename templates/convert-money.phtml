@@ -123,6 +123,28 @@
                             </div>
 
                         </div>
+                        <div id="stripModal" class="mymodal">
+
+                            <!-- Modal content -->
+                            <div class="close-modal"><span>&times;</span></div>
+                            <div class="modal-content">
+
+                                <div class="modal_head">
+
+                                    <div class="modal-heading">Card Payment</div>
+
+                                    <div class="modal-text">Lörem ipsum prol sant äras. Relig teplat. </div>
+
+                                </div>
+
+                                <div class="modal_body">
+                                    <script src="https://js.stripe.com/v3/"></script>
+                                    <script src="/assets/js/script.js"></script>
+                                </div>
+                            </div>
+
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -179,10 +201,16 @@
 
 
     // Get the modal
+    let modalStrip = document.getElementById('stripModal')
+
     let modalD = document.getElementById("myModal");
     let spanD = document.getElementsByClassName("close-modal")[0];
+    let spanStrip = document.getElementsByClassName("close-modal")[1];
     spanD.onclick = function () {
         modalD.style.display = "none";
+    }
+    spanStrip.onclick = function () {
+        modalStrip.style.display = "none";
     }
     window.onclick = function (event) {
         if (event.target == modalD) {
@@ -234,6 +262,12 @@
 
             return
         }
+
+        if($('#residing_method').val()=== '6'){
+
+            modalStrip.style.display = "block";
+            return
+        }
         let sign = $("#price_to option:selected").text().replace(' USD', '').replace(' GBP', '').replace(' EUR', '');
         sign = encode($.trim(sign))
         window.location.href = "/bank-transfer?q=" + encode($('#residing_method').val()) + "&am=" + encode($('#entered_currency').val()) + "&eq=" + encode(String(convertCurrency($('#entered_currency').val(), $('#price_to').val()))) + '&s=' + sign;
@@ -255,7 +289,6 @@
         let exchangeRate = $('#price_to').val();
         let input = Number($('#entered_currency').val());
         let inputAfterSub = Number($('#entered_currency').val()) - totalPercent;
-        console.log(totalPercent, inputAfterSub)
         let received = convertCurrency(inputAfterSub, exchangeRate);
         if (Number($('#entered_currency').val()) > totalPercent) {
             $('.actual_amount').html(numberWithCommas(received));
