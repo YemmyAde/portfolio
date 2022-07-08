@@ -2,10 +2,10 @@
 if (!session_id()) {
     session_start();
 }
-ini_set('display_errors', 0);
-ini_set('display_startup_errors', 0);
-// error_reporting(E_ALL);
-error_reporting(0);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+ error_reporting(E_ALL);
+error_reporting(1);
 
 define('SITE_TITLE', 'Join CEDA');
 define('BASE_URL', 'https://joinceda.com');
@@ -13,6 +13,7 @@ define('PAGE_LIMIT', 10);
 
 //loading of all classes
 require dirname(__FILE__) .'/../lib/phpmailer/autoload.php';
+//require dirname(__FILE__) .'/../lib/stripe-php/init.php';
 foreach (glob(dirname(__FILE__) ."/../classes/*.php") as $filename) {
     include $filename;
 }
