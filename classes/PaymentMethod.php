@@ -3,7 +3,7 @@ class PaymentMethod
 {
     public static function get(){
         global $DB;
-        $sql = "SELECT * FROM ceda_payment_methods";
+        $sql = "SELECT * FROM ceda_payment_methods WHERE is_active = 1";
         $stmt = $DB->prepare($sql);
         try {
             $stmt->execute([]);

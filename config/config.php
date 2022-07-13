@@ -14,7 +14,7 @@ define('STRIPE_KEY', 'pk_live_51JX66lADIz0KikRTMsM4OTxBNJjYxe0MAxleUQrywLk7RGeCv
 define('STRIPE_SECRET', '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');
 //loading of all classes
 require dirname(__FILE__) .'/../lib/phpmailer/vendor/autoload.php';
-require dirname(__FILE__) .'/../lib/stripe-php/vendor/autoload.php';
+require dirname(__FILE__) .'/../lib/stripe-php/init.php';
 foreach (glob(dirname(__FILE__) ."/../classes/*.php") as $filename) {
     include $filename;
 }

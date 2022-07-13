@@ -14,7 +14,7 @@
                 <div class="border-header"></div>
                 <div class="content-wrapper">
                     <div class="convert-wrapper three">
-                        <div class="method-title"><?= ($payment_method == "bank") ? "NGN DOM ACCOUNT" : "Payoneer Account" ?></div>
+                        <div class="method-title"><?= ($payment_method == "bank") ? "Pay with US Bank Transfer" : "Pay with Payoneer Funds" ?></div>
                         <?php if ($payment_method == "bank") { ?>
                             <div class="method-title banktranfer">(Bank Transfer)</div>
                         <?php } ?>
@@ -39,21 +39,21 @@
                                         <h3 class="title-convert">Confirm order info</h3>
                                         <div class="convert-order-info-data">
                                             <div class="data-wrapper">
-                                                <p class="info-title-convert">Amount</p>
-                                                <p class="info-amount"><?= $sign ?> <?= $amount ?></p>
+                                                <p class="info-title-convert">Amount to be Paid</p>
+                                                <p class="info-amount tobe_paid"><?= $sign ?> <?= $amount ?></p>
                                             </div>
                                             <div class="data-wrapper">
-                                                <p class="info-title-convert">Total Value</p>
-                                                <p class="info-amount value-col"><?= $_SESSION['currency_sign'] ?> <?= number_format($equivalent) ?></p>
+                                                <p class="info-title-convert">You will Receive</p>
+                                                <p class="info-amount value-col ywr"><?= $_SESSION['currency_sign'] ?> <?= number_format($equivalent) ?></p>
                                             </div>
-                                            <div class="data-wrapper">
+                                            <!--<div class="data-wrapper">
                                                 <p class="info-title-convert">Status</p>
                                                 <p class="info-amount status-col">In progress</p>
                                             </div>
                                             <div class="data-wrapper">
                                                 <p class="info-title-convert">Duration</p>
                                                 <p class="info-amount">12:05</p>
-                                            </div>
+                                            </div>-->
                                         </div>
                                     </div>
                                 </div>

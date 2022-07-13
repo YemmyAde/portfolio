@@ -138,8 +138,7 @@
                                 </div>
 
                                 <div class="modal_body">
-                                    <script src="https://js.stripe.com/v3/"></script>
-                                    <script src="/assets/js/script.js"></script>
+
                                 </div>
                             </div>
 
@@ -262,15 +261,16 @@
 
             return
         }
-
-        if($('#residing_method').val()=== '6'){
-
-            modalStrip.style.display = "block";
-            return
+        let q = "";
+        if($('#residing_method').val()=== '2'){
+            q = "payoneer"
+        }
+        if($('#residing_method').val()=== '4'){
+            q = "bank"
         }
         let sign = $("#price_to option:selected").text().replace(' USD', '').replace(' GBP', '').replace(' EUR', '');
         sign = encode($.trim(sign))
-        window.location.href = "/bank-transfer?q=" + encode($('#residing_method').val()) + "&am=" + encode($('#entered_currency').val()) + "&eq=" + encode(String(convertCurrency($('#entered_currency').val(), $('#price_to').val()))) + '&s=' + sign;
+        window.location.href = "/bank-transfer?q=" + encode(q) + "&am=" + encode($('#entered_currency').val()) + "&eq=" + encode(String(convertCurrency($('#entered_currency').val() -totalPercent, $('#price_to').val()))) + '&s=' + sign;
     });
     $('#price_to').on('change', function () {
         let exchangeRate = $('#price_to').val();
@@ -319,3 +319,5 @@
     }
 
 </script>
+<script src="https://js.stripe.com/v3/"></script>
+<script src="/assets/js/script.js"></script>
