@@ -10,10 +10,11 @@ error_reporting(1);
 define('SITE_TITLE', 'Join CEDA');
 define('BASE_URL', 'https://joinceda.com');
 define('PAGE_LIMIT', 10);
-
+define('STRIPE_KEY', 'pk_live_51JX66lADIz0KikRTMsM4OTxBNJjYxe0MAxleUQrywLk7RGeCvjgaRBLuX42noHdIHh4lLlFJRdAOB7018To36wyX00pYImKcVX');
+define('STRIPE_SECRET', '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');
 //loading of all classes
-require dirname(__FILE__) .'/../lib/phpmailer/autoload.php';
-//require dirname(__FILE__) .'/../lib/stripe-php/init.php';
+require dirname(__FILE__) .'/../lib/phpmailer/vendor/autoload.php';
+require dirname(__FILE__) .'/../lib/stripe-php/vendor/autoload.php';
 foreach (glob(dirname(__FILE__) ."/../classes/*.php") as $filename) {
     include $filename;
 }
