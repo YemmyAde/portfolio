@@ -14,8 +14,8 @@
                 <div class="border-header"></div>
                 <div class="content-wrapper">
                     <div class="convert-wrapper three">
-                        <div class="method-title"><?= ($payment_method == "bank") ? "Pay with US Bank Transfer" : "Pay with Payoneer Funds" ?></div>
-                        <?php if ($payment_method == "bank") { ?>
+                        <div class="method-title"><?= ($payment_method == "4") ? "Pay with US Bank Transfer" : "Pay with Payoneer Funds" ?></div>
+                        <?php if ($payment_method == "4") { ?>
                             <div class="method-title banktranfer">(Bank Transfer)</div>
                         <?php } ?>
                         <!--<div class="steps">
@@ -57,7 +57,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <?php if ($payment_method == "bank") { ?>
+                                <?php if ($payment_method == "4") { ?>
                                     <div class="card">
                                         <div class="timeline-indi"></div>
 
@@ -107,7 +107,7 @@
                                         </div>
                                     </div>
                                 <?php } ?>
-                                <?php if ($payment_method == "payoneer") { ?>
+                                <?php if ($payment_method == "2") { ?>
                                     <div class="card">
                                         <div class="timeline-indi"></div>
 
@@ -203,7 +203,8 @@
                               enctype="multipart/form-data">
                             <input type="hidden" name="amount_in" value="<?=$amount?>"/>
                             <input type="hidden" name="amount_to" value="<?=$equivalent?>"/>
-                            <input type="hidden" name="type" value="<?= ($payment_method == "bank") ? 1 : 2 ?>"/>
+                            <input type="hidden" name="payment_method" value="<?= $payment_method?>" />
+                            <input type="hidden" name="bank" value="<?= $recipient?>" />
                             <div class="trans">
                                 <div class="trans-wrapper">
                                     <div class="trans-image-wrapper">

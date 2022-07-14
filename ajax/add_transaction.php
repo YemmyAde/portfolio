@@ -28,13 +28,14 @@ if ($_FILES['file'] != '') {
 }
 $data = [
     'user_id' => $_SESSION['id'],
+    'payment_method'=>$_REQUEST['payment_method'],
     'amount_in' => $_REQUEST['amount_in'],
     'amount_to' => $_REQUEST['amount_to'],
-    'amount_in_currency' => 'usd',//$_REQUEST['amount_in_currency'],
+    'amount_in_currency' => $_REQUEST['amount_in_currency'],
     'amount_to_currency' =>  $_SESSION['currency'],
-//    'bank_type' =>  $_SESSION['type'],
     'transaction_id' =>  $_REQUEST['trans_id'],
     'transaction_date' => date('Y-m-d H:i:s'),
+    'bank' => $_REQUEST['bank'],
     'description' => 'Fund Conversation',
     'status' => 'Pending',
 ];

@@ -261,16 +261,31 @@
 
             return
         }
-        let q = "";
-        if($('#residing_method').val()=== '2'){
-            q = "payoneer"
+        if($('#entered_currency').val()==''){
+            $('#snackbar').html('Please enter amount to convert');
+            showToast();
+            return
         }
-        if($('#residing_method').val()=== '4'){
-            q = "bank"
+        if($('#residing_method').val()==''){
+            $('#snackbar').html('Please select payment method');
+            showToast();
+            return
         }
+        if($('#choose_NGN').val()==''){
+            $('#snackbar').html('Please select recipient');
+            showToast();
+            return
+        }
+
         let sign = $("#price_to option:selected").text().replace(' USD', '').replace(' GBP', '').replace(' EUR', '');
-        sign = encode($.trim(sign))
-        window.location.href = "/bank-transfer?q=" + encode(q) + "&am=" + encode($('#entered_currency').val()) + "&eq=" + encode(String(convertCurrency($('#entered_currency').val() -totalPercent, $('#price_to').val()))) + '&s=' + sign;
+        let data ={
+            payment_type : $('#residing_method').val(),
+            entered_currency: $('#entered_currency').val(),
+            equivalent: String(convertCurrency($('#entered_currency').val() -totalPercent, $('#price_to').val())),
+            selected_currency_sign: $.trim(sign),
+            recipient: $('#choose_NGN').val()
+        };
+        window.location.href = "/bank-transfer?q=" + encode(JSON.stringify(data));
     });
     $('#price_to').on('change', function () {
         let exchangeRate = $('#price_to').val();

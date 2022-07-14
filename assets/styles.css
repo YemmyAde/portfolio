@@ -2278,34 +2278,35 @@ p.contact-form-sub-heading {
 .tobe_paid {
     background: #EFECFD;
     border-radius: 8px;
-    font-family: 'Sora';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 30px;
-    color: #5E3EEB;
+    font-family: 'Sora' !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    font-size: 24px !important;
+    line-height: 30px !important;
+    color: #5E3EEB !important;
     display: flex;
     align-items: center;
     width: 105px;
-    padding: 0 0 0px 5px;
+    padding: 0 0 0px 5px !important;
     height: 40px;
-    margin-top: 10px;
+    margin-top: 10px !important;
 }
 .ywr {
     background: #F2F2F2;
     border-radius: 8px;
-    font-family: 'Sora';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 30px;
+    font-family: 'Sora' !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    font-size: 24px !important;
+    line-height: 30px !important;
     color: #000000 !important;
     display: flex;
     align-items: center;
-    padding: 0 0 0px 5px;
+    padding: 0 0 0px 5px !important;
     height: 40px;
-    margin-top: 10px;
+    margin-top: 10px !important;
 }
+
 .data-wrapper {
     width: 25%;
 }
