@@ -41,11 +41,8 @@
                                         Bank Name
                                     </p>
                                    
-                                    <select class="form-control bank_name_wrapper select-bank" name="bank_name" id="bank_name" aria-placeholder="Choose Bank">
+                                    <select class="form-control bank_name_wrapper select-bank" name="bank_name" id="bank_name" aria-placeholder="Choose Bank" required>
                                         <option>Choose Bank</option>
-                                        <option>GTB</option>
-                                        <option>First Bank</option>
-                                        <option>UBA</option>
                                     </select>
                                 </div>
                                 <div class="bank_section">
@@ -59,7 +56,7 @@
                                     <p class="m0 bank-name">
                                         Account Number
                                     </p>
-                                    <input type="text" class="form-control bank_name_wrapper" name="account_number"
+                                    <input type="text" class="form-control bank_name_wrapper" name="account_number" required
                                            placeholder="Account Number">
                                 </div>
                                 <button type="submit" class="btn-send">Submit <span class="sub-btn-kyc"><img
@@ -76,10 +73,24 @@
 <?php include 'templates/footer.phtml'; ?>
 <script>
 
-    // $('.btn-send').click(function (e) {
-    //     e.preventDefault();
-    //
-    // });
+    function fetchNigeriaBanks(){
+        fetch('https://nigerianbanks.xyz/')
+            .then(response => response.json())
+            .then(result => {
+
+                let bankOption = result.map((item, i) => {
+                    return (
+                        ` <option value="${item.name}">${item.name}</option>`
+                    )
+
+                })
+                document.getElementById("bank_name").innerHTML = bankOption;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+    fetchNigeriaBanks()
     $('#kyc_form').on('submit',function (e){
         e.preventDefault();
         $(this).ajaxSubmit({

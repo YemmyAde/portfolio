@@ -10,14 +10,21 @@ $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 function add($img_url=""){
     $data = [
         'user_id'               =>$_SESSION['id'],
-        'bank_name'             =>$_REQUEST["bank_name"],
-        'account_name'          =>$_SESSION['name'],
-        'account_number'        =>$_REQUEST["account_number"],
         'document_link'         =>($img_url!="")?$img_url:"",
         'is_approved'           =>($img_url!="")?0:1,
     ];
+    $bankData = [
+        'user_id'               =>$_SESSION['id'],
+        'bank_name'             =>$_REQUEST["bank_name"],
+        'account_name'          =>$_SESSION['name'],
+        'account_number'        =>$_REQUEST["account_number"],
+    ];
+    $bank_res = Bank::addBank($bankData);
     $kyc_res = KycVerification::addKyc($data);
-    return $kyc_res;
+    if($kyc_res && $bank_res) {
+        return true;
+    }
+    return false;
 }
 // Check if image file is a actual image or fake image
 if ($_FILES['file'] != '') {
@@ -66,11 +73,5 @@ if ($_FILES['file'] != '') {
     }
 }
 else{
-    $kyc_res = add();
-    if($kyc_res){
-        echo json_encode(['message' => 'Recipient Added']);
-    }
-    else{
-        echo json_encode(['error' =>'Oops! something went wrong']);
-    }
+    echo json_encode(['error'=>'Please select a document']);
 }

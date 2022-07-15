@@ -1,5 +1,5 @@
 <option value="">Select Recipients Details</option>
-<?php foreach ($kyc_info as $key => $value) { ?>
-    <option value="<?=$kyc_info[$key]['kyc_id']?>"><?= $kyc_info[$key]['account_number'] ?> - <?= $kyc_info[$key]['bank_name'] ?></option>
+<?php foreach ($banks as $key => $value) { ?>
+    <option value="<?=$banks[$key]['bank_id']?>"><?= $banks[$key]['account_number'] ?> - <?= $banks[$key]['bank_name'] ?></option>
 <?php } ?>
 <option value="add"> Add New Recipient</option>
