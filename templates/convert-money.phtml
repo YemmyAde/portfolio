@@ -163,6 +163,7 @@
             dataType: "html"
         }).done(function (data) {
             $("#choose_NGN").html(data);
+            document.getElementById("myModal").style.display = "none";
         });
     }
     getBanks()
@@ -224,6 +225,7 @@
             modalD.style.display = "block";
         }
     }
+
     //dom content loader
     document.addEventListener("DOMContentLoaded", () => {
         fetch('https://nigerianbanks.xyz/')

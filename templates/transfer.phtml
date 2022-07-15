@@ -15,9 +15,9 @@
                 <div class="content-wrapper">
                     <div class="convert-wrapper three">
                         <div class="method-title"><?= ($payment_method == "4") ? "Pay with US Bank Transfer" : "Pay with Payoneer Funds" ?></div>
-                        <?php if ($payment_method == "4") { ?>
+                        <?php /*if ($payment_method == "4") { */?><!--
                             <div class="method-title banktranfer">(Bank Transfer)</div>
-                        <?php } ?>
+                        --><?php /*} */?>
                         <!--<div class="steps">
                             <ul class="progressbar">
                                 <li class="active"> Lörem ipsumbr <br> menskopp dedobel</li>
@@ -57,7 +57,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <?php if ($payment_method == "4") { ?>
+                                <?php if ($payment_method == "5") { ?>
                                     <div class="card">
                                         <div class="timeline-indi"></div>
 
@@ -107,7 +107,7 @@
                                         </div>
                                     </div>
                                 <?php } ?>
-                                <?php if ($payment_method == "2") { ?>
+                                <?php if ($payment_method == "2" || $payment_method=='4') { ?>
                                     <div class="card">
                                         <div class="timeline-indi"></div>
 

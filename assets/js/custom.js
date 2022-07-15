@@ -51,3 +51,17 @@ function validatePassword(password){
     }
     return true;
 }
+
+function copyToClipboard(text) {
+    var sampleTextarea = document.createElement("textarea");
+    document.body.appendChild(sampleTextarea);
+    sampleTextarea.value = text; //save main text in it
+    sampleTextarea.select(); //select textarea content
+    document.execCommand("copy");
+    document.body.removeChild(sampleTextarea);
+
+}
+
+function copy(text){
+    alert(text)
+}
